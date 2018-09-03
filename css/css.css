@@ -1,0 +1,91 @@
+body{
+	background-color:#171742;
+	border-radius: 25px;
+	
+	
+}
+#tudo{
+	margin-left:185px;
+	border-width:3;
+	border-style: solid;
+	border-color: black;
+	background-color:white;
+}
+	
+	
+
+
+#valorfinal{
+	position:relative;
+	text-align:right;
+	border-width: 0;
+	border-style: solid;
+	border-color: black;
+	background-color:white;
+}
+
+#valorfinal 	td {
+	border-width: 3;
+	border-style: solid;
+	border-color: black;
+	background-color:white;
+}
+
+
+
+#opcoes{
+	text-align:center;
+	padding-top:100px;
+	width:100%;
+
+}
+#opcoes td{
+	text-align:center;
+	border-radius: 10px;
+	background: #bdbdbd;
+	padding:4px;
+
+	
+}
+
+
+
+#rodape{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #686778;
+    color: white;
+    text-align: center;
+	border-radius: 20px;
+}
+
+
+
+
+#cabecalho{
+	
+    left: 0;
+    top:0;
+    width: 100%;
+    background-color: #686778;
+    color: white;
+    text-align: center;
+	border-radius: 20px;
+}
+#botoes{
+	padding-top:0px;
+	
+	
+}
+#busca th, td, tr{
+	
+	
+}
+
+#relatorio th, td, tr{
+	text-align:center;
+	
+	
+	
+}
