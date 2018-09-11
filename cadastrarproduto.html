@@ -44,17 +44,17 @@ return true;
 		<br><br><br><br><br><br>
 		<center>
 			<div id="formulario">
-				<form  id="cadastrarproduto" action="php/cadastrarproduto.php" method="POST"  onsubmit="return validaCampo(); return false;">
+				<form  action="php/cadastrarproduto.php" method="POST" >
 					<table bgcolor="#A9A9A9">
 					
 							<tr>
 								<th><label>Codigo de Barras:</label></th>
-								<th><input id="codigobarras" class="codigobarras"></input></th>
+								<th><input name="codigobarras" id="codigobarras" class="codigobarras"></input></th>
 							</tr>
 							
 							<tr>
 								<th><label>Nome do Produto:</label></th>
-								<th><input id="nomedoproduto" class="nomedoproduto"></input></th>
+								<th><input name="nomedoproduto" id="nomedoproduto" class="nomedoproduto"></input></th>
 							</tr>
 							
 							<tr>
@@ -86,7 +86,7 @@ return true;
 							<!--Botão de Enviar -->
 							<tr align="center">
 								<td><button><input type="reset" value="Limpar Campos" id="limpar" name="limpar"></button></td>
-								<td><button><input type="submit" value="Registrar" id="registrar" name="registrar"></button></td>
+								<td><button><input type="submit" value="Registrar" id="submit" name="submit"></button></td>
 							</tr>
 							<!-- Até Aqui -->
 							
