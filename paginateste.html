@@ -1,28 +1,9 @@
-<script type="text/javascript">
-function validaCampo()
-{
-if(document.cadastrarproduto.codigobarras.value=="")
-{
-alert("O Campo código de barras é obrigatório!");
-return false;
-}
-else
-if(document.cadastrarproduto.nomedoproduto.value=="")
-{
-alert("O Campo Nome do produto é obrigatório!");
-return false;
-}
-else
-return true;
-}
-<!-- Fim do JavaScript que validará os campos obrigatórios! -->
-</script>
+
 
 
 <html>
 	<header>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="css/css.css">
 
 
 
@@ -101,28 +82,6 @@ return true;
 		<center>
 			<div id="formulario">
 				
-					<table border="1" bgcolor="#A9A9A9">
-					
-						<tr>
-							<th>Código</th>
-							<th>Nome</th>
-							<th>Código de barras</th>
-							<!--<th>Categoria</th>
-							<th>Subcategoria</th> -->
-							<th colspan="2">Ações</th>
-						</tr>
-						
-					
-						
-						
-							<!-- Botões alterar e excluir 
-							<form method="get" action="alterarproduto.html">
-								<th><button><img src="img/alterarlapis.png" height="20px" width="20px" ></button></td></th>
-							</form>
-							<th><button><img src="img/excluirbotao.png" height="20px" width="20px" ></button></td></th>
-							<!-- Até aqui -->
-						
-						
 						
 				
 						<?php 
@@ -130,7 +89,7 @@ return true;
 						
 						
 						
-						$comando="SELECT * FROM produto";
+					echo	$comando="SELECT * FROM produto";
 						$resultado=mysqli_query($conexao,$comando);
 						$dados=array();
 						
@@ -141,23 +100,8 @@ return true;
 							foreach($dados as $cadaDado){
 						?>
 
-<tr>
-	<td><?php echo $cadaDado['id_produto']; ?></td>
-	<td><?php echo $cadaDado['nome_produto']; ?></td>
-	<td><?php echo $cadaDado['codbarras_produto']; ?></td>
-	
-	
-	<!-- <td><?php // echo $cadaDado['nome_categoria']; ?></td>
-	<td><?php // echo $cadaDado['nome_subcategoria']; ?></td> -->
-</tr>
-	<tr>
-		<td><?php echo $comando ?>
-<?php	
-	
-}
-}
 
-?>					
+					
 					
 
 						
@@ -165,8 +109,7 @@ return true;
 		
 							
 							
-					</table>
-			</div>
+					
 
 		
 		</center>
@@ -174,11 +117,17 @@ return true;
 			
 	
 
+</form>
+</div>
+<?php 
 
+echo	$comando;
 
+?> 
 	</body>
 	<div id="rodape">     
 		<p></p>
 	</div>
+	
 	
 </html>
