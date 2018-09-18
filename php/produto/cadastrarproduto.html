@@ -1,9 +1,27 @@
-
+<script type="text/javascript">
+function validaCampo()
+{
+if(document.cadastrarproduto.codigobarras.value=="")
+{
+alert("O Campo código de barras é obrigatório!");
+return false;
+}
+else
+if(document.cadastrarproduto.nomedoproduto.value=="")
+{
+alert("O Campo Nome do produto é obrigatório!");
+return false;
+}
+else
+return true;
+}
+</script>
 
 
 <html>
 	<header>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/css.css">
 
 
 
@@ -11,7 +29,7 @@
 	
 	
 	<div id="cabecalho"> 
-		<img src="img/principal.jpg" width="180px" height="180px" align="left" border="1">
+		<img src="../../img/principal.jpg" width="180px" height="180px" align="left" border="1">
 		<center>
 			<h2>Produto</h2>
 		</center>
@@ -20,8 +38,8 @@
 	<body>
 	
 		<div id="botoes">
-			<button><a href="index.html"><img src="img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="index.html"><img src="img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
+			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<br><br><br><br><br><br>
 		<center>
@@ -82,14 +100,21 @@
 		<center>
 			<div id="formulario">
 				
+					<table border="1" bgcolor="#A9A9A9">
+					
+						<tr>
+							<th>Código</th>
+							<th>Nome</th>
+							<th>Código de barras</th>
 						
-				
-						<?php 
+							<th colspan="2">Ações</th>
+						</tr>
+						<?php
 						include ("php/conexao.php");
 						
 						
 						
-					echo	$comando="SELECT * FROM produto";
+						$comando="SELECT * FROM produto";
 						$resultado=mysqli_query($conexao,$comando);
 						$dados=array();
 						
@@ -100,8 +125,21 @@
 							foreach($dados as $cadaDado){
 						?>
 
+<tr>
+	<td><?php echo 'teste'.$cadaDado['id_produto'].'teste'; ?></td>
+	<td><?php echo $cadaDado['nome_produto']; ?></td>
+	<td><?php echo $cadaDado['codbarras_produto']; ?></td>
+	
+	
+	
+</tr>
+	
+<?php	
+	
+}
+}
 
-					
+?>					
 					
 
 						
@@ -109,7 +147,8 @@
 		
 							
 							
-					
+					</table>
+			</div>
 
 		
 		</center>
@@ -117,17 +156,11 @@
 			
 	
 
-</form>
-</div>
-<?php 
 
-echo	$comando;
 
-?> 
 	</body>
 	<div id="rodape">     
 		<p></p>
 	</div>
-	
 	
 </html>
