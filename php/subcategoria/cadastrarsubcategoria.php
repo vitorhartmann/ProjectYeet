@@ -24,7 +24,7 @@
 		<br><br><br><br><br><br>
 		<center>
 			<div id="formulario">
-				<form method="POST" action="cadastrarproduto.php">
+				<form method="POST" action="cadastrarsubcategoriascript.php">
 					<table bgcolor="#A9A9A9">
 							<th>Categoria:</th>
 							<th>
@@ -82,9 +82,9 @@
 			
 							<!-- Botões alterar e excluir -->
 							<form method="get" action="alterarsubcategoria.html">
-								<th><button><img src="img/alterarlapis.png" height="20px" width="20px" ></button></td></th>
+								<th><button><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>
 							</form>
-							<th><button><img src="img/excluirbotao.png" height="20px" width="20px" ></button></td></th>
+							<th><button><img src="../../img/excluirbotao.png" height="20px" width="20px" ></button></td></th>
 							<!-- Até aqui -->
 						</tr>
 						
