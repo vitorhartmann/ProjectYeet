@@ -49,12 +49,12 @@ return true;
 					
 							<tr>
 								<th><label>Codigo de Barras:</label></th>
-								<th><input name="codigobarras" id="codigobarras" class="codigobarras"></input></th>
+								<th><input  name="codigobarras" id="codigobarras" class="codigobarras"></input></th>
 							</tr>
 							
 							<tr>
 								<th><label>Nome do Produto:</label></th>
-								<th><input name="nomedoproduto" id="nomedoproduto" class="nomedoproduto"></input></th>
+								<th><input  name="nomedoproduto" id="nomedoproduto" class="nomedoproduto"></input></th>
 							</tr>
 							
 							<tr>
@@ -110,7 +110,7 @@ return true;
 							<th colspan="2">Ações</th>
 						</tr>
 						<?php
-						include ("php/conexao.php");
+						include ("../conexao.php");
 						
 						
 						

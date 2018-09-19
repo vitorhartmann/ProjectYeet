@@ -72,15 +72,27 @@
 						
 						
 						<?php 
-						$sql = mysqli_query("Select * From categoria");
-						while($exibe = mysqli_fetch_assoc($sql)){
+						include ("../conexao.php");
 						
+						$comando = mysqli_query("Select * From categoria");
 						
-}
+						$retornartabela = mysqli_query($conexao, $comando);
+						
+						while ($linha = mysqli_fetch_assoc($retornartabela)) {
+							
+							$id_categoria = $linha['id_categoria'];
+							$nome_categoria = $linha['nome_categoria'];
+       
+              
+            
+    }
+						
 						?>
 						<tr>
-							<th><?php echo $exibe["id_categoria"]?></th>
-							<th><?php echo $exibe["nome_categoria"] ?></th>
+							<th><?php echo ["id_categoria"]?></th>
+							<th><?php echo ["nome_categoria"] ?></th>
+							
+							
 			
 							<!-- Botões alterar e excluir -->
 							<form method="get" action="alterarproduto.html">
