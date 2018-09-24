@@ -110,35 +110,42 @@ return true;
 							<th colspan="2">Ações</th>
 						</tr>
 						<?php
-						include ("../conexao.php");
-						
-						
-						
-						$comando="SELECT * FROM produto";
-						$resultado=mysqli_query($conexao,$comando);
-						$dados=array();
-						
-						while($guardaDados = mysqli_fetch_assoc($resultado)){
-						array_push($dados,$guardaDados);
-						}
-						if($dados!=null){
-							foreach($dados as $cadaDado){
-						?>
+						$servername = "localhost";
+						$username = "root";
+						$password = "root";
+						$dbname = "yeet";
 
-<tr>
-	<td><?php echo 'teste'.$cadaDado['id_produto'].'teste'; ?></td>
-	<td><?php echo $cadaDado['nome_produto']; ?></td>
-	<td><?php echo $cadaDado['codbarras_produto']; ?></td>
-	
-	
-	
-</tr>
-	
-<?php	
-	
-}
-}
+						// Create connection
+						$conn = new mysqli($servername, $username, $password, $dbname);
+						// Check connection
+						if ($conn->connect_error) {
+							die("Connection failed: " . $conn->connect_error);
+						} 
 
+						$sql = "SELECT * FROM produto";
+						$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+		echo "<tr>";
+		echo "<td> " . $row["id_produto"]. "</td>" ;
+        echo "<td> " . $row["nome_produto"]. "</td>" ;
+		echo "<td> " . $row["codbarras_produto"]. "</td>";
+							echo '<form method="get" action="alterarproduto.html">';
+							echo '<th><button><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
+							echo '</form>';
+							echo '<th><button><img src="../../img/excluirbotao.png" height="20px" width="20px" ></button></td></th>';
+							
+						echo '</tr>';
+		
+		echo "</tr>";
+		
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
 ?>					
 					
 

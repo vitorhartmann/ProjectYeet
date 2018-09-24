@@ -75,30 +75,47 @@
 							<th colspan="2">Ações</th>
 						</tr>
 						
-						<tr>
-							<th>1</th>
-							<th>Pereciveis</th>
-							<th>Leite</th>
+						<?php
+						$servername = "localhost";
+						$username = "root";
+						$password = "root";
+						$dbname = "yeet";
+
+						// Create connection
+						$conn = new mysqli($servername, $username, $password, $dbname);
+						// Check connection
+						if ($conn->connect_error) {
+							die("Connection failed: " . $conn->connect_error);
+						} 
+
+						$sql = "SELECT * FROM subcategoria";
+						$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+		echo "<tr>";
+        echo "<td> " . $row["id_subcategoria"]. "</td>" ;
+		echo "<td> " . $row["nome_subcategoria"]. "</td>";
+		echo "<td> " . $row["categoria_id_categoria"]. "</td>";
+							echo '<form method="get" action="alterarproduto.html">';
+							echo '<th><button><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
+							echo '</form>';
+							echo '<th><button><img src="../../img/excluirbotao.png" height="20px" width="20px" ></button></td></th>';
+							
+						echo '</tr>';
+		
+		echo "</tr>";
+		
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>	
 			
-							<!-- Botões alterar e excluir -->
-							<form method="get" action="alterarsubcategoria.html">
-								<th><button><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>
-							</form>
-							<th><button><img src="../../img/excluirbotao.png" height="20px" width="20px" ></button></td></th>
-							<!-- Até aqui -->
-						</tr>
 						
-						<tr>
-							<th>2</th>
-							<th>Não Pereciveis</th>
-							<th>Arroz</th>
-							<!-- Botões alterar e excluir -->
-							<form method="get" action="alterarsubcategoria.html">
-								<th><button><img src="img/alterarlapis.png" height="20px" width="20px" ></button></td></th>
-							</form>
-							<th><button><img src="img/excluirbotao.png" height="20px" width="20px" ></button></td></th>
-							<!-- Até aqui -->
-						</tr>
+						
 							
 							
 							

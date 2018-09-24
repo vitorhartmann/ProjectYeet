@@ -39,8 +39,8 @@ include("../conexao.php");
 
 
  
- $comando="INSERT INTO produto (nome_produto,saldo_produto,codbarras_produto,valor_produto) 
-	VALUES ('{$nomeproduto}','0','{$codbarrasproduto}','0')";
+ $comando="INSERT INTO produto ('nome_produto', 'saldo_produto', 'codbarras_produto',
+ 'valor_produto', 'subcategoria_id_subcategoria') VALUES ('{$nomeproduto}', '0', '{$codbarrasproduto}', '0', '1')";
 	
 
 	
