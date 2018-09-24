@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/09/2018 às 21:11
+-- Tempo de geração: 24/09/2018 às 21:10
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -36,8 +36,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
-(1, 'Perecíveis'),
-(2, 'Não Perecíveis');
+(1, 'Não Especificado'),
+(2, 'Perecíveis'),
+(3, 'Não Pereciveis');
 
 -- --------------------------------------------------------
 
@@ -65,6 +66,13 @@ CREATE TABLE `produto` (
   `subcategoria_id_subcategoria` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `produto`
+--
+
+INSERT INTO `produto` (`id_produto`, `nome_produto`, `saldo_produto`, `codbarras_produto`, `valor_produto`, `subcategoria_id_subcategoria`) VALUES
+(1, 'Leite Tirol 1L', 0, 00000044444444, '0.00', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +84,13 @@ CREATE TABLE `subcategoria` (
   `nome_subcategoria` varchar(45) NOT NULL,
   `categoria_id_categoria` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `subcategoria`
+--
+
+INSERT INTO `subcategoria` (`id_subcategoria`, `nome_subcategoria`, `categoria_id_categoria`) VALUES
+(1, 'Não Especificado', 1);
 
 -- --------------------------------------------------------
 
@@ -154,7 +169,7 @@ ALTER TABLE `venda_has_produto`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_categoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de tabela `pagamento`
 --
@@ -164,12 +179,12 @@ ALTER TABLE `pagamento`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id_produto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de tabela `subcategoria`
 --
 ALTER TABLE `subcategoria`
-  MODIFY `id_subcategoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_subcategoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de tabela `venda`
 --
