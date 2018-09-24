@@ -30,9 +30,10 @@
 							<th>
 									
 									<select>
-									<option value="categoria1"></option>
-									<option value="categoria2">Pereciveis</option>
-									<option value="categoria3">Não Pereciveis</option>
+ 
+
+									</select> 
+
 									
 							</th>
 							
@@ -89,6 +90,7 @@
 						} 
 
 						$sql = "SELECT * FROM subcategoria ;";
+					
 						
 						$result = $conn->query($sql);
 
