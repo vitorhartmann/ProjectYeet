@@ -103,10 +103,10 @@
 							die("Connection failed: " . $conn->connect_error);
 						} 
 
-						$sql = "SELECT * FROM subcategoria ;";
-					
+						//$sql = "SELECT * FROM subcategoria ;";
+						$innerjoin="  SELECT * FROM categoria INNER JOIN subcategoria ON categoria.id_categoria = subcategoria.categoria_id_categoria";   
 						
-						$result = $conn->query($sql);
+						$result = $conn->query($innerjoin);
 
 if ($result->num_rows > 0) {
     // output data of each row
@@ -114,7 +114,7 @@ if ($result->num_rows > 0) {
 		echo "<tr>";
         echo "<td> " . $row["id_subcategoria"]. "</td>" ;
 		echo "<td> " . $row["nome_subcategoria"]. "</td>";
-		echo "<td> " . $row["categoria_id_categoria"]. "</td>";
+		echo "<td> " . $row["nome_categoria"]. "</td>";
 							echo '<form method="get" action="alterarproduto.html">';
 							echo '<th><button><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
 							echo '</form>';
@@ -126,7 +126,7 @@ if ($result->num_rows > 0) {
 		
     }
 } else {
-    echo "0 results";
+    echo "0 resultados";
 }
 $conn->close();
 ?>	
