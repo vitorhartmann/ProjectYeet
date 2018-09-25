@@ -110,13 +110,7 @@ return true;
 							<th colspan="2">Ações</th>
 						</tr>
 						<?php
-						$servername = "localhost";
-						$username = "root";
-						$password = "root";
-						$dbname = "yeet";
-
-						// Create connection
-						$conn = new mysqli($servername, $username, $password, $dbname);
+						include("../conexao.php");
 						// Check connection
 						if ($conn->connect_error) {
 							die("Connection failed: " . $conn->connect_error);

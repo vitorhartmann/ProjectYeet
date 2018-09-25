@@ -29,10 +29,24 @@
 							<th>Categoria:</th>
 							<th>
 									
-									<select>
- 
+									
+		
+    <?php 
+		
+		include("../conexao.php");
+						
+        $sql  = mysqli_query($conn, "select * from categoria");?>
+		
+            <select>
+			<option></option>
+			<?php
+              while($resultado = mysqli_fetch_array($sql)){ ?>     
+                  <option><?php echo $resultado['nome_categoria']; ?></option>
+                  <?php } ?>
+            </select>
+   
 
-									</select> 
+	
 
 									
 							</th>

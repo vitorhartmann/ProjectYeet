@@ -1,9 +1,10 @@
-<?php 
-	$conexao=mysqli_connect('localhost','root','root','yeet'); //SUBSTITUIR O # PELO NOME DO BANCO DE DADOS
 
-	//ESTABELECE UMA CONEXAO COM O BANCO DE DADOS
+<?php
+						$servername = "localhost";
+						$username = "root";
+						$password = "root";
+						$dbname = "yeet";
 
-	//A variavel conexão vai armazenar a conexao com o banco que a função mysqli_connect retornará 
-	
-
-?>
+						// Create connection
+						$conn = new mysqli($servername, $username, $password, $dbname);
+						?>
