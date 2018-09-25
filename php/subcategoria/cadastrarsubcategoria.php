@@ -37,11 +37,11 @@
 						
         $sql  = mysqli_query($conn, "select * from categoria");?>
 		
-            <select>
-			<option></option>
+            <select name="nome_categoria">
+			<option value="0"></option>
 			<?php
               while($resultado = mysqli_fetch_array($sql)){ ?>     
-                  <option class="nome_categoria" id="nome_categoria" name="nome_categoria"><?php echo $resultado['nome_categoria']; ?></option>
+                  <option  value="nome_categoria"><?php echo $resultado['nome_categoria']; ?></option>
                   <?php } ?>
             </select>
    
@@ -53,7 +53,7 @@
 							
 							<tr>
 								<th><label>Nome da Subcategoria:</label></th>
-								<th><input></input></th>
+								<th><input class="nome_subcategoria" id="nome_subcategoria" name="nome_subcategoria"></input></th>
 							</tr>
 							
 							<tr>

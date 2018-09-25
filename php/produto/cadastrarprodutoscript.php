@@ -49,7 +49,7 @@ include("../conexao.php");
 
 
 	
- $resultado=mysqli_query($conexao,$comando);
+ $resultado=mysqli_query($conn,$comando);
 	
 	 if($resultado==true){
 		echo "
