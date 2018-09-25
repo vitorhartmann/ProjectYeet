@@ -34,7 +34,7 @@ include("../conexao.php");
 
 
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO !
-$nome_categoria= $_POST	 ["nome_categoria"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
+$id_categoria= $_POST	 ["id_categoria"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
 $nome_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
 
 
@@ -42,12 +42,11 @@ $nome_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_s
 
 
  
-$comando="INSERT INTO subcategoria ('nome_subcategoria','categoria_id_categoria') 
-	VALUES ('{$nome_subcategoria}', '{$nome_categoria}')";
+  $comando="INSERT INTO subcategoria (nome_subcategoria,categoria_id_categoria) 
+	VALUES ('{$nome_subcategoria}', {$id_categoria});";
 	
 
-	
-// $mysqli_query($conexao.$comando);
+
 
 
 
