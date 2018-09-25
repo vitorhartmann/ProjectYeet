@@ -41,7 +41,7 @@
 			<option></option>
 			<?php
               while($resultado = mysqli_fetch_array($sql)){ ?>     
-                  <option><?php echo $resultado['nome_categoria']; ?></option>
+                  <option class="nome_categoria" id="nome_categoria" name="nome_categoria"><?php echo $resultado['nome_categoria']; ?></option>
                   <?php } ?>
             </select>
    
@@ -103,7 +103,7 @@
 							die("Connection failed: " . $conn->connect_error);
 						} 
 
-						//$sql = "SELECT * FROM subcategoria ;";
+			
 						$innerjoin="  SELECT * FROM categoria INNER JOIN subcategoria ON categoria.id_categoria = subcategoria.categoria_id_categoria";   
 						
 						$result = $conn->query($innerjoin);
