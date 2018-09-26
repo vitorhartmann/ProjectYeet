@@ -25,17 +25,20 @@
 
 <?php
 
+
+
+
+
+
+
+
 include("../conexao.php");
-
-
-
-
-
-
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO !
 $nome_categoria= $_POST ["nome_categoria"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
 
-
+if(empty($_POST['nome_categoria']){
+ echo "campo vazio";
+}
  
 
 
