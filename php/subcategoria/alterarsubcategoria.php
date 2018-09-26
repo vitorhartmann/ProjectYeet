@@ -28,6 +28,35 @@
 		
 		
 		
+		
+		
+		
+		
+		<?php
+			//Fazer IF se id_categoria(banco) é igual ao Id_categoria(a alterar) da subcategoria sendo alterada
+              while($resultado = mysqli_fetch_array($sql)){
+$selected='';				  
+			  if (1==1):
+				  $selected='selected';
+			  ?>  
+		
+		<?php echo '<option  value='.$resultado["id_categoria"].' '.$selected.'>'.$resultado['nome_categoria']. '</option>';?>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		</center>
 		
 	

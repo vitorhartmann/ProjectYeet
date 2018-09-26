@@ -28,8 +28,7 @@
 				<form method="POST" action="cadastrarcategoriascript.php">
 					<table bgcolor="#A9A9A9">
 					
-							
-							
+						
 							<tr>
 								<th><label>Nome da Categoria:</label></th>
 								<th><input class="nome_categoria" id="nome_categoria" name="nome_categoria"></input></th>
@@ -70,7 +69,9 @@
 						
 						
 <?php
-						$servername = "localhost";
+					
+
+					$servername = "localhost";
 						$username = "root";
 						$password = "root";
 						$dbname = "yeet";
@@ -88,17 +89,25 @@
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
+		echo '<form method="post" action="alterarcategoria.php">';
 		echo "<tr>";
         echo "<td> " . $row["id_categoria"]. "</td>" ;
+		echo "<input name='id_categoria' type='hidden' value='" .$row['id_categoria']. "'>";
 		echo "<td> " . $row["nome_categoria"]. "</td>";
-							echo '<form method="get" action="alterarproduto.html">';
-							echo '<th><button><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
+		
+							echo '<th><button href="alterarcategoria.php?id_categoria=$id_categoria"><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
+							echo "<input name='nome_categoria' type='hidden' value='" .$row['nome_categoria']. "'>";
 							echo '</form>';
+							
+							
 							echo '<th><button><img src="../../img/excluirbotao.png" height="20px" width="20px" ></button></td></th>';
+							
 							
 						echo '</tr>';
 		
 		echo "</tr>";
+		
+		
 		
     }
 } else {

@@ -34,13 +34,14 @@ include("../conexao.php");
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO !
  $codbarrasproduto= $_POST ["codigobarras"];//atribuição do campo "codigobarras" vindo do formulário para variavel
  $nomeproduto= $_POST ["nomedoproduto"];//atribuição do campo "nomedoproduto" vindo do formulário para variavel
+$id_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
 
  
 
 
  
  $comando="INSERT INTO produto ('nome_produto', 'saldo_produto', 'codbarras_produto',
- 'valor_produto', 'subcategoria_id_subcategoria') VALUES ('{$nomeproduto}', '0', '{$codbarrasproduto}', '0', '1')";
+ 'valor_produto', 'subcategoria_id_subcategoria',) VALUES ('{$nomeproduto}', '0', '{$codbarrasproduto}', '0', '{$subcategoria_id_subcategoria}')";
 	
 
 	

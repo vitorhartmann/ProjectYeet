@@ -60,11 +60,19 @@ return true;
 							<tr>
 								<th><label>Categoria</label></th>
 								<th>
-									<select>
-									<option value="categoria1"></option>
-									<option value="categoria2"></option>
-									<option value="categoria3"></option>
-									<option value="categoria4"></option>
+									<?php 
+		
+		include("../conexao.php");
+						
+        $sql  = mysqli_query($conn, "select * from categoria");?>
+		
+            <select name="id_categoria">
+			
+			<?php
+              while($resultado = mysqli_fetch_array($sql)){ ?>     
+                  <?php echo '<option  value='.$resultado["id_categoria"].' >'.$resultado['nome_categoria']. '</option>';?>
+                  <?php } ?>
+            
 								</th>
 							</select>
 							</tr>
@@ -72,11 +80,19 @@ return true;
 							<tr>
 								<th><label>Sub-Categoria</label></th>
 								<th>
-									<select>
-									<option value="subcategoria1"></option>
-									<option value="subcategoria2"></option>
-									<option value="subcategoria3"></option>
-									<option value="subcategoria4"></option>
+									<?php 
+		
+		include("../conexao.php");
+		
+						
+        $sql  = mysqli_query($conn, "select * from subcategoria WHERE categoria_id_categoria='{$id_categoria}'");?>
+		
+            <select name="id_subcategoria">
+			
+			<?php
+              while($resultado = mysqli_fetch_array($sql)){ ?>     
+                  <?php echo '<option  value='.$resultado["id_subcategoria"].' >'.$resultado['nome_subcategoria']. '</option>';?>
+                  <?php } ?>
 								</th>
 							</select>
 							</tr>
