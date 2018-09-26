@@ -33,22 +33,25 @@
 
 
 include("../conexao.php");
+
+
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO !
 $nome_categoria= $_POST ["nome_categoria"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
 
-if(empty($_POST['nome_categoria']){
- echo "campo vazio";
+
+if(mysql_num_rows($pegaEmail) == 1){
+  echo "email já cadastrado";
 }
- 
-
-
+else{
+  echo "cadastrado com sucesso";
+}
  
 $comando="INSERT INTO categoria (nome_categoria) 
 	VALUES ('{$nome_categoria}')";
 	
 
 	
-// $mysqli_query($conexao.$comando);
+
 
 
 
@@ -85,6 +88,7 @@ $comando="INSERT INTO categoria (nome_categoria)
 		";
 	} 
 
+		
 ?>
 </body>
 	<div id="rodape">     
