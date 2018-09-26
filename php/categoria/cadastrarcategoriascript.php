@@ -58,7 +58,7 @@ $comando="INSERT INTO categoria (nome_categoria)
 			<div id='sucesso'>
 				<table>
 					<tr>
-						<h1>Cadastrado com sucesso</h1>
+						<h1>Exito na operação</h1>
 					</tr>
 				</table>	
 			</div>
@@ -73,7 +73,7 @@ $comando="INSERT INTO categoria (nome_categoria)
 			<div id='erro'>
 				<table>
 					<tr>
-						<h1>Erro ao cadastrar</h1>
+						<h1>Erro na operação</h1>
 					</tr>
 				</table>	
 			</div>
