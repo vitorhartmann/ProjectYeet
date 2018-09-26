@@ -58,7 +58,7 @@ $id_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_sub
 			<div id='sucesso'>
 				<table>
 					<tr>
-						<h1>Cadastrado com sucesso</h1>
+						<h1>Êxito na operação</h1>
 					</tr>
 				</table>	
 			</div>
@@ -73,7 +73,7 @@ $id_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_sub
 			<div id='erro'>
 				<table>
 					<tr>
-						<h1>Erro ao cadastrar</h1>
+						<h1>Erro na operação</h1>
 					</tr>
 				</table>	
 			</div>
