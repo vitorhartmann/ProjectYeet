@@ -33,17 +33,36 @@
 		
 		
 		<?php
+			include("../conexao.php");
+		
+		 $id_subcategoria = $_POST ["id_categoria"];
+         $nome_subcategoria = $_POST ["nome_categoria"];
+		
+		
+		
+		
 			//Fazer IF se id_categoria(banco) é igual ao Id_categoria(a alterar) da subcategoria sendo alterada
-              while($resultado = mysqli_fetch_array($sql)){
-$selected='';				  
-			  if (1==1):
-				  $selected='selected';
+             // while($resultado = mysqli_fetch_array($sql)){
+			//$selected='';				  
+			  //if (1==1):
+				//  $selected='selected';
 			  ?>  
 		
 		<?php echo '<option  value='.$resultado["id_categoria"].' '.$selected.'>'.$resultado['nome_categoria']. '</option>';?>
 		
 		
-		
+		<table bgcolor="A9A9A9">
+        <form action="salva.php" method="post">
+            <!-- Jogamos os valores a serem editados dentro dos inputs no campo value -->
+			<tr>
+								<th><label>Nome da SubCategoria:</label></th>
+								<th><input type="text" name="nome_subcategoria" value="<?php echo $nome_subcategoria; ?>"></th>
+								<input  name="id_subcategoria" type="hidden" value="<?php echo $id_subcategoria; ?>">
+			</tr>
+           
+            <tr><th colspan="2"><input type="submit" value="Salvar alterações"></th></tr>
+        </form>
+		</table>
 		
 		
 		

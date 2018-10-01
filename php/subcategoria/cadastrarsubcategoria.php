@@ -114,14 +114,17 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		echo "<tr>";
         echo "<td> " . $row["id_subcategoria"]. "</td>" ;
-		echo "<td> " . $row["nome_subcategoria"]. "</td>";
 		echo "<td> " . $row["nome_categoria"]. "</td>";
-							echo '<form method="get" action="alterarproduto.html">';
-							echo '<th><button><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
-							echo '</form>';
-							echo '<th><button><img src="../../img/excluirbotao.png" height="20px" width="20px" ></button></td></th>';
+		echo "<td> " . $row["nome_subcategoria"]. "</td>";
+							echo "<form method='post' action='alterarsubcategoria.php'>";
+							echo "<th><button><img src='../../img/alterarlapis.png' height='20px' width='20px' ></button></td></th>";
+							echo "</form>";
 							
-						echo '</tr>';
+							echo "<form method='post' name='form' action='remove.php'></form>";
+							echo "<th><button><img src='../../img/excluirbotao.png' height='20px width='20px' ></button></td></th>";
+							echo "<input name='id_subcategoria' type='hidden' value='" .$row['id_subcategoria']. "'>";
+							echo "</form>";
+						echo "</tr>";
 		
 		echo "</tr>";
 		

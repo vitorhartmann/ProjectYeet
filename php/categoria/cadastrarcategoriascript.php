@@ -39,12 +39,41 @@ include("../conexao.php");
 $nome_categoria= $_POST ["nome_categoria"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
 
 
-if(mysql_num_rows($pegaEmail) == 1){
-  echo "email já cadastrado";
-}
-else{
-  echo "cadastrado com sucesso";
-}
+
+
+
+
+  $sql = "SELECT * FROM categoria WHERE nome_categoria = '{$nome_categoria}'"; //monto a query
+
+
+  $query = $conn->query( $sql ); //executo a query
+
+  if( $query->num_rows > 0 ) {//se retornar algum resultado 
+	
+		echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Categoria Já Cadastrada</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+	
+	
+  } else {
+    
+  
+
+
+
+
+
  
 $comando="INSERT INTO categoria (nome_categoria) 
 	VALUES ('{$nome_categoria}')";
@@ -88,7 +117,7 @@ $comando="INSERT INTO categoria (nome_categoria)
 		";
 	} 
 
-		
+}	
 ?>
 </body>
 	<div id="rodape">     

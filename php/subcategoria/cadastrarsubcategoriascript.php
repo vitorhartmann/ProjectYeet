@@ -38,8 +38,29 @@ $id_categoria= $_POST	 ["id_categoria"];//atribuição do campo "nome_categoria"
 $nome_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
 
 
- 
+   $sql = "SELECT * FROM subcategoria WHERE nome_subcategoria = '{$nome_subcategoria}'"; //monto a query
 
+
+  $query = $conn->query( $sql ); //executo a query
+
+  if( $query->num_rows > 0 ) {//se retornar algum resultado 
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>SubCategoria Já Cadastrada</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+	
+	
+  } else {
 
  
   $comando="INSERT INTO subcategoria (nome_subcategoria,categoria_id_categoria) 
@@ -82,7 +103,7 @@ $nome_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_s
 				
 		";
 	} 
-
+}
 ?>
 </body>
 	<div id="rodape">     
