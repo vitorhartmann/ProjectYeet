@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/09/2018 às 21:54
+-- Tempo de geração: 01/10/2018 às 21:00
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -38,7 +38,7 @@ CREATE TABLE `categoria` (
 INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
 (1, 'Não Especificado'),
 (2, 'Perecíveis'),
-(3, 'Não Pereciveis');
+(29, 'Não Perecíveis');
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,9 @@ CREATE TABLE `subcategoria` (
 
 INSERT INTO `subcategoria` (`id_subcategoria`, `nome_subcategoria`, `categoria_id_categoria`) VALUES
 (1, 'Não Especificado', 1),
-(6, 'Teste', 2);
+(6, 'Teste', 2),
+(7, '', 1),
+(8, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -170,7 +172,7 @@ ALTER TABLE `venda_has_produto`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_categoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT de tabela `pagamento`
 --
@@ -185,7 +187,7 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `subcategoria`
 --
 ALTER TABLE `subcategoria`
-  MODIFY `id_subcategoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_subcategoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de tabela `venda`
 --
