@@ -11,7 +11,7 @@
 	<div id="cabecalho"> 
 		<img src="../../img/principal.jpg" width="180px" height="180px" align="left" border="1">
 		<center>
-			<h2>Produto</h2>
+			<h2>Categoria</h2>
 		</center>
 	</div>
 	
@@ -25,14 +25,14 @@
 <?php 
     //Recebe os dados com as alterações feitas
 	include("../conexao.php");
-    $id_subcategoria = $_POST ["id_subcategoria"];
+    $id_categoria = $_POST ["id_categoria"];
     
 
     //Estabelece a conexão com o mysql
     
     
     //Executa a atualização no banco de dados
-    $sql = "DELETE FROM subcategoria  WHERE id_subcategoria=".$id_subcategoria ;
+    $sql = "DELETE FROM categoria  WHERE id_categoria=".$id_categoria ;
     $update = mysqli_query($conn, $sql);
 
 

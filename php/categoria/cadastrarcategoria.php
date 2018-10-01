@@ -89,7 +89,7 @@
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-		echo '<form method="post" action="alterarcategoria.php">';
+		
 		echo "<tr>";
         echo "<td> " . $row["id_categoria"]. "</td>" ;
 		echo "<input name='id_categoria' type='hidden' value='" .$row['id_categoria']. "'>";
