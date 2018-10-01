@@ -84,8 +84,9 @@ return true;
 		
 		include("../conexao.php");
 		
+		
 						
-        $sql  = mysqli_query($conn, "select * from subcategoria WHERE categoria_id_categoria='{$id_categoria}'");?>
+        $sql  = mysqli_query($conn, "select * from subcategoria WHERE categoria_id_categoria='{$id_subcategoria}'");?>
 		
             <select name="id_subcategoria">
 			

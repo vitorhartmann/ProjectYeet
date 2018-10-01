@@ -1,3 +1,11 @@
+<?php 
+		$nome_produto = $_POST ["nome_produto"];
+		$codbarras_produto = $_POST ["codbarras_produto"];
+		
+		?>		
+			
+
+
 <html>
 	<header>
 		<meta charset="utf-8">

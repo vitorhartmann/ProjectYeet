@@ -120,13 +120,13 @@ if ($result->num_rows > 0) {
 							echo "<th><button><img src='../../img/alterarlapis.png' height='20px' width='20px' ></button></td></th>";
 							echo "</form>";
 							
-							echo "<form method='post' name='form' action='remove.php'></form>";
+							echo "<form action='remove.php' method='post'></form>";
 							echo "<th><button><img src='../../img/excluirbotao.png' height='20px width='20px' ></button></td></th>";
-							echo "<input name='id_subcategoria' type='hidden' value='" .$row['id_subcategoria']. "'>";
+							echo "<input name='id_subcategoria' type='hidden' value=''" .$row['id_subcategoria']. "'>";
 							echo "</form>";
 						echo "</tr>";
 		
-		echo "</tr>";
+		
 		
     }
 } else {

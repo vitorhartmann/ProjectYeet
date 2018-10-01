@@ -25,14 +25,14 @@
 <?php 
     //Recebe os dados com as alterações feitas
 	include("../conexao.php");
-    $id_categoria = $_POST ["id_categoria"];
+    $id_subcategoria = $_POST ["id_subcategoria"];
     
 
     //Estabelece a conexão com o mysql
     
     
     //Executa a atualização no banco de dados
-    $sql = "DELETE FROM categoria  WHERE id_categoria=".$id_categoria ;
+    $sql = "DELETE FROM subcategoria  WHERE id_subcategoria=".$id_subcategoria ;
     $update = mysqli_query($conn, $sql);
 
 
