@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01/10/2018 às 21:00
+-- Tempo de geração: 02/10/2018 às 21:43
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -91,9 +91,7 @@ CREATE TABLE `subcategoria` (
 
 INSERT INTO `subcategoria` (`id_subcategoria`, `nome_subcategoria`, `categoria_id_categoria`) VALUES
 (1, 'Não Especificado', 1),
-(6, 'Teste', 2),
-(7, '', 1),
-(8, '1', 1);
+(6, 'Teste', 2);
 
 -- --------------------------------------------------------
 
