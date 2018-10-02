@@ -113,10 +113,13 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 		echo "<tr>";
-        echo "<td> " . $row["id_subcategoria"]. "</td>" ;
+        echo "<td> " . $row['id_subcategoria']. "</td>" ;
 		echo "<input name='id_subcategoria' type='hidden' value='" .$row['id_subcategoria']. "'>";
-		echo "<td> " . $row["nome_categoria"]. "</td>";
-		echo "<td> " . $row["nome_subcategoria"]. "</td>";
+		echo "<td> " . $row['nome_categoria']. "</td>";
+		echo "<input name='nome_categoria' type='hidden' value='" .$row['nome_categoria']. "'>";
+		echo "<td> " . $row['nome_subcategoria']. "</td>";
+		echo "<input name='nome_subcategoria' type='hidden' value='" .$row['nome_subcategoria']. "'>";
+		
 							echo "<form method='post' action='alterarsubcategoria.php'>";
 							echo "<th><button><img src='../../img/alterarlapis.png' height='20px' width='20px' ></button></td></th>";
 							echo "</form>";

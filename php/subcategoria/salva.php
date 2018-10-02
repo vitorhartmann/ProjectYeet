@@ -24,14 +24,14 @@
 <?php 
     //Recebe os dados com as alterações feitas
 	include("../conexao.php");
-    $id_categoria = $_POST ["id_categoria"];
-    $novoNome = $_POST ["nome_categoria"];
+    $id_subcategoria = $_POST ["id_subcategoria"];
+    $novoNome = $_POST ["nome_subcategoria"];
 
     //Estabelece a conexão com o mysql
     
     
     //Executa a atualização no banco de dados
-    $sql = "UPDATE categoria SET nome_categoria='" . $novoNome . "' WHERE id_categoria=".$id_categoria ;
+    $sql = "UPDATE subcategoria SET nome_subcategoria='" . $novoNome . "' WHERE id_subcategoria=".$id_subcategoria ;
     $update = mysqli_query($conn, $sql);
 
 

@@ -19,7 +19,7 @@
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="cadastrarsubcategoria.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<br><br><br><br><br><br>
 		<center>
@@ -34,9 +34,9 @@
 		
 		<?php
 			include("../conexao.php");
-		
-		 $id_subcategoria = $_POST ["id_categoria"];
-         $nome_subcategoria = $_POST ["nome_categoria"];
+			
+		 $id_subcategoria = $_POST ["id_subcategoria"];
+         $nome_subcategoria = $_POST ["nome_subcategoria"];
 		
 		
 		
@@ -48,12 +48,12 @@
 				//  $selected='selected';
 			  ?>  
 		
-		<?php echo '<option  value='.$resultado["id_categoria"].' '.$selected.'>'.$resultado['nome_categoria']. '</option>';?>
+		<?php //echo '<!-- <option  value='.$resultado["id_categoria"].' '.$selected.'>'.$resultado['nome_categoria']. --> '</option>';?>
 		
 		
 		<table bgcolor="A9A9A9">
         <form action="salva.php" method="post">
-            <!-- Jogamos os valores a serem editados dentro dos inputs no campo value -->
+            
 			<tr>
 								<th><label>Nome da SubCategoria:</label></th>
 								<th><input type="text" name="nome_subcategoria" value="<?php echo $nome_subcategoria; ?>"></th>
