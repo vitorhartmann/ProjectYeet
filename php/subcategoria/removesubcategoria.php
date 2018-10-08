@@ -58,7 +58,7 @@
 				</table>	
 			</div>
 		</center>	";
-	}s
+	}
 ?>
 </body>
 	<div id="rodape">     
