@@ -27,6 +27,34 @@
     $id_subcategoria = $_POST ["id_subcategoria"];
     $novoNome = $_POST ["nome_subcategoria"];
 	
+	
+	
+	$sql = "SELECT * FROM subcategoria WHERE nome_subcategoria = '{$novoNome}'"; //monto a query
+
+
+  $query = $conn->query( $sql ); //executo a query
+
+  if( $query->num_rows > 0 ) {//se retornar algum resultado 
+	
+		echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>SubCategoria Já Cadastrada</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+	
+	
+  } else {
+	
+	
 	if(empty($novoNome)){
 	echo "<center>";
 		echo	"<div id='erro'>";
@@ -44,6 +72,8 @@
 	
 }
 else{
+	
+	
 
     //Estabelece a conexão com o mysql
     
@@ -84,6 +114,7 @@ else{
 		</center>	
 		";
 	}	
+  }
 ?>
 </body>
 	<div id="rodape">     

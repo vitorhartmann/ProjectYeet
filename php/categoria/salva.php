@@ -26,8 +26,34 @@
 	include("../conexao.php");
     $id_categoria = $_POST ["id_categoria"];
     $novoNome = $_POST ["nome_categoria"];
+	
+	$sql = "SELECT * FROM categoria WHERE nome_subcategoria = '{$novoNome}'"; //monto a query
 
-    //Estabelece a conexão com o mysql
+
+  $query = $conn->query( $sql ); //executo a query
+	
+	 if( $query->num_rows > 0 ) {//se retornar algum resultado 
+	
+		echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Categoria Já Cadastrada</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+	
+	
+  } else {
+	
+
+    
     if(empty($novoNome)){
 	echo "<center>";
 		echo	"<div id='erro'>";
