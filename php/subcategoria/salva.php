@@ -26,6 +26,24 @@
 	include("../conexao.php");
     $id_subcategoria = $_POST ["id_subcategoria"];
     $novoNome = $_POST ["nome_subcategoria"];
+	
+	if(empty($novoNome)){
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Campo Nome da SubCategoria precisa ser preenchido</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+}
+else{
 
     //Estabelece a conexão com o mysql
     
@@ -65,7 +83,7 @@
 			</div>
 		</center>	
 		";
-		
+	}	
 ?>
 </body>
 	<div id="rodape">     

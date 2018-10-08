@@ -28,7 +28,23 @@
     $novoNome = $_POST ["nome_categoria"];
 
     //Estabelece a conexão com o mysql
-    
+    if(empty($novoNome)){
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Campo Nome da Categoria precisa ser preenchido</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+}
+else{
     
     //Executa a atualização no banco de dados
     $sql = "UPDATE categoria SET nome_categoria='" . $novoNome . "' WHERE id_categoria=".$id_categoria ;
@@ -65,6 +81,7 @@
 			</div>
 		</center>	
 		";
+		}
 ?>
 </body>
 	<div id="rodape">     
