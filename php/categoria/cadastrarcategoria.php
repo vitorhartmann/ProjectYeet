@@ -1,5 +1,7 @@
 
 <html>
+<head>
+</head>
 	<header>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../../css/css.css">
@@ -24,7 +26,7 @@
 		</div>
 		<br><br><br><br><br><br>
 		<center>
-			<div id="formulario">
+			<div id="formulario" onsubmit="return validateForm()" method="post">
 				<form method="POST" action="cadastrarcategoriascript.php">
 					<table bgcolor="#A9A9A9">
 					
@@ -95,8 +97,10 @@ if ($result->num_rows > 0) {
 		echo "<input name='id_categoria' type='hidden' value='" .$row['id_categoria']. "'>";
 		echo "<td> " . $row["nome_categoria"]. "</td>";
 		
+							echo "<form action='alterarcategoria.php' method='post'>";
 							echo '<th><button href="alterarcategoria.php?id_categoria=$id_categoria"><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
 							echo "<input name='nome_categoria' type='hidden' value='" .$row['nome_categoria']. "'>";
+							echo "<input name='id_categoria' type='hidden' value='" .$row['id_categoria']. "'>";
 							echo '</form>';
 							
 							 echo "<form action='remove.php' method='post'>";						
@@ -134,3 +138,4 @@ $conn->close();
 	</div>
 	
 </html>
+

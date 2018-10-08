@@ -38,7 +38,23 @@ include("../conexao.php");
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO !
 $nome_categoria= $_POST ["nome_categoria"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
 
-
+if(empty($nome_categoria)){
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Campo Nome da Categoria precisa ser preenchido</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+}
+else{
 
 
 
@@ -117,6 +133,7 @@ $comando="INSERT INTO categoria (nome_categoria)
 		";
 	} 
 
+}
 }	
 ?>
 </body>

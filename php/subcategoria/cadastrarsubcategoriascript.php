@@ -37,6 +37,24 @@ include("../conexao.php");
 $id_categoria= $_POST	 ["id_categoria"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
 $nome_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
 
+if(empty($nome_categoria)){
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Campo Nome da SubCategoria precisa ser preenchido</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+}
+else{
+
 
    $sql = "SELECT * FROM subcategoria WHERE nome_subcategoria = '{$nome_subcategoria}'"; //monto a query
 
@@ -103,6 +121,7 @@ $nome_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_s
 				
 		";
 	} 
+}
 }
 ?>
 </body>

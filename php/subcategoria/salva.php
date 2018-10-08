@@ -19,7 +19,7 @@
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="cadastrarcategoria.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="cadastrarsubcategoria.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 <?php 
     //Recebe os dados com as alterações feitas
@@ -36,12 +36,36 @@
 
 
     if( !$update ){
-        header("Location:href='../../erro.html");
+        echo "
+		
+		
+			<center>
+			<div id='erro'>
+				<table>
+					<tr>
+						<h1>Erro na operação</h1>
+					</tr>
+				</table>	
+			</div>
+		</center>	
+				
+		";
         exit;
     }
 
     
-	header("Location:../../sucesso.html");
+	echo "
+		<center>
+			<div id='sucesso'>
+				<table>
+					<tr>
+						<h1>Exito na operação</h1>
+					</tr>
+				</table>	
+			</div>
+		</center>	
+		";
+		
 ?>
 </body>
 	<div id="rodape">     

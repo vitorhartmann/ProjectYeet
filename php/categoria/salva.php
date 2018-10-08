@@ -11,7 +11,7 @@
 	<div id="cabecalho"> 
 		<img src="../../img/principal.jpg" width="180px" height="180px" align="left" border="1">
 		<center>
-			<h2>Produto</h2>
+			<h2>Categoria</h2>
 		</center>
 	</div>
 	
@@ -36,12 +36,35 @@
 
 
     if( !$update ){
-        header("Location:href='../../erro.html");
+        echo "
+		
+		
+			<center>
+			<div id='erro'>
+				<table>
+					<tr>
+						<h1>Erro na operação</h1>
+					</tr>
+				</table>	
+			</div>
+		</center>	
+				
+		";
         exit;
     }
 
     
-	header("Location:../../sucesso.html");
+	echo "
+		<center>
+			<div id='sucesso'>
+				<table>
+					<tr>
+						<h1>Exito na operação</h1>
+					</tr>
+				</table>	
+			</div>
+		</center>	
+		";
 ?>
 </body>
 	<div id="rodape">     
