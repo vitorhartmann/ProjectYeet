@@ -46,7 +46,7 @@
 				</table>	
 			</div>
 		</center>	";
-    }
+    }else{
 
     
 	echo "<center>
@@ -58,6 +58,7 @@
 				</table>	
 			</div>
 		</center>	";
+	}s
 ?>
 </body>
 	<div id="rodape">     
