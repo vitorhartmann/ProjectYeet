@@ -26,6 +26,24 @@
 	include("../conexao.php");
     $id_subcategoria = $_POST ["id_subcategoria"];
     $novoNome = $_POST ["nome_subcategoria"];
+	$id_categoria=$_POST["id_categoria"];
+	
+	if($id_categoria==0){
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Campo Categoria precisa ser selecionado</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+}else{
 	
 	
 	
@@ -80,6 +98,7 @@ else{
     
     //Executa a atualização no banco de dados
     $sql = "UPDATE subcategoria SET nome_subcategoria='" . $novoNome . "' WHERE id_subcategoria=".$id_subcategoria ;
+	$sqlid = "UPDATE subcategoria SET categoria_id_categoria='" . $id_categoria . "' WHERE id_subcategoria=".$id_subcategoria ;
     $update = mysqli_query($conn, $sql);
 
 
@@ -115,6 +134,7 @@ else{
 		";
 	}	
   }
+ }
 ?>
 </body>
 	<div id="rodape">     
