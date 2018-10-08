@@ -35,25 +35,52 @@
 		<?php
 			include("../conexao.php");
 			
+		
 		 $id_subcategoria = $_POST ["id_subcategoria"];
-         $nome_subcategoria = $_POST ["nome_subcategoria"];
+         
+		$comando=mysqli_query($conn, "select categoria.*,id_subcategoria,nome_subcategoria from subcategoria
+		INNER JOIN categoria ON categoria.id_categoria = subcategoria.categoria_id_categoria where id_subcategoria=".$id_subcategoria);
+		 while($resultado = mysqli_fetch_array($comando)){
+		$id_categoria=$resultado["id_categoria"];
+		$nome_subcategoria=$resultado["nome_subcategoria"];		
+		 }
 		
 		
 		
 		
-			//Fazer IF se id_categoria(banco) é igual ao Id_categoria(a alterar) da subcategoria sendo alterada
-             // while($resultado = mysqli_fetch_array($sql)){
-			//$selected='';				  
-			  //if (1==1):
-				//  $selected='selected';
-			  ?>  
 		
-		<?php //echo '<!-- <option  value='.$resultado["id_categoria"].' '.$selected.'>'.$resultado['nome_categoria']. --> '</option>';?>
 		
+		
+		
+		 $sql  = mysqli_query($conn, "select * from categoria");
+		 ?>
+		
+       
+		
+		
+		
+		
+		
+
 		
 		<table bgcolor="A9A9A9">
-        <form action="salva.php" method="post">
-            
+        <form action="salvasubcategoria.php" method="post">
+            <tr>
+				<th><label>Nome da Categoria:</label></th>
+				<th>
+				     <select name="id_categoria">
+			<option value="0"></option>
+			<?php
+			//Fazer IF se id_categoria(banco) é igual ao Id_categoria(a alterar) da subcategoria sendo alterada
+              while($resultado = mysqli_fetch_array($sql)){ 
+					$selected='';				  
+			  if ($resultado["id_categoria"]==$id_categoria)
+				  $selected='selected';
+                   echo '<option  value='.$resultado["id_categoria"].' '.$selected.'  >'.$resultado['nome_categoria']. '</option>';
+          } ?>
+            </select>
+				</th>
+			</tr>
 			<tr>
 								<th><label>Nome da SubCategoria:</label></th>
 								<th><input type="text" name="nome_subcategoria" value="<?php echo $nome_subcategoria; ?>"></th>

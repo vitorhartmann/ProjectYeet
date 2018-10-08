@@ -42,7 +42,7 @@
         ?>
 		
         <table bgcolor="A9A9A9">
-        <form action="salva.php" method="post">
+        <form action="salvacategoria.php" method="post">
             <!-- Jogamos os valores a serem editados dentro dos inputs no campo value -->
 			<tr>
 								<th><label>Nome da Categoria:</label></th>

@@ -103,7 +103,7 @@ if ($result->num_rows > 0) {
 							echo "<input name='id_categoria' type='hidden' value='" .$row['id_categoria']. "'>";
 							echo '</form>';
 							
-							 echo "<form action='remove.php' method='post'>";						
+							 echo "<form action='removecategoria.php' method='post'>";						
 							echo '<th><button><img src="../../img/excluirbotao.png" height="20px" width="20px" ></button></td></th>';
 							echo "<input name='id_categoria' type='hidden' value='" .$row['id_categoria']. "'>";
 							echo "</form>";

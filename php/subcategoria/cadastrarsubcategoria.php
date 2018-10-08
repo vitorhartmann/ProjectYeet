@@ -124,7 +124,7 @@ if ($result->num_rows > 0) {
 							echo "<input name='nome_subcategoria' type='hidden' value='" .$row['nome_subcategoria']. "'>";
 							echo "</form>";
 							
-							echo "<form action='remove.php' method='post'>";
+							echo "<form action='removesubcategoria.php' method='post'>";
 							echo "<th><button><img src='../../img/excluirbotao.png' height='20px width='20px' ></button></td></th>";
 							echo "<input name='id_subcategoria' type='hidden' value='" .$row['id_subcategoria']. "'>";
 							echo "</form>";

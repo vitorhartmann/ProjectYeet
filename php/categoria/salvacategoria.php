@@ -27,7 +27,7 @@
     $id_categoria = $_POST ["id_categoria"];
     $novoNome = $_POST ["nome_categoria"];
 	
-	$sql = "SELECT * FROM categoria WHERE nome_subcategoria = '{$novoNome}'"; //monto a query
+	$sql = "SELECT * FROM categoria WHERE nome_categoria = '{$novoNome}'"; //monto a query
 
 
   $query = $conn->query( $sql ); //executo a query
@@ -108,6 +108,7 @@ else{
 		</center>	
 		";
 		}
+  }
 ?>
 </body>
 	<div id="rodape">     

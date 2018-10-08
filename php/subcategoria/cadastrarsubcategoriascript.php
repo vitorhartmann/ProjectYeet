@@ -37,7 +37,7 @@ include("../conexao.php");
 $id_categoria= $_POST	 ["id_categoria"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
 $nome_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
 
-if(empty($nome_categoria)){
+if(empty($nome_subcategoria)){
 	echo "<center>";
 		echo	"<div id='erro'>";
 		echo		"<table>";
