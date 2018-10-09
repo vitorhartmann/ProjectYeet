@@ -1,3 +1,8 @@
+<?php
+$id_produto= $_POST	 ["id_produto"];//atribuição do campo "nome_categoria" vindo do formulário para variavel
+$valor_produto= $_POST ["valor_produto"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
+?>
+
 <html>
 	<header>
 		<meta charset="utf-8">

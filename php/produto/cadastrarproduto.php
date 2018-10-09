@@ -1,7 +1,48 @@
 
 
 <html>
-	<header>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#categoria').on('change', function() {
+        $.ajax({
+            type: 'POST',
+            url: 'listasubcategoria.php',
+            dataType: 'html',
+            data: {'categoria': $('#categoria').val()},
+            // Antes de carregar os registros, mostra para o usuário que está
+            // sendo carregado.
+            beforeSend: function(xhr) {
+                $('#subcategoria').attr('disabled', 'disabled');
+                $('#subcategoria').html('<option value="">Carregando...</option>');
+            },
+            // Após carregar, coloca a lista dentro do select de cidades.
+            success: function(data) {
+                if ($('#categoria').val() !== '') {
+                    // Adiciona o retorno no campo, habilita e da foco
+                    $('#subcategoria').html('<option value="">Selecione</option>');
+                    $('#subcategoria').append(data);
+                    $('#subcategoria').removeAttr('disabled').focus();
+                } else {
+                    $('#subcategoria').html('<option value="">Selecione um estado</option>');
+                    $('#subcategoria').attr('disabled', 'disabled');
+
+                    
+                }
+            }
+        });
+    });   
+});
+
+</script>
+
+</head>
+
+	
+	<body>
+		<header>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../../css/css.css">
 
@@ -16,9 +57,6 @@
 			<h2>Produto</h2>
 		</center>
 	</div>
-	
-	<body>
-	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
 			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
@@ -48,7 +86,7 @@
 						
         $sql  = mysqli_query($conn, "select * from categoria");?>
 		
-            <select name="id_categoria">
+            <select name="id_categoria" id="id_categoria">
 			
 			<?php
               while($resultado = mysqli_fetch_array($sql)){ ?>     
@@ -62,20 +100,12 @@
 							<tr>
 								<th><label>Sub-Categoria:</label></th>
 								<th>
-									<?php 
+								
 		
-		include("../conexao.php");
+	
 		
-		
-        $sql  = mysqli_query($conn, "select * from subcategoria WHERE categoria_id_categoria='{$id_categoria}'");?>
-		
-            <select name="id_subcategoria">  
-			<option value="0"></option>
-			<?php
-			
-              while($resultado = mysqli_fetch_array($sql)){ ?>     
-                  <?php echo '<option  value='.$resultado["id_subcategoria"].' >'.$resultado['nome_subcategoria']. '</option>';?>
-                  <?php } ?>
+            <select name="id_subcategoria" id="id_subcategoria">  
+			<option value="">Selecione uma Categoria</option>
             </select>
 								</th>
 							</select>
