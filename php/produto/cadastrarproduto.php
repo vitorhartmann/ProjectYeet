@@ -1,21 +1,3 @@
-<script type="text/javascript">
-function validaCampo()
-{
-if(document.cadastrarproduto.codigobarras.value=="")
-{
-alert("O Campo código de barras é obrigatório!");
-return false;
-}
-else
-if(document.cadastrarproduto.nomedoproduto.value=="")
-{
-alert("O Campo Nome do produto é obrigatório!");
-return false;
-}
-else
-return true;
-}
-</script>
 
 
 <html>
@@ -58,7 +40,7 @@ return true;
 							</tr>
 							
 							<tr>
-								<th><label>Categoria</label></th>
+								<th><label>Categoria:</label></th>
 								<th>
 									<?php 
 		
@@ -78,22 +60,23 @@ return true;
 							</tr>
 							
 							<tr>
-								<th><label>Sub-Categoria</label></th>
+								<th><label>Sub-Categoria:</label></th>
 								<th>
 									<?php 
 		
 		include("../conexao.php");
 		
 		
-						
-        $sql  = mysqli_query($conn, "select * from subcategoria WHERE categoria_id_categoria='{$id_subcategoria}'");?>
+        $sql  = mysqli_query($conn, "select * from subcategoria WHERE categoria_id_categoria='{$id_categoria}'");?>
 		
-            <select name="id_subcategoria">
-			
+            <select name="id_subcategoria">  
+			<option value="0"></option>
 			<?php
+			
               while($resultado = mysqli_fetch_array($sql)){ ?>     
                   <?php echo '<option  value='.$resultado["id_subcategoria"].' >'.$resultado['nome_subcategoria']. '</option>';?>
                   <?php } ?>
+            </select>
 								</th>
 							</select>
 							</tr>

@@ -61,7 +61,7 @@ function showMe (it, box) {
 							
 						<tr>
 							<th><label>Nome do Produto:</label></th>
-							<th><input class="nome_produto" id="nome_produto" name="nome_produto></input></th>
+							<th><input class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
