@@ -6,28 +6,33 @@
 
 <script>
 $(document).ready(function() {
-    $('#categoria').on('change', function() {
+    $('#id_categoria').on('change', function() {
         $.ajax({
             type: 'POST',
             url: 'listasubcategoria.php',
             dataType: 'html',
-            data: {'categoria': $('#categoria').val()},
+            data: {'categoria': $('#id_categoria').val()},
             // Antes de carregar os registros, mostra para o usuário que está
             // sendo carregado.
             beforeSend: function(xhr) {
-                $('#subcategoria').attr('disabled', 'disabled');
-                $('#subcategoria').html('<option value="">Carregando...</option>');
+                $('#id_subcategoria').attr('disabled', 'disabled');
+                $('#id_subcategoria').html('<option value="">Carregando...</option>');
             },
             // Após carregar, coloca a lista dentro do select de cidades.
             success: function(data) {
-                if ($('#categoria').val() !== '') {
+				alert('TESTE DE ENTRADA ');
+                if ($('#id_categoria').val() !== '') {
+									alert('TESTE DE ENTRADA '+data);
+
                     // Adiciona o retorno no campo, habilita e da foco
-                    $('#subcategoria').html('<option value="">Selecione</option>');
-                    $('#subcategoria').append(data);
-                    $('#subcategoria').removeAttr('disabled').focus();
+                    $('#id_subcategoria').html('<option value="">Selecione</option>');
+                    $('#id_subcategoria').append(data);
+                    $('#id_subcategoria').removeAttr('disabled').focus();
                 } else {
-                    $('#subcategoria').html('<option value="">Selecione um estado</option>');
-                    $('#subcategoria').attr('disabled', 'disabled');
+									alert(data+ 'TESTE DE ENTRADA');
+
+                    $('#id_subcategoria').html('<option value="">Selecione uma Categoria</option>');
+                    $('#id_subcategoria').attr('disabled', 'disabled');
 
                     
                 }
@@ -87,7 +92,7 @@ $(document).ready(function() {
         $sql  = mysqli_query($conn, "select * from categoria");?>
 		
             <select name="id_categoria" id="id_categoria">
-			
+			<option value="">Selecione...</option>
 			<?php
               while($resultado = mysqli_fetch_array($sql)){ ?>     
                   <?php echo '<option  value='.$resultado["id_categoria"].' >'.$resultado['nome_categoria']. '</option>';?>
