@@ -1,4 +1,9 @@
 <html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
 	<header>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../../css/css.css">
@@ -34,7 +39,7 @@ include("../conexao.php");
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO !
  $codbarrasproduto= $_POST ["codigobarras"];//atribuição do campo "codigobarras" vindo do formulário para variavel
  $nomeproduto= $_POST ["nomedoproduto"];//atribuição do campo "nomedoproduto" vindo do formulário para variavel
-$id_subcategoria= $_POST ["nome_subcategoria"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
+$id_subcategoria= $_POST ["id_subcategoria"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
 
  
 

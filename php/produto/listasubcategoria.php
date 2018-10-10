@@ -1,11 +1,14 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 <?php
-// Uma forma de obter $_POST['estado'] mais segura
+include("../conexao.php");
+// Uma forma de obter $_POST['categoria'] mais segura
 $codCategoria = filter_input(INPUT_POST, 'categoria', FILTER_VALIDATE_INT);
 
 $sqlSubCategoria = 'SELECT * FROM subcategoria WHERE id_categoria = :codCategoria ORDER BY nome ASC';
-$resSubcategoria = $conexao->prepare($sqlSubCategoria);
-$resSubcategoria->execute(array(
-    ':codCategoria' => $codCategoria
+$resSubcategoria = $conn->prepare($sqlSubCategoria);
+$resSubcategoria->execute(array(':codCategoria' => $codCategoria
 ));
 $subcategoria = $resSubcategoria->fetchAll();
 ?>
