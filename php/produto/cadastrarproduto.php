@@ -20,16 +20,16 @@ $(document).ready(function() {
             },
             // Após carregar, coloca a lista dentro do select de cidades.
             success: function(data) {
-				alert('TESTE DE ENTRADA ');
+			
                 if ($('#id_categoria').val() !== '') {
-									alert('TESTE DE ENTRADA '+data);
+								
 
                     // Adiciona o retorno no campo, habilita e da foco
                     $('#id_subcategoria').html('<option value="">Selecione</option>');
                     $('#id_subcategoria').append(data);
                     $('#id_subcategoria').removeAttr('disabled').focus();
                 } else {
-									alert(data+ 'TESTE DE ENTRADA');
+									
 
                     $('#id_subcategoria').html('<option value="">Selecione uma Categoria</option>');
                     $('#id_subcategoria').attr('disabled', 'disabled');
