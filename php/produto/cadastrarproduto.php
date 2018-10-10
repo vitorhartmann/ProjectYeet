@@ -110,7 +110,7 @@ $(document).ready(function() {
 	
 		
             <select name="id_subcategoria" id="id_subcategoria">  
-			<option value="">Selecione uma Categoria</option>
+			<option value="">Selecione uma Categoria...</option>
             </select>
 								</th>
 							</select>

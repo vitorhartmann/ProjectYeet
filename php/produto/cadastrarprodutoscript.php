@@ -46,7 +46,7 @@ $id_subcategoria= $_POST ["id_subcategoria"];//atribuição do campo "nome_subca
 
  
  $comando="INSERT INTO produto ('nome_produto', 'saldo_produto', 'codbarras_produto',
- 'valor_produto', 'subcategoria_id_subcategoria',) VALUES ('{$nomeproduto}', '0', '{$codbarrasproduto}', '0', '{$subcategoria_id_subcategoria}')";
+ 'valor_produto', 'subcategoria_id_subcategoria',) VALUES ('{$nomeproduto}', '0', '{$codbarrasproduto}', '0', '{$id_subcategoria}')";
 	
 
 	
