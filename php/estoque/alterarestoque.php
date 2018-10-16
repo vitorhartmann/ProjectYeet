@@ -6,19 +6,18 @@
 		?>		
 			
 
+<script type="text/javascript">
 
+document.getElementById('checkboxvalor').onchange = function() {
+    document.getElementById('novo_valor').disabled = !this.checked;
+};
+</script>
 
 
 <script src="jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script type="text/javascript">
-function showMe (it, box) {
-  var vis = (box.checked) ? "block" : "none";
-  document.getElementById(it).style.display = vis;
-}
 
-</script>
 <?php
 		include("../conexao.php");
 
@@ -86,25 +85,17 @@ $result = $conn->query($sql);
 							
 						<tr>
 							<th><label>Alterar valor?</label></th>
-							<th><label><input type="checkbox" name="c1" onclick="showMe("div1", this)"> </label></th>
+							<th><label><input id="checkboxvalor" type="checkbox" name="checkbox"> </label></th>
+						</tr>
+						<tr>
+								<th><label>Valor Novo:</label></th>
+								<th><input id="novo_valor" disabled="disabled"></input></th>
 						</tr>
 						
 						
-						
 					</table>
-								
-					<div id="div1" style="display:none">
-						<table  bgcolor="#A9A9A9" id="t1">
-									
 							
-						
-							<tr width="px">
-								<th><label>Valor Novo:</label></th>
-								<th><input></input></th>
-							</tr>
-							
-						</table>
-					</div>
+				
 							
 							
 							

@@ -74,14 +74,14 @@ function showMe (it, box) {
 							
 						<tr>
 							<th><label>Alterar valor?</label></th>
-							<th><label><input type="checkbox" name="c1" onclick="showMe('div1', this)"> </label></th>
+							<th><label><input disabled="disabled" type="checkbox" name="c1" onclick="showMe('div1', this)"> </label></th>
 						</tr>
 						
 						
 						
 					</table>
 								
-					<div id="div1" style="display:none">
+					<div id="divcheckbox" style="display:none">
 						<table  bgcolor="#A9A9A9" id="t1">
 									
 							
