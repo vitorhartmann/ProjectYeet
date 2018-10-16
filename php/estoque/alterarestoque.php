@@ -1,7 +1,6 @@
 <?php 
-		$nome_produto = $_POST ["nome_produto"];
-		$codbarras_produto = $_POST ["codbarras_produto"];
 		
+		$codbarras_produto = $_POST ["codbarras_produto"];
 		?>		
 			
 
@@ -21,7 +20,7 @@ function showMe (it, box) {
 		include("../conexao.php");
 
 	
-$sql = "SELECT * FROM produto where codbarras_produto='.{$codbarras_produto}.' or nome_produto='.{$nome_produto}.'";
+$sql = "SELECT * FROM produto where codbarras_produto='{$codbarras_produto}'";
 $result = $conn->query($sql);
       
             
@@ -54,7 +53,7 @@ $result = $conn->query($sql);
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="estoque.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<br><br><br><br><br><br>
 		<center>
@@ -117,7 +116,63 @@ $result = $conn->query($sql);
 			</div>		
 		</center>	';
 		} else {
-    echo "0 results";
+    echo '<div id="formulario">
+				<form method="POST" action="alterarestoque.php">
+					<table bgcolor="#A9A9A9">
+					
+					
+						<tr>
+							<th><label>Codigo de Barras:</label></th>
+							<th><input  value="Não Encontrado" class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
+						</tr>
+							
+						<tr>
+							<th><label>Nome do Produto:</label></th>
+							<th><input value="Não Encontrado" class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
+						</tr>
+						<tr>
+							<th><label>Quantidade atual: </label></th>
+							<th><label></label></th>
+						</tr>
+						<tr>
+							<th><label>Quantidade a adicionar:</label></th>
+							<th><input></input></th>
+						</tr>
+							
+						<tr>
+							<th><label>Alterar valor?</label></th>
+							<th><label><input type="checkbox" name="c1" onclick="showMe("div1", this)"> </label></th>
+						</tr>
+						
+						
+						
+					</table>
+								
+					<div id="div1" style="display:none">
+						<table  bgcolor="#A9A9A9" id="t1">
+									
+							
+						
+							<tr width="px">
+								<th><label>Valor Novo:</label></th>
+								<th><input></input></th>
+							</tr>
+							
+						</table>
+					</div>
+							
+							
+							
+					<!--Botão de Enviar -->
+					<tr align="center">
+					<td colspan="2"><button><input type="reset" value="Adicionar" id="limpar" name="limpar"></button></td>
+					</tr>
+					<!-- Até Aqui -->
+											
+							
+				</form>
+			</div>		
+		</center>	';
 }?>
 		
 		
