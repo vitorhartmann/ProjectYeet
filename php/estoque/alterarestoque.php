@@ -76,11 +76,11 @@ $result = $conn->query($sql);
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
-							<th><label></label></th>
+							<th><input disabled="disabled" value="'.$row["saldo_produto"].'"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade a adicionar:</label></th>
-							<th><input></input></th>
+							<th><input type="text" class="adicionar_produto" id="adicionar_produto" name="adicionar_produto"></input></th>
 						</tr>
 							
 						<tr>
