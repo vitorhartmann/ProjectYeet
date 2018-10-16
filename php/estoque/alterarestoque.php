@@ -64,15 +64,15 @@ $result = $conn->query($sql);
 				<form method="POST" action="alterarestoque.php">
 					<table bgcolor="#A9A9A9">
 					
-					
+					'; while($row = $result->fetch_assoc()) { echo' 
 						<tr>
 							<th><label>Codigo de Barras:</label></th>
-							<th><input  value="'.$codbarras_produto.'"class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
+							<th><input  value="'.$row["codbarras_produto"].'"class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
 						</tr>
 							
 						<tr>
 							<th><label>Nome do Produto:</label></th>
-							<th><input value="'.$nome_produto.' "class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
+							<th><input value="'.$row["nome_produto"].' "class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
@@ -117,7 +117,7 @@ $result = $conn->query($sql);
 				</form>
 			</div>		
 		</center>	';
-		} else {
+					}} else {
     echo '<div id="formulario">
 				<form method="POST" action="alterarestoque.php">
 					<table bgcolor="#A9A9A9">
