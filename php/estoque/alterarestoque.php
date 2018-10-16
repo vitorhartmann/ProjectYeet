@@ -1,7 +1,7 @@
 <?php 
 		
 		$codbarras_produto = $_POST ["codbarras_produto"];
-		
+		$nome_produto=$_POST["nome_produto"];
 		
 		?>		
 			
@@ -67,12 +67,12 @@ $result = $conn->query($sql);
 					
 						<tr>
 							<th><label>Codigo de Barras:</label></th>
-							<th><input ';?>value="<?php $nome_categoria?>"<?php echo   'class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
+							<th><input  value="'.$codbarras_produto.'"class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
 						</tr>
 							
 						<tr>
 							<th><label>Nome do Produto:</label></th>
-							<th><input class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
+							<th><input value="'.$nome_produto.' class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
