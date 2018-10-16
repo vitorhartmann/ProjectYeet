@@ -8,6 +8,7 @@
 
 
 
+
 <script src="jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -107,11 +108,11 @@ $result = $conn->query($sql);
 							
 							
 							
-					<!--Botão de Enviar -->
+					
 					<tr align="center">
 					<td colspan="2"><button><input type="reset" value="Adicionar" id="limpar" name="limpar"></button></td>
 					</tr>
-					<!-- Até Aqui -->
+				
 											
 							
 				</form>

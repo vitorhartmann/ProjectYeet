@@ -65,11 +65,11 @@ function showMe (it, box) {
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
-							<th><label><?php ?></label></th>
+							<th><input type="text" disabled="disabled"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade a adicionar:</label></th>
-							<th><input></input></th>
+							<th><input disabled="disabled"></input></th>
 						</tr>
 							
 						<tr>
@@ -88,7 +88,7 @@ function showMe (it, box) {
 						
 							<tr width="px">
 								<th><label>Valor Novo:</label></th>
-								<th><input></input></th>
+								<th><input disabled="disabled"></input></th>
 							</tr>
 							
 						</table>
