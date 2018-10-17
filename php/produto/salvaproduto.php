@@ -52,7 +52,30 @@ $sql = "SELECT * FROM produto WHERE nome_produto = '{$novoNome}'"; //monto a que
 	
 	
   } else {
+	$sql = "SELECT * FROM produto WHERE codbarras_produto = '{$codbarras_produto}'"; //monto a query
+
+
+  $query = $conn->query( $sql ); //executo a query
+
+  if( $query->num_rows > 0 ) {//se retornar algum resultado 
 	
+		echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Código de barras já utilizado</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+	
+	
+  } else {
 	
 	
 	
@@ -146,7 +169,8 @@ else{
   }
 }
 }
-
+  }
+  
   
   
   
