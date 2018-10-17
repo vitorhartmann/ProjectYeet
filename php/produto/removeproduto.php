@@ -19,20 +19,20 @@
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="cadastrarsubcategoria.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="cadastrarproduto.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 
 <?php 
     //Recebe os dados com as alterações feitas
 	include("../conexao.php");
-    $id_subcategoria = $_POST ["id_subcategoria"];
+    $id_produto = $_POST ["id_produto"];
     
 
     //Estabelece a conexão com o mysql
     
     
     //Executa a atualização no banco de dados
-    $sql = 'DELETE FROM subcategoria  WHERE id_subcategoria='.$id_subcategoria ;
+    $sql = 'DELETE FROM produto  WHERE id_produto='.$id_produto ;
     $update = mysqli_query($conn, $sql);
 
 

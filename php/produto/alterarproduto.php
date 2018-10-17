@@ -44,15 +44,19 @@
 		<table bgcolor="A9A9A9">
         <form action="salvaproduto.php" method="post">
             <!-- Jogamos os valores a serem editados dentro dos inputs no campo value -->
-			
+			<tr>
+				<input  name="id_produto" type="hidden" value="<?php echo $id_produto; ?>">
+			</tr>
 			<tr>
 								<th><label>Codigo de Barras:</label></th>
 								<th><input  type="text" value="<?php echo $codbarras_produto;?>" name="codigobarras" id="codigobarras" class="codigobarras"></input></th>
+								<input  name="novoCodBarras" type="hidden" value="<?php echo $codbarras_produto; ?>">
 			</tr>
 			<tr>
 								<th><label>Nome do produto:</label></th>
-								<th><input type="text" name="nome_categoria" value="<?php echo $nome_produto; ?>"></th>
-								<input  name="id_categoria" type="hidden" value="<?php echo $id_produto; ?>">
+								<th><input type="text" name="nome_produto" value="<?php echo $nome_produto; ?>"></th>
+								<input  name="nome_categoria" type="hidden" value="<?php echo $nome_produto; ?>">
+							
 			</tr>
            
             <tr><th colspan="2"><input type="submit" value="Salvar alterações"></th></tr>

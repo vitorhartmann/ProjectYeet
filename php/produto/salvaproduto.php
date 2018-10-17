@@ -19,35 +19,16 @@
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="cadastrarsubcategoria.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="cadastrarproduto.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 <?php 
     //Recebe os dados com as alterações feitas
 	include("../conexao.php");
-    $id_subcategoria = $_POST ["id_subcategoria"];
-    $novoNome = $_POST ["nome_subcategoria"];
-	$id_categoria=$_POST["id_categoria"];
+    $id_produto = $_POST ["id_produto"];
+    $novoNome = $_POST ["nome_produto"];
+	$novoCodBarras = $_POST ["codbarras_produto"];
 	
-	if($id_categoria==0){
-	echo "<center>";
-		echo	"<div id='erro'>";
-		echo		"<table>";
-		echo			"<tr>";
-		echo				"<h1>Erro na operação</h1>";
-		echo				"<h1>Campo Categoria precisa ser selecionado</h1>";
-		echo			"</tr>";
-		echo		"</table>"	;
-		echo	"</div>";
-		echo "</center>";
-	
-	
-	
-	
-}else{
-	
-	
-	
-	$sql = "SELECT * FROM subcategoria WHERE nome_subcategoria = '{$novoNome}'"; //monto a query
+$sql = "SELECT * FROM produto WHERE nome_produto = '{$novoNome}'"; //monto a query
 
 
   $query = $conn->query( $sql ); //executo a query
@@ -59,7 +40,7 @@
 		echo		"<table>";
 		echo			"<tr>";
 		echo				"<h1>Erro na operação</h1>";
-		echo				"<h1>SubCategoria Já Cadastrada</h1>";
+		echo				"<h1>Produto Já Cadastrado</h1>";
 		echo			"</tr>";
 		echo		"</table>"	;
 		echo	"</div>";
@@ -73,13 +54,17 @@
   } else {
 	
 	
+	
+	
+	
+	
 	if(empty($novoNome)){
 	echo "<center>";
 		echo	"<div id='erro'>";
 		echo		"<table>";
 		echo			"<tr>";
 		echo				"<h1>Erro na operação</h1>";
-		echo				"<h1>Campo Nome da SubCategoria precisa ser preenchido</h1>";
+		echo				"<h1>Campo Nome do produto precisa ser preenchido</h1>";
 		echo			"</tr>";
 		echo		"</table>"	;
 		echo	"</div>";
@@ -97,9 +82,11 @@ else{
     
     
     //Executa a atualização no banco de dados
-    $sql = "UPDATE subcategoria SET nome_subcategoria='" . $novoNome . "' WHERE id_subcategoria=".$id_subcategoria ;
-	$sqlid = "UPDATE subcategoria SET categoria_id_categoria='" . $id_categoria . "' WHERE id_subcategoria=".$id_subcategoria ;
+    $sql = "UPDATE produto SET nome_produto='" . $novoNome . "' WHERE id_produto=".$id_produto ;
+
+	
     $update = mysqli_query($conn, $sql);
+	
 
 
     if( !$update ){
@@ -110,7 +97,7 @@ else{
 			<div id='erro'>
 				<table>
 					<tr>
-						<h1>Erro na operação</h1>
+						<h1>Erro na operação </h1>
 					</tr>
 				</table>	
 			</div>
@@ -118,9 +105,15 @@ else{
 				
 		";
         exit;
-    }
+    }else{
+		
 
-    
+
+	$comando = "UPDATE produto SET codbarras_produto='" . $novoCodBarras . "' WHERE id_produto=".$id_produto ;
+	$update2 = mysqli_query($conn, $comando);
+	
+     if( $update2 ){
+       
 	echo "
 		<center>
 			<div id='sucesso'>
@@ -132,9 +125,29 @@ else{
 			</div>
 		</center>	
 		";
+		}else{
+			echo "
+		
+		
+			<center>
+			<div id='erro'>
+				<table>
+					<tr>
+						<h1>Erro na operação </h1>
+					</tr>
+				</table>	
+			</div>
+		</center>	
+				
+		";
 	}	
   }
- }
+}
+  }
+  
+  
+  
+  
 ?>
 </body>
 	<div id="rodape">     

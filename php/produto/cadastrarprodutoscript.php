@@ -127,7 +127,7 @@ else{
 
  
   $comando="INSERT INTO produto (nome_produto, saldo_produto, codbarras_produto,
- valor_produto, subcategoria_id_subcategoria) VALUES ('{$nomeproduto}', '0', '{$codbarrasproduto}', '0', '{$id_subcategoria}')";
+ valor_produto, subcategoria_id_subcategoria) VALUES ('{$nome_produto}', '0', '{$codbarras_produto}', '0', '{$id_subcategoria}')";
 	
 
 	
