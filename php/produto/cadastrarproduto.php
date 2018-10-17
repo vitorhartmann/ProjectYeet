@@ -161,10 +161,18 @@ if ($result->num_rows > 0) {
 		echo "<td> " . $row["id_produto"]. "</td>" ;
         echo "<td> " . $row["nome_produto"]. "</td>" ;
 		echo "<td> " . $row["codbarras_produto"]. "</td>";
-							echo '<form method="get" action="alterarproduto.html">';
-							echo '<th><button><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
+		
+							echo "<form action='alterarproduto.php' method='post'>";
+							echo '<th><button href="alterarproduto.php?id_produto=$id_produto"><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
+							echo "<input name='nome_produto' type='hidden' value='" .$row['nome_produto']. "'>";
+							echo "<input name='id_produto' type='hidden' value='" .$row['id_produto']. "'>";
 							echo '</form>';
+							
+							
+							echo "<form action='removeproduto.php' method='post'>";						
 							echo '<th><button><img src="../../img/excluirbotao.png" height="20px" width="20px" ></button></td></th>';
+							echo "<input name='id_produto' type='hidden' value='" .$row['id_produto']. "'>";
+							echo "</form>";
 							
 						echo '</tr>';
 		
