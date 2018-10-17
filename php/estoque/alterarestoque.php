@@ -1,9 +1,4 @@
-<?php 
-		
-		$codbarras_produto = $_POST ["codbarras_produto"];
-		$nome_produto=$_POST["nome_produto"];
-		
-		?>		
+	
 			
 
 <script type="text/javascript">
@@ -47,8 +42,8 @@ document.getElementById('checkboxvalor').onchange = function() {
 		<?php
 		include("../conexao.php");
 		
-		$codbarras_produto=['codbarras_produto'];
-		$nome_produto=['nome_produto'];
+		$codbarras_produto=$_POST['codbarras_produto'];
+		$nome_produto=$_POST['nome_produto'];
 
 	
 $sql = "SELECT * FROM produto where codbarras_produto='{$codbarras_produto}'";
