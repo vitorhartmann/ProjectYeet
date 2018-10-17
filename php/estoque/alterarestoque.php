@@ -117,18 +117,22 @@ $result = $conn->query($sql);
 					<table bgcolor="#A9A9A9">
 					
 					'; while($row = $result->fetch_assoc()) { echo' 
+					"<input name="id_produto" type="hidden" value=' .$row['id_produto']. '>";
 						<tr>
 							<th><label>Codigo de Barras:</label></th>
 							<th><input  value="'.$row["codbarras_produto"].'" disabled="disabled" class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
+							 "<input name="codbarras_produto" type="hidden" value=' .$row['codbarras_produto']. '>";
 						</tr>
 							
 						<tr>
 							<th><label>Nome do Produto:</label></th>
 							<th><input value="'.$row["nome_produto"].' " disabled="disabled" class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
+							"<input name="nome_produto" type="hidden" value=' .$row['nome_produto']. '>";
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
 							<th><input disabled="disabled" value="'.$row["saldo_produto"].'"></input></th>
+							"<input name="saldo_produto" type="hidden" value=' .$row['saldo_produto']. '>";
 						</tr>
 						<tr>
 							<th><label>Quantidade a adicionar:</label></th>
