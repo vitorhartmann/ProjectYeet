@@ -166,6 +166,7 @@ if ($result->num_rows > 0) {
 							echo '<th><button href="alterarproduto.php?id_produto=$id_produto"><img src="../../img/alterarlapis.png" height="20px" width="20px" ></button></td></th>';
 							echo "<input name='nome_produto' type='hidden' value='" .$row['nome_produto']. "'>";
 							echo "<input name='id_produto' type='hidden' value='" .$row['id_produto']. "'>";
+							echo "<input name='codbarras_produto' type='hidden' value='" .$row['codbarras_produto']. "'>";
 							echo '</form>';
 							
 							

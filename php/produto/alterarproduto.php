@@ -29,8 +29,9 @@
 	
 	
             //Recebe os dados a serem editados
-            $id_produto = $_POST ["id_categoria"];
-            $nome_produto = $_POST ["nome_categoria"];
+            $id_produto = $_POST ["id_produto"];
+            $nome_produto = $_POST ["nome_produto"];
+			$codbarras_produto = $_POST ["codbarras_produto"];
 		
 			
 			
@@ -43,6 +44,11 @@
 		<table bgcolor="A9A9A9">
         <form action="salvaproduto.php" method="post">
             <!-- Jogamos os valores a serem editados dentro dos inputs no campo value -->
+			
+			<tr>
+								<th><label>Codigo de Barras:</label></th>
+								<th><input  type="text" value="<?php echo $codbarras_produto;?>" name="codigobarras" id="codigobarras" class="codigobarras"></input></th>
+			</tr>
 			<tr>
 								<th><label>Nome do produto:</label></th>
 								<th><input type="text" name="nome_categoria" value="<?php echo $nome_produto; ?>"></th>
