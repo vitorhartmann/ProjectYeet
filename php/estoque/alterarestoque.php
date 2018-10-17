@@ -57,7 +57,7 @@ $result = $conn->query($sql);
 
   if( $result->num_rows > 0 ) {//se retornar algum resultado 
             echo '<div id="formulario">
-				<form method="POST" action="alterarestoque.php">
+				<form method="POST" action="adicionarestoque.php">
 					<table bgcolor="#A9A9A9">
 					
 					'; while($row = $result->fetch_assoc()) { echo' 
@@ -113,7 +113,7 @@ $result = $conn->query($sql);
 			
          if ($result->num_rows > 0) {
 			echo '<div id="formulario">
-				<form method="POST" action="alterarestoque.php">
+				<form method="POST" action="adicionarestoque.php">
 					<table bgcolor="#A9A9A9">
 					
 					'; while($row = $result->fetch_assoc()) { echo' 
@@ -164,7 +164,7 @@ $result = $conn->query($sql);
 					}} else {
 					
     echo '<div id="formulario">
-				<form method="POST" action="alterarestoque.php">
+				<form method="POST" action="adicionarestoque.php">
 					<table bgcolor="#A9A9A9">
 					
 					
