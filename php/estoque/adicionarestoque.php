@@ -86,9 +86,17 @@ $(document).ready(function() {
     $adicionar_produto = $_POST ["adicionar_produto"];
 	$saldo_produto= $_POST ["saldo_produto"];
 	$saldototal_produto=$adicionar_produto+$saldo_produto ;
-	$novo_valor = $_POST ["novo_valor"];
+	$novoValor=$_POST ["novo_valor"];
+	
+	
+	 if(isset($novoValor)){ 
+		 
+	$novovalor=$_POST ["novo_valor"];
+	 }else{
+		 $novoValor=$_POST["antigo_valor"];
+	 }
     
-	$sql = "UPDATE produto SET saldo_produto='" . $saldototal_produto . "', valor_produto='" . $novo_valor . "'  WHERE id_produto=".$id_produto ;
+	$sql = "UPDATE produto SET saldo_produto='" . $saldototal_produto . "', valor_produto='" . $novovalor . "'  WHERE id_produto=".$id_produto ;
 
 	
     $update = mysqli_query($conn, $sql);
