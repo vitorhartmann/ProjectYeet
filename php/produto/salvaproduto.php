@@ -26,7 +26,7 @@
 	include("../conexao.php");
     $id_produto = $_POST ["id_produto"];
     $novoNome = $_POST ["nome_produto"];
-	$novoCodBarras = $_POST ["codbarras_produto"];
+	$codbarras_produto = $_POST ["codbarras_produto"];
 	
 $sql = "SELECT * FROM produto WHERE nome_produto = '{$novoNome}'"; //monto a query
 
@@ -76,7 +76,7 @@ $sql = "SELECT * FROM produto WHERE nome_produto = '{$novoNome}'"; //monto a que
 }
 else{
 		
-	if(empty($novoCodBarras)){
+	if(empty($codbarras_produto)){
 	echo "<center>";
 		echo	"<div id='erro'>";
 		echo		"<table>";
@@ -100,7 +100,7 @@ else{
     
     
     //Executa a atualização no banco de dados
-    $sql = "UPDATE produto SET nome_produto='" . $novoNome . "' WHERE id_produto=".$id_produto ;
+     echo $sql = "UPDATE produto SET nome_produto='" . $novoNome . "', codbarras_produto='" . $novoCodBarras . "'  WHERE id_produto=".$id_produto ;
 
 	
     $update = mysqli_query($conn, $sql);
@@ -127,10 +127,7 @@ else{
 		
 
 	
-	$comando = "UPDATE produto SET codbarras_produto='" . $novoCodBarras . "' WHERE id_produto=".$id_produto ;
-	$update2 = mysqli_query($conn, $comando);
-	
-     if( $update2 ){
+    
        
 	echo "
 		<center>
@@ -143,27 +140,15 @@ else{
 			</div>
 		</center>	
 		";
-		}else{
-			echo "
-		
-		
-			<center>
-			<div id='erro'>
-				<table>
-					<tr>
-						<h1>Erro na operação </h1>
-					</tr>
-				</table>	
-			</div>
-		</center>	
-				
-		";
+
+
 	}	
   }
 }
-  }
+}
+
   
-  } 
+  
   
   
 ?>

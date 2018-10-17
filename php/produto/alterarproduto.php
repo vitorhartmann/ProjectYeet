@@ -49,13 +49,13 @@
 			</tr>
 			<tr>
 								<th><label>Codigo de Barras:</label></th>
-								<th><input  type="text" name="codigobarras" value="<?php echo $codbarras_produto;?>"></input></th>
-								<input  name="codbarras_produto" type="hidden" value="<?php echo $codbarras_produto; ?>">
+								<th><input  type="text" name="codbarras_produto" value="<?php echo $codbarras_produto;?>"></input></th>
+								
 			</tr>
 			<tr>
 								<th><label>Nome do produto:</label></th>
 								<th><input type="text" name="nome_produto" value="<?php echo $nome_produto; ?>"></th>
-								<input  name="nome_categoria" type="hidden" value="<?php echo $nome_produto; ?>">
+								
 							
 			</tr>
            
