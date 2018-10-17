@@ -80,7 +80,7 @@ $result = $conn->query($sql);
 						</tr>
 						<tr>
 								<th><label>Valor Novo:</label></th>
-								<th><input id="novo_valor" disabled="disabled"></input></th>
+								<th><input value="'.$row["valor_produto"].' id="novo_valor" disabled="disabled" ></input></th>
 						</tr>
 						
 						
@@ -136,7 +136,7 @@ $result = $conn->query($sql);
 						</tr>
 						<tr>
 								<th><label>Valor Novo:</label></th>
-								<th><input id="novo_valor" disabled="disabled"></input></th>
+								<th><input id="novo_valor" value="'.$row["valor_produto"].'" disabled="disabled"></input></th>
 						</tr>
 						
 						

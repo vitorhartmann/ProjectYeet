@@ -58,10 +58,6 @@ function showMe (it, box) {
 							<th><input disabled="disabled"></input></th>
 						</tr>
 							
-						<tr>
-							<th><label>Alterar valor?</label></th>
-							<th><label><input disabled="disabled" type="checkbox" name="c1" onclick="showMe('div1', this)"> </label></th>
-						</tr>
 						
 						
 						
