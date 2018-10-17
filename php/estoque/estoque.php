@@ -9,21 +9,7 @@ function showMe (it, box) {
 }
 
 </script>
-<?php
-		include("../conexao.php");
 
-	
-	
-          
-            
-		
-			
-			
-			
-
-			
-			
-        ?>
 
 <html>
 	<header>
@@ -56,12 +42,12 @@ function showMe (it, box) {
 					
 						<tr>
 							<th><label>Codigo de Barras:</label></th>
-							<th><input class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
+							<th><input  id="codbarras_produto" name="codbarras_produto"></input></th>
 						</tr>
 							
 						<tr>
 							<th><label>Nome do Produto:</label></th>
-							<th><input class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
+							<th><input  id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
@@ -98,7 +84,7 @@ function showMe (it, box) {
 							
 					<!--Botão de Enviar -->
 					<tr align="center">
-					<td colspan="2"><button><input type="submit" value="Adicionar" id="limpar" name="limpar"></button></td>
+					<td colspan="2"><button><input type="submit" value="Adicionar" id="submit" name="submit"></button></td>
 					</tr>
 					<!-- Até Aqui -->
 											
