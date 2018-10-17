@@ -100,7 +100,7 @@ else{
     
     
     //Executa a atualização no banco de dados
-     echo $sql = "UPDATE produto SET nome_produto='" . $novoNome . "', codbarras_produto='" . $novoCodBarras . "'  WHERE id_produto=".$id_produto ;
+    $sql = "UPDATE produto SET nome_produto='" . $novoNome . "', codbarras_produto='" . $codbarras_produto . "'  WHERE id_produto=".$id_produto ;
 
 	
     $update = mysqli_query($conn, $sql);
