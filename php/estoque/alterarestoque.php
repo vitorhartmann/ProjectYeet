@@ -76,7 +76,7 @@ $result = $conn->query($sql);
 						<tr>
 							
 							<th><label>Quantidade atual: </label></th>
-							<th><input disabled="disabled" value="'.$row["saldo_produto"].'"></input></th>
+							<th><input name="saldo_produto" disabled="disabled" value="'.$row["saldo_produto"].'"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade a adicionar:</label></th>
@@ -90,6 +90,7 @@ $result = $conn->query($sql);
 						<tr>
 								<th><label>Valor Novo:</label></th>
 								<th><input value="'.$row["valor_produto"].' " name="novo_valor" id="novo_valor" disabled="disabled"  ></input></th>
+								<input value="'.$row["valor_produto"].' " name="antigo_valor" id="antigo_valor" type="hidden"  ></input>
 						</tr>
 						
 						
@@ -150,6 +151,7 @@ $result = $conn->query($sql);
 						<tr>
 								<th><label>Valor Novo:</label></th>
 								<th><input id="novo_valor" name="novo_valor" value="'.$row["valor_produto"].'" disabled="disabled" ></input></th>
+								<input value="'.$row["valor_produto"].' " name="antigo_valor" id="antigo_valor" type="hidden"  ></input>
 						</tr>
 						
 						

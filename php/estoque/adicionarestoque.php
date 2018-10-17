@@ -59,7 +59,7 @@ $(document).ready(function() {
 	<div id="cabecalho"> 
 		<img src="../../img/principal.jpg" width="180px" height="180px" align="left" border="1">
 		<center>
-			<h2>Produto</h2>
+			<h2>Estoque</h2>
 		</center>
 	</div>
 		<div id="botoes">
@@ -83,8 +83,8 @@ $(document).ready(function() {
     //Recebe os dados com as alterações feitas
 	include("../conexao.php");
     $id_produto = $_POST ["id_produto"];
-	$adicionar_produto = $_POST ["adicionar_produto"];
-	$saldo_produto=$_POST["saldo_produto"];
+    $adicionar_produto = $_POST ["adicionar_produto"];
+	$saldo_produto= $_POST ["saldo_produto"];
 	$saldototal_produto=$adicionar_produto+$saldo_produto ;
 	$novo_valor = $_POST ["novo_valor"];
     
