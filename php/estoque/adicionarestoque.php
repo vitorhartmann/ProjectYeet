@@ -5,4 +5,43 @@
 	$adicionar_produto = $_POST ["adicionar_produto"];
 	$novo_valor = $_POST ["novo_valor"];
     
+	$sql = "UPDATE produto SET saldo_produto='" . $adicionar_produto . "', valor_produto='" . $novo_valor . "'  WHERE id_produto=".$id_produto ;
+
+	
+    $update = mysqli_query($conn, $sql);
+	
+	 if( !$update ){
+        echo "
+		
+		
+			<center>
+			<div id='erro'>
+				<table>
+					<tr>
+						<h1>Erro na operação </h1>
+					</tr>
+				</table>	
+			</div>
+		</center>	
+				
+		";
+        exit;
+    }else{
+		   echo "
+		
+		
+			<center>
+			<div id='erro'>
+				<table>
+					<tr>
+						<h1>Ëxito na operação </h1>
+					</tr>
+				</table>	
+			</div>
+		</center>	
+				
+		";
+	}
+		
+	
 ?>
