@@ -63,12 +63,12 @@ $result = $conn->query($sql);
 					'; while($row = $result->fetch_assoc()) { echo' 
 						<tr>
 							<th><label>Codigo de Barras:</label></th>
-							<th><input  value="'.$row["codbarras_produto"].'"class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
+							<th><input  value="'.$row["codbarras_produto"].'" disabled="disabled" class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
 						</tr>
 							
 						<tr>
 							<th><label>Nome do Produto:</label></th>
-							<th><input value="'.$row["nome_produto"].' "class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
+							<th><input value="'.$row["nome_produto"].' disabled="disabled" "class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
@@ -119,12 +119,12 @@ $result = $conn->query($sql);
 					'; while($row = $result->fetch_assoc()) { echo' 
 						<tr>
 							<th><label>Codigo de Barras:</label></th>
-							<th><input  value="'.$row["codbarras_produto"].'"class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
+							<th><input  value="'.$row["codbarras_produto"].'" disabled="disabled" class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
 						</tr>
 							
 						<tr>
 							<th><label>Nome do Produto:</label></th>
-							<th><input value="'.$row["nome_produto"].' "class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
+							<th><input value="'.$row["nome_produto"].' " disabled="disabled" class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
@@ -170,12 +170,12 @@ $result = $conn->query($sql);
 					
 						<tr>
 							<th><label>Codigo de Barras:</label></th>
-							<th><input  value="Não Encontrado" class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
+							<th><input  value="Não Encontrado" disabled="disabled" class="codbarras_produto" id="codbarras_produto" name="codbarras_produto"></input></th>
 						</tr>
 							
 						<tr>
 							<th><label>Nome do Produto:</label></th>
-							<th><input value="Não Encontrado" class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
+							<th><input value="Não Encontrado" disabled="disabled" class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
