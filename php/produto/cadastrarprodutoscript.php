@@ -37,11 +37,92 @@ include("../conexao.php");
 
 
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO !
- $codbarrasproduto= $_POST ["codigobarras"];//atribuição do campo "codigobarras" vindo do formulário para variavel
- $nomeproduto= $_POST ["nomedoproduto"];//atribuição do campo "nomedoproduto" vindo do formulário para variavel
+ $codbarras_produto= $_POST ["codbarras_produto"];//atribuição do campo "codigobarras" vindo do formulário para variavel
+ $nome_produto= $_POST ["nome_produto"];//atribuição do campo "nomedoproduto" vindo do formulário para variavel
 $id_subcategoria= $_POST ["id_subcategoria"];//atribuição do campo "nome_subcategoria" vindo do formulário para variavel
 
- 
+if(empty($codbarras_produto)){
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Campo Código de Barras precisa ser preenchido</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	}
+else{
+	
+ if(empty($nome_produto)){
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Campo Nome do produto precisa ser preenchido</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+}
+else{
+	$sql = "SELECT * FROM produto WHERE nome_produto = '{$nome_produto}'"; //monto a query
+
+
+  $query = $conn->query( $sql ); //executo a query
+
+  if( $query->num_rows > 0 ) {//se retornar algum resultado 
+	
+		echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Produto Já Cadastrado</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+	
+	
+  } else {
+	  $sql = "SELECT * FROM produto WHERE codbarras_produto = '{$codbarras_produto}'"; //monto a query
+
+
+  $query = $conn->query( $sql ); //executo a query
+
+  if( $query->num_rows > 0 ) {//se retornar algum resultado 
+	
+		echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Produto Já Cadastrado</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+	
+	
+  } else {
+    
 
 
  
@@ -87,7 +168,10 @@ $id_subcategoria= $_POST ["id_subcategoria"];//atribuição do campo "nome_subca
 		";
 	} 
 
-
+  }
+  }
+}
+}
 
 ?>
 

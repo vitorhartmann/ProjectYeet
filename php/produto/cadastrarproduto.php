@@ -74,12 +74,12 @@ $(document).ready(function() {
 					
 							<tr>
 								<th><label>Codigo de Barras:</label></th>
-								<th><input  name="codigobarras" id="codigobarras" class="codigobarras"></input></th>
+								<th><input  name="codbarras_produto" id="codbarras_produto" class="codigobarras"></input></th>
 							</tr>
 							
 							<tr>
 								<th><label>Nome do Produto:</label></th>
-								<th><input  name="nomedoproduto" id="nomedoproduto" class="nomedoproduto"></input></th>
+								<th><input  name="nome_produto" id="nome_produto" class="nome_produto"></input></th>
 							</tr>
 							
 							<tr>
