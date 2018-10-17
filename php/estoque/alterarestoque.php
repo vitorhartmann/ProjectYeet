@@ -101,7 +101,7 @@ $result = $conn->query($sql);
 							
 					
 					<tr align="center">
-					<td colspan="2"><button><input type="reset" value="Adicionar" id="limpar" name="limpar"></button></td>
+					<td colspan="2"><button><input type="submit" value="Adicionar" id="limpar" name="limpar"></button></td>
 					</tr>
 				
 											
