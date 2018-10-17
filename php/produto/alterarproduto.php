@@ -49,8 +49,8 @@
 			</tr>
 			<tr>
 								<th><label>Codigo de Barras:</label></th>
-								<th><input  type="text" value="<?php echo $codbarras_produto;?>" name="codigobarras" id="codigobarras" class="codigobarras"></input></th>
-								<input  name="novoCodBarras" type="hidden" value="<?php echo $codbarras_produto; ?>">
+								<th><input  type="text" name="codigobarras" value="<?php echo $codbarras_produto;?>"></input></th>
+								<input  name="codbarras_produto" type="hidden" value="<?php echo $codbarras_produto; ?>">
 			</tr>
 			<tr>
 								<th><label>Nome do produto:</label></th>
