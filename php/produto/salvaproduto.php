@@ -75,6 +75,24 @@ $sql = "SELECT * FROM produto WHERE nome_produto = '{$novoNome}'"; //monto a que
 	
 }
 else{
+		
+	if(empty($novoCodBarras)){
+	echo "<center>";
+		echo	"<div id='erro'>";
+		echo		"<table>";
+		echo			"<tr>";
+		echo				"<h1>Erro na operação</h1>";
+		echo				"<h1>Campo Código de Barras precisa ser preenchido</h1>";
+		echo			"</tr>";
+		echo		"</table>"	;
+		echo	"</div>";
+		echo "</center>";
+	
+	
+	
+	
+}
+else{
 	
 	
 
@@ -108,7 +126,7 @@ else{
     }else{
 		
 
-
+	
 	$comando = "UPDATE produto SET codbarras_produto='" . $novoCodBarras . "' WHERE id_produto=".$id_produto ;
 	$update2 = mysqli_query($conn, $comando);
 	
@@ -145,7 +163,7 @@ else{
 }
   }
   
-  
+  } 
   
   
 ?>
