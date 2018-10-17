@@ -7,7 +7,7 @@
 	$saldototal_produto=$adicionar_produto+$saldo_produto ;
 	$novo_valor = $_POST ["novo_valor"];
     
-	$sql = "UPDATE produto SET saldo_produto='" . $adicionar_produto . "', valor_produto='" . $novo_valor . "'  WHERE id_produto=".$id_produto ;
+	$sql = "UPDATE produto SET saldo_produto='" . $saldototal_produto . "', valor_produto='" . $novo_valor . "'  WHERE id_produto=".$id_produto ;
 
 	
     $update = mysqli_query($conn, $sql);
