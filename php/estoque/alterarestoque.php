@@ -1,17 +1,13 @@
 	
 			
 
-<script type="text/javascript">
+<script>
 
-document.getElementById('checkboxvalor').onchange = function() {
-    document.getElementById('novo_valor').disabled = !this.checked;
-};
 </script>
 
 
 <script src="jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 
 
 <html>
@@ -76,11 +72,11 @@ $result = $conn->query($sql);
 							
 						<tr>
 							<th><label>Alterar valor?</label></th>
-							<th><label><input id="checkboxvalor" type="checkbox" name="checkbox"> </label></th>
+							<th><label><input id="checkboxvalor" type="checkbox" name="checkboxvalor"> </label></th>
 						</tr>
 						<tr>
 								<th><label>Valor Novo:</label></th>
-								<th><input value="'.$row["valor_produto"].' id="novo_valor" disabled="disabled" ></input></th>
+								<th><input value="'.$row["valor_produto"].' name="novo_valor" id="novo_valor" disabled="disabled" ></input></th>
 						</tr>
 						
 						
@@ -132,11 +128,11 @@ $result = $conn->query($sql);
 							
 						<tr>
 							<th><label>Alterar valor?</label></th>
-							<th><label><input id="checkboxvalor" type="checkbox" name="checkbox"> </label></th>
+							<th><label><input id="checkboxvalor" type="checkbox" name="checkboxvalor"> </label></th>
 						</tr>
 						<tr>
 								<th><label>Valor Novo:</label></th>
-								<th><input id="novo_valor" value="'.$row["valor_produto"].'" disabled="disabled"></input></th>
+								<th><input id="novo_valor" name="novo_valor" value="'.$row["valor_produto"].'" ></input></th>
 						</tr>
 						
 						
@@ -197,7 +193,7 @@ $result = $conn->query($sql);
 						
 							<tr width="px">
 								<th><label>Valor Novo:</label></th>
-								<th><input></input></th>
+								<th><input name="novo_valor" ></input></th>
 							</tr>
 							
 						</table>
