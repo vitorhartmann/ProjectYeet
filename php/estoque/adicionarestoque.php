@@ -87,12 +87,12 @@ $(document).ready(function() {
 	$valorsetado= $_POST["novo_valor"];
 	$saldo_produto=$_POST["saldo_produto"];
 	 
-	if(!isset($_POST[$valorsetado])){
+	if(empty($valorsetado)){
 		
-		$novoValor=$_POST ["novo_valor"];
+		$novoValor=$_POST["antigo_valor"];
 		
 	}else{
-		$novoValor=$_POST["antigo_valor"];
+		$novoValor=$_POST["novo_valor"];
 		
 	}
 	
