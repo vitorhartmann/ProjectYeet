@@ -30,7 +30,7 @@
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="estoque.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="modificarestoque.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<br><br><br><br><br><br>
 		<center>
@@ -69,6 +69,10 @@ $result = $conn->query($sql);
 							<th><input name="saldo_produto" id="saldo_produto"  value="'.$row["saldo_produto"].'"></input></th>
 						</tr>
 						
+						<tr align="center">
+					<td colspan="2"><button><input type="submit" value="Alterar" id="limpar" name="limpar"></button></td>
+					</tr>
+						
 						
 					</table>
 							
@@ -77,9 +81,7 @@ $result = $conn->query($sql);
 							
 							
 					
-					<tr align="center">
-					<td colspan="2"><button><input type="submit" value="Alterar" id="limpar" name="limpar"></button></td>
-					</tr>
+					
 				
 											
 							
@@ -112,7 +114,7 @@ $result = $conn->query($sql);
 						</tr>
 						<tr>
 							<th><label>Quantidade atual: </label></th>
-							<th><input value="'.$row["saldo_produto"].'"></input></th>
+							<th><input name="saldo_produto" id="saldo_produto" value="'.$row["saldo_produto"].'"></input></th>
 							
 						</tr>
 						
