@@ -23,30 +23,40 @@
 		</div>
 		<br><br><br><br><br><br>
 		<center>
-			<div id="formulario">
+		
+
+	
+     
+
+ 
 				<form method="POST" action="alterarprecoscript.php">
 					<table bgcolor="#A9A9A9">
 					
-							<tr>
-								<th><label>Codigo de Barras:</label></th>
-								<th><input></input></th>
-							</tr>
+
+		
+					
+						<tr>
+							<th><label>Codigo de Barras:</label></th>
+							<th><input  id="codbarras_produto" name="codbarras_produto"></input></th>
+						</tr>
 							
-							<tr>
-								<th><label>Nome do Produto:</label></th>
-								<th><label></label></th>
-							</tr>
-							<tr>
-								<th><label>Valor: </label></th>
-								<th><input value="Valor Atual"></input></th>
-							</tr>
+						<tr>
+							<th><label>Nome do Produto:</label></th>
+							<th><input  id="nome_produto" name="nome_produto"></input></th>
+						</tr>
+						
+						<tr>
+								<th><label>Valor Novo:</label></th>
+								<th><input value="" name="novo_valor" id="novo_valor" disabled="disabled"  ></input></th>
 							
+								
+						</tr>
 							
 							
 							
 							<!--Botão de Enviar -->
 							<tr align="center">
-								<td colspan="2"><button><input type="reset" value="Alterar" id="limpar" name="limpar"></button></td>
+								<td colspan="2"><button><input type="submit" value="Procurar" id="limpar" name="limpar"></button></td>
 							</tr>
 							<!-- Até Aqui -->
 							
@@ -58,7 +68,7 @@
 			</div>		
 		</center>	
 		
-		
+  
 				
 			
 	
