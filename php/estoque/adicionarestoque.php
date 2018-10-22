@@ -84,16 +84,18 @@ $(document).ready(function() {
 	include("../conexao.php");
     $id_produto = $_POST ["id_produto"];
     $adicionar_produto = $_POST ["adicionar_produto"];
-	$novoValor=$_POST ["novo_valor"];
-	
-	$sql='Select * from produto where id_produto=" . $id_produto . "';
-	
-		mysqli_query($conn, $sql);
-	 while($resultado = mysqli_fetch_array($sql)){
-	
-	$saldo_produto=$resultado["saldo_produto"];
-	 }
-	
+	$valorsetado= $_POST["novo_valor"];
+
+	$saldo_produto=$_POST["saldo_produto"];
+	 
+	if(isset($_POST[$valorsetado])){
+		
+		$novoValor=$_POST ["novo_valor"];
+		
+	}else{
+		$novoValor=$_POST["antigo_valor"];
+		
+	}
 	
 	$saldototal_produto=$adicionar_produto+$saldo_produto ;
 
