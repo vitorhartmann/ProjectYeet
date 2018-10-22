@@ -85,10 +85,9 @@ $(document).ready(function() {
     $id_produto = $_POST ["id_produto"];
     $adicionar_produto = $_POST ["adicionar_produto"];
 	$valorsetado= $_POST["novo_valor"];
-
 	$saldo_produto=$_POST["saldo_produto"];
 	 
-	if(isset($_POST[$valorsetado])){
+	if(!isset($_POST[$valorsetado])){
 		
 		$novoValor=$_POST ["novo_valor"];
 		
