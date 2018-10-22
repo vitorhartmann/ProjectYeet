@@ -24,35 +24,32 @@
 		<br><br><br><br><br><br>
 		<center>
 			<div id="formulario">
-				<form method="POST" action="alterarestoque.php">
+				<form method="POST" action="consultagerencialscript.php">
 					<table border="1" bgcolor="#A9A9A9">
 					
-							<tr>
-								<th><label>Código:</label></th>
-								<th><input></input></th>
-							</tr>
+						
 							
 							<tr>
 								<th><label>Código de barras:</label></th>
-								<th><input></input></th>
+								<th><input name="codbarras_produto" id="codbarras_produto"></input></th>
 							</tr>
 							
 							<tr>
 								<th><label>Nome do Produto:</label></th>
-								<th><label>Leite Tirol 1L</label></th>
+								<th><input name="nome_produto" id="nome_produto"></input></th>
 							</tr>
 							<tr>
 								<th><label>Quantidade em estoque: </label></th>
-								<th><label> XXXXXXX</label></th>
+								<th><input disabled> </label></th>
 							</tr>
 							
 							<tr>
 								<th><label>Valor: R$</label></th>
-								<th><label>2.69</label></th>
+								<th><input disabled></input></th>
 							</tr>
 							<!--Botão de Pesquisar -->
 							<tr align="center">
-								<td colspan="2"><button><input type="reset" value="Pesquisar" id="limpar" name="limpar"></button></td>
+								<td colspan="2"><button><input type="submit" value="Pesquisar" id="limpar" name="limpar"></button></td>
 							</tr>
 							<!-- Até Aqui -->
 							

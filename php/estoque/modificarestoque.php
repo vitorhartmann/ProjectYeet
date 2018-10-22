@@ -30,7 +30,7 @@
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="../../index.html.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<br><br><br><br><br><br>
 		<center>

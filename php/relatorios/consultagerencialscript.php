@@ -1,15 +1,4 @@
-	
-			
-
-
-
-
-
-<script src="jquery-3.3.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-<html>
+		<html>
 	<header>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../../css/css.css">
@@ -22,7 +11,7 @@
 	<div id="cabecalho"> 
 		<img src="../../img/principal.jpg" width="180px" height="180px" align="left" border="1">
 		<center>
-			<h2>Adicionar Estoque</h2>
+			<h2>Consulta Gerencial</h2>
 		</center>
 	</div>
 	
@@ -30,7 +19,7 @@
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="modificarestoque.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="consultagerencial.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<br><br><br><br><br><br>
 		<center>
@@ -47,8 +36,8 @@ $result = $conn->query($sql);
 
   if( $result->num_rows > 0 ) {//se retornar algum resultado 
             echo '<div id="formulario">
-				<form method="POST" action="salvarestoque.php">
-					<table bgcolor="#A9A9A9">
+				<form method="POST" action="">
+					<table bgcolor="#A9A9A9" border="1">
 					
 					'; while($row = $result->fetch_assoc()) { echo' 
 						"<input name="id_produto" type="hidden" value=' .$row["id_produto"]. '>";
@@ -65,18 +54,15 @@ $result = $conn->query($sql);
 						</tr>
 						<tr>
 							
-							<th><label>Quantidade atual: </label></th>
-							<th><input name="saldo_produto" id="saldo_produto"  value="'.$row["saldo_produto"].'"></input></th>
+							<th><label>Quantidade em estoque: </label></th>
+							<th><input name="saldo_produto" id="saldo_produto"  disabled value="'.$row["saldo_produto"].'"></input></th>
 						</tr>
+						<tr>
 						
-						<tr align="center">
-					<td colspan="2"><button><input type="submit" value="Alterar" id="limpar" name="limpar"></button></td>
-					</tr>
-						
-						
-					</table>
-							
-				
+							<th><label>Valor R$:</label></th>
+							<th><input name="valor_produto" id="valor_produto" disabled value="'.$row["valor_produto"].'"></input></th>
+						</tr>
+					
 							
 							
 							
@@ -96,8 +82,8 @@ $result = $conn->query($sql);
 			
          if ($result->num_rows > 0) {
 			echo '<div id="formulario">
-				<form method="POST" action="salvarestoque.php">
-					<table bgcolor="#A9A9A9">
+				<form method="POST" action="">
+					<table bgcolor="#A9A9A9" border="1">
 					
 					'; while($row = $result->fetch_assoc()) { echo' 
 					"<input name="id_produto" type="hidden" value=' .$row["id_produto"]. '>";
@@ -113,11 +99,15 @@ $result = $conn->query($sql);
 						
 						</tr>
 						<tr>
-							<th><label>Quantidade atual: </label></th>
-							<th><input name="saldo_produto" id="saldo_produto" value="'.$row["saldo_produto"].'"></input></th>
+							<th><label>Quantidade em estoque: </label></th>
+							<th><input name="saldo_produto" id="saldo_produto" disabled value="'.$row["saldo_produto"].'"></input></th>
 							
 						</tr>
+						<tr>
 						
+							<th><label>Valor R$:</label></th>
+							<th><input name="valor_produto" id="valor_produto" disabled value="'.$row["valor_produto"].'"></input></th>
+						</tr>
 						
 						
 					</table>
@@ -127,10 +117,7 @@ $result = $conn->query($sql);
 							
 							
 					
-					<tr align="center">
-					<td colspan="2"><button><input type="submit" value="Adicionar" id="limpar" name="limpar"></button></td>
-					</tr>
-				
+					
 											
 							
 				</form>
@@ -139,8 +126,8 @@ $result = $conn->query($sql);
 					}} else {
 					
     echo '<div id="formulario">
-				<form method="POST" action="salvarestoque.php">
-					<table bgcolor="#A9A9A9">
+				<form method="POST" action="">
+					<table bgcolor="#A9A9A9" border="1">
 					
 					
 						<tr>
@@ -153,8 +140,12 @@ $result = $conn->query($sql);
 							<th><input value="Não Encontrado" disabled="disabled" class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						<tr>
-							<th><label>Quantidade atual: </label></th>
-							<th><label value="Não encontrado" disabled="Disabled"></label></th>
+							<th><label>Quantidade em estoque: </label></th>
+							<th><input value="Não encontrado" disabled="Disabled"></input></th>
+						</tr>
+						<tr>
+							<th><label>Valor:R$ </label></th>
+							<th><input value="Não encontrado" disabled="Disabled"></input></th>
 						</tr>
 						
 						
@@ -177,11 +168,7 @@ $result = $conn->query($sql);
 							
 							
 							
-					<!--Botão de Enviar -->
-					<tr align="center">
-					<td colspan="2"><button><input type="submit" value="Adicionar" id="limpar" name="limpar"></button></td>
-					</tr>
-					<!-- Até Aqui -->
+					
 											
 							
 				</form>
@@ -189,8 +176,12 @@ $result = $conn->query($sql);
 		</center>	';
 					}
 					}
-?>
-		
+?>				
+							
+					</table>
+				</form>
+			</div>		
+		</center>	
 		
 	
 
