@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/10/2018 às 21:46
+-- Tempo de geração: 22/10/2018 às 20:56
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -72,7 +72,7 @@ CREATE TABLE `produto` (
 
 INSERT INTO `produto` (`id_produto`, `nome_produto`, `saldo_produto`, `codbarras_produto`, `valor_produto`, `subcategoria_id_subcategoria`) VALUES
 (1, 'Leite Tirol 1L', 0, 00000044444444, '0.00', 1),
-(3, 'Teste', 0, 00000111222333, '0.00', 1);
+(3, 'Teste', 0, 00000111222333, '1.00', 1);
 
 -- --------------------------------------------------------
 
