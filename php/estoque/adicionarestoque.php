@@ -84,11 +84,17 @@ $(document).ready(function() {
 	include("../conexao.php");
     $id_produto = $_POST ["id_produto"];
     $adicionar_produto = $_POST ["adicionar_produto"];
-	$saldo_produto= $_POST ["saldo_produto"];
-	$saldototal_produto=$adicionar_produto+$saldo_produto ;
 	$novoValor=$_POST ["novo_valor"];
 	
+	$sql="Select * from produto where id_produto=" . $id_produto . "";
 	
+	$saldo_produto= $_POST ["saldo_produto"];
+	
+	mysqli_query($conn, $sql);
+	
+	
+	$saldototal_produto=$adicionar_produto+$saldo_produto ;
+
 	 if(isset($novoValor)){ 
 		 
 	$novovalor=$_POST ["novo_valor"];
@@ -96,7 +102,7 @@ $(document).ready(function() {
 		 $novoValor=$_POST["antigo_valor"];
 	 }
     
-	$sql = "UPDATE produto SET saldo_produto='" . $saldototal_produto . "', valor_produto='" . $novovalor . "'  WHERE id_produto=".$id_produto ;
+	$sql = "UPDATE produto SET saldo_produto='" . $saldototal_produto . "', valor_produto='" . $novoValor . "'  WHERE id_produto=".$id_produto ;
 
 	
     $update = mysqli_query($conn, $sql);
