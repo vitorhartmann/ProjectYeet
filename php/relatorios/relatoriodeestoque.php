@@ -26,11 +26,15 @@
 				<table border="1" bgcolor="white">
 					<tr>
 						<th>Código de Barras:</th>
-						<th><input></input> </th>
+						<th><input name="codbarras_produto" id="codbarras_produto"></input> </th>
+					</tr>
+					<tr>
+						<th>Nome do Produto:</th>
+						<th><input name="nome_produto" id="nome_produto"></input> </th>
 					</tr>
 					<tr>
 						<th>Valor em Estoque menor a:</th>
-						<th><input></input></th>
+						<th><input name="saldo_produto" id="saldo_produto"></input></th>
 					</tr>
 					
 					<!--Botão de Enviar -->
@@ -43,19 +47,15 @@
 			</div>
 		<br>
 			<div id="relatorio">
-				<table border="1" bgcolor="white" text-align=>
+				<table border="1" bgcolor="white">
 					<tr>
-						<th>Cód.</th>
+						<th>Cód.Barras</th>
 						<th>Nome</th>
-						<th>Cód. Barras</th>
 						<th>Saldo</th>
 						
 					</tr>
 					<tr>
-						<td>001</td>
-						<td>Leite Tirol 1L</td>
-						<td>7896256600223</td>
-						<td>0</td>
+					
 						
 					</tr>
 			
