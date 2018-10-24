@@ -22,16 +22,10 @@
 			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<center>
+		<form method="POST" action="relatoriodeestoquescript.php">
 			<div id="busca">
+			
 				<table border="1" bgcolor="white">
-					<tr>
-						<th>Código de Barras:</th>
-						<th><input name="codbarras_produto" id="codbarras_produto"></input> </th>
-					</tr>
-					<tr>
-						<th>Nome do Produto:</th>
-						<th><input name="nome_produto" id="nome_produto"></input> </th>
-					</tr>
 					<tr>
 						<th>Valor em Estoque menor a:</th>
 						<th><input name="saldo_produto" id="saldo_produto"></input></th>
@@ -39,12 +33,13 @@
 					
 					<!--Botão de Enviar -->
 					<tr align="center">
-						<td colspan="2"><button><input type="reset" value="Pesquisar" id="limpar" name="limpar"></button></td>
+						<td colspan="2"><button><input type="submit" value="Pesquisar" id="limpar" name="limpar"></button></td>
 					</tr>
 					<!-- Até Aqui -->
 			
 				</table>
 			</div>
+		</form>
 		<br>
 			<div id="relatorio">
 				<table border="1" bgcolor="white">
