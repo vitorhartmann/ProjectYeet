@@ -25,7 +25,7 @@
 		<form method="POST" action="relatoriodeestoquescript.php">
 			<div id="busca">
 			
-				<table border="1" bgcolor="white">
+				<table border="1" bgcolor="#A9A9A9">
 					<tr>
 						<th>Valor em Estoque menor a:</th>
 						<th><input name="saldo_produto" id="saldo_produto"></input></th>
@@ -42,17 +42,11 @@
 		</form>
 		<br>
 			<div id="relatorio">
-				<table border="1" bgcolor="white">
+					<table bgcolor="#A9A9A9" border="1">
 					<tr>
-						<th>Cód.Barras</th>
-						<th>Nome</th>
-						<th>Saldo</th>
-						
-					</tr>
-					<tr>
-					
-						
-					</tr>
+					<th><label>Código de Barras: </label></th>
+					<th><label>Nome do Produto:</label></th>
+					<th><label>Quantidade em estoque: </label></th>
 			
 				</table>
 			</div>

@@ -26,7 +26,7 @@
 		$saldo_produto=$_POST['saldo_produto'];
 		?>
 		<form method="POST" action="relatoriodeestoquescript.php">
-		<table border="1" bgcolor="white">
+		<table border="1" bgcolor="#A9A9A9">
 		
 					<tr>
 						<th>Valor em Estoque menor a:</th>
