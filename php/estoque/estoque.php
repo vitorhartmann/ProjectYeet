@@ -49,38 +49,20 @@ function showMe (it, box) {
 							<th><label>Nome do Produto:</label></th>
 							<th><input  id="nome_produto" name="nome_produto"></input></th>
 						</tr>
-						<tr>
-							<th><label>Quantidade atual: </label></th>
-							<th><input type="text" disabled="disabled"></input></th>
-						</tr>
-						<tr>
-							<th><label>Quantidade a adicionar:</label></th>
-							<th><input disabled="disabled"></input></th>
-						</tr>
+						
 							
 						
 						
 						
 					</table>
 								
-					<div id="divcheckbox" style="display:none">
-						<table  bgcolor="#A9A9A9" id="t1">
-									
-							
-						
-							<tr width="px">
-								<th><label>Valor Novo:</label></th>
-								<th><input disabled="disabled"></input></th>
-							</tr>
-							
-						</table>
-					</div>
+					
 							
 							
 							
 					<!--Botão de Enviar -->
 					<tr align="center">
-					<td colspan="2"><button><input type="submit" value="Adicionar" id="submit" name="submit"></button></td>
+					<td colspan="2"><button><input type="submit" value="Buscar" id="submit" name="submit"></button></td>
 					</tr>
 					<!-- Até Aqui -->
 											

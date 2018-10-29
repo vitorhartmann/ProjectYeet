@@ -43,7 +43,7 @@
 			<?php
 			include("../conexao.php");
 			$saldo_produto=$_POST['saldo_produto'];
-			$sql = "SELECT * FROM produto where saldo_produto<'{$saldo_produto}'";
+		 $sql = "SELECT * FROM produto where saldo_produto<='{$saldo_produto}'";
 $result = $conn->query($sql);
 
 if( $result->num_rows > 0 ) {//se retornar algum resultado 

@@ -25,7 +25,7 @@
 		<center>
 			<div id="formulario">
 				<form method="POST" action="consultagerencialscript.php">
-					<table border="1" bgcolor="#A9A9A9">
+					<table border="0" bgcolor="#A9A9A9">
 					
 						
 							
@@ -38,18 +38,10 @@
 								<th><label>Nome do Produto:</label></th>
 								<th><input name="nome_produto" id="nome_produto"></input></th>
 							</tr>
-							<tr>
-								<th><label>Quantidade em estoque: </label></th>
-								<th><input disabled> </label></th>
-							</tr>
 							
-							<tr>
-								<th><label>Valor: R$</label></th>
-								<th><input disabled></input></th>
-							</tr>
 							<!--Botão de Pesquisar -->
 							<tr align="center">
-								<td colspan="2"><button><input type="submit" value="Pesquisar" id="limpar" name="limpar"></button></td>
+								<td colspan="2"><button><input type="submit" value="Buscar" id="limpar" name="limpar"></button></td>
 							</tr>
 							<!-- Até Aqui -->
 							

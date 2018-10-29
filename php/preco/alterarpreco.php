@@ -45,18 +45,13 @@
 							<th><input  id="nome_produto" name="nome_produto"></input></th>
 						</tr>
 						
-						<tr>
-								<th><label>Valor Novo:</label></th>
-								<th><input value="" name="novo_valor" id="novo_valor" disabled="disabled"  ></input></th>
-							
-								
-						</tr>
+						
 							
 							
 							
 							<!--Botão de Enviar -->
 							<tr align="center">
-								<td colspan="2"><button><input type="submit" value="Procurar" id="limpar" name="limpar"></button></td>
+								<td colspan="2"><button><input type="submit" value="Buscar" id="limpar" name="limpar"></button></td>
 							</tr>
 							<!-- Até Aqui -->
 							

@@ -49,11 +49,7 @@
 								<th><input value=""  class="nome_produto" id="nome_produto" name="nome_produto"></input></th>
 						
 							</tr>
-							<tr>
-								<th><label>Quantidade atual: </label></th>
-								<th><input disabled="disabled" value=""></input></th>
 							
-							</tr>
 							
 							<tr align="center">
 								<td colspan="2"><button><input type="submit" value="Buscar" id="limpar" name="limpar"></button></td>

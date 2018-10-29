@@ -1,9 +1,4 @@
-<?php
 
-error_reporting(0);
-ini_set(“display_errors”, 0 );
-
-?>
 
 <html>
 <head>
@@ -89,10 +84,9 @@ $(document).ready(function() {
 	include("../conexao.php");
     $id_produto = $_POST ["id_produto"];
     $adicionar_produto = $_POST ["adicionar_produto"];
-	$valorsetado= $_POST["novo_valor"];
 	$saldo_produto=$_POST["saldo_produto"];
 	 
-	if(empty($valorsetado)){
+	if(empty($_POST["novo_valor"])){
 		
 		$novoValor=$_POST["antigo_valor"];
 		

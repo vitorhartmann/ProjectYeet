@@ -37,7 +37,7 @@ $result = $conn->query($sql);
   if( $result->num_rows > 0 ) {//se retornar algum resultado 
             echo '<div id="formulario">
 				<form method="POST" action="">
-					<table bgcolor="#A9A9A9" border="1">
+					<table bgcolor="#A9A9A9" border="0">
 					
 					'; while($row = $result->fetch_assoc()) { echo' 
 						"<input name="id_produto" type="hidden" value=' .$row["id_produto"]. '>";
@@ -83,7 +83,7 @@ $result = $conn->query($sql);
          if ($result->num_rows > 0) {
 			echo '<div id="formulario">
 				<form method="POST" action="">
-					<table bgcolor="#A9A9A9" border="1">
+					<table bgcolor="#A9A9A9" border="0">
 					
 					'; while($row = $result->fetch_assoc()) { echo' 
 					"<input name="id_produto" type="hidden" value=' .$row["id_produto"]. '>";
@@ -127,7 +127,7 @@ $result = $conn->query($sql);
 					
     echo '<div id="formulario">
 				<form method="POST" action="">
-					<table bgcolor="#A9A9A9" border="1">
+					<table bgcolor="#A9A9A9" border="0">
 					
 					
 						<tr>

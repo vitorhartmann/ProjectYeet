@@ -27,7 +27,7 @@
 			
 				<table border="1" bgcolor="#A9A9A9">
 					<tr>
-						<th>Valor em Estoque menor a:</th>
+						<th>Valor em Estoque menor ou igual a:</th>
 						<th><input name="saldo_produto" id="saldo_produto"></input></th>
 					</tr>
 					
