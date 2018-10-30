@@ -95,6 +95,28 @@ $(document).ready(function() {
 		
 	}
 	
+
+	
+	if ( $novoValor < "0"){ 
+	
+	echo "
+		
+		
+			<center>
+			<div id='erro'>
+				<table>
+					<tr>
+						<h1>Saldo a Adicionar negativo </h1>
+						<h1>Favor informar quantidade válida (quantidade>0)</h1>
+					</tr>
+				</table>	
+			</div>
+		</center>	
+				
+		";
+	
+	}else{
+	
 	$saldototal_produto=$adicionar_produto+$saldo_produto ;
 
 
@@ -135,7 +157,7 @@ $(document).ready(function() {
 		</center>	
 				
 		";
-	}
+	}}
 		
 	
 ?>
