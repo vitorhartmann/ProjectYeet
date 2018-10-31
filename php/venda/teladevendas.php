@@ -95,36 +95,27 @@
 			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		    <form name="frm_venda" method="post" action="inseredados.php" onsubmit="return validaDetalhe()">
-      <table border="0" bgcolor="#A9A9A9" align="center">
+      <table border="1" bgcolor="#A9A9A9" align="center">
         <tr>
-          <?php
-            /*
-              Desafio :D - na real foi só pra vc ficar pensando, "Como?!"
-            */
-            @exec('wmic COMPUTERSYSTEM Get UserName', $vendedor);
-            @$vendedor = explode("\\", $vendedor[1]);
-            @$vendedor = array_reverse($vendedor);
-            @$vendedor = explode("_", $vendedor[0]);
-          ?>
-          <td align="right">Vendedor: </td>
+          <td align="right">ID Cupom: </td>
           <td colspan="2">
             <input type="text" name="txtvendedor" value="<?php echo @ucfirst($vendedor[0]).' '.@ucfirst($vendedor[1]); ?>">
           </td>
-        </tr>
-        <tr>
+        
+        
           <td align="right">Data: </td>
           <td colspan="2">
             <input type="text" name="txtdata" value="<?php echo date("d/m/Y"); ?>">
           </td>
-        </tr>
-        <tr>
+        
+        
           <td align="right">Hora: </td>
           <td colspan="2">
             <input type="text" name="txthora" value="<?php echo date("H:i:s"); ?>">
           </td>
         </tr>
         <tr>
-          <td class="titulo_produtos" colspan="3">Produto(s)</td>
+          <td class="titulo_produtos" colspan="8">Produto(s)</td>
         </tr>
         <tr>
           <td>Produto</td>
