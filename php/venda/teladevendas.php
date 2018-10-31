@@ -4,6 +4,7 @@
   date_default_timezone_set("America/Sao_Paulo");
 ?>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 function calcular() {
 	
