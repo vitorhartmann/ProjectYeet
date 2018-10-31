@@ -114,9 +114,11 @@
             <input type="text" name="txthora" value="<?php echo date("H:i:s"); ?>">
           </td>
         </tr>
+		<tr height="30px"></tr>
         <tr>
           <td class="titulo_produtos" colspan="8">Produto(s)</td>
         </tr>
+	
         <tr>
 		  <td>Cód Barras</td>
           <td>Produto</td>
@@ -162,9 +164,10 @@
           </td>
         </tr>
         <tr>
-          <td align="right" colspan="3">
+          <td align="right" colspan="6">
+		  <button type="reset">Limpar Campos</button>
             <button type="submit">Cadastrar</button>
-            <button type="reset">Limpar</button>
+            
           </td>
         </tr>
       </table>
