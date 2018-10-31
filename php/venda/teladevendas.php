@@ -133,14 +133,7 @@
               Sendo assim, todos os campos de um detalhe deve ter seus nomes como array-->
               <option value="">Selecione um produto...</option>
               <?php
-              $sql_slt_produtos="SELECT * FROM produto ORDER BY nome ASC";
-              $sql_slt_produtos_preparado=$conn->prepare($sql_slt_produtos);
-              $sql_slt_produtos_preparado->execute();
-              while($sql_slt_produtos_dados=$sql_slt_produtos_preparado->fetch()){
-                $codigo_produto=$sql_slt_produtos_dados['codbarras_produto'];
-                $nome_produto=$sql_slt_produtos_dados['nome_produto'];
-                echo "<option value='$codigo_produto'>$nome_produto</option>";
-              }
+             
               ?>
             </select>
           </td>
@@ -149,7 +142,7 @@
           </td>
           <td>
             <!--botão com função de remover essa linha de produto, ou seja, esse "detalhe", ao clicar-->
-            <a href="#" class="removerDetalhe" title="Remover linha"><img src="../../img/excluirbotao.png" border="0"></a>
+            <a href="#" class="removerDetalhe" title="Remover linha"><img src="../../img/excluirbotao.png" border="0" width="35px" height="35px"></a>
           </td>
         </tr>
         <tr>
