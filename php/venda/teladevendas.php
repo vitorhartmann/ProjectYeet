@@ -4,6 +4,22 @@
   date_default_timezone_set("America/Sao_Paulo");
 ?>
 <html>
+<script>
+function calcular() {
+	
+	
+	
+    var num1 = Number(document.getElementById("num1").value);
+    var num2 = Number(document.getElementById("num2").value);
+	
+
+    var elemResult = document.getElementById("resultado");
+
+  
+       elemResult.textContent = "O resultado é " + String(num1 * num2) + ".";
+   
+</script>
+
 <script  src="jquery.js"></script>
     <script type="text/javascript">
     //Abaixo o código Javascript com jQuery que permite remover e adicionar Detalhes do formulário.
@@ -144,13 +160,13 @@
             <input type="text" name="nome_produto" size="25">
           </td>
 		  <td>
-            <input type="text" name="valor_unitario" size="3">
+            <input type="text" id="valorun[]" name="valor_unitario" size="3">
           </td>
 		  <td>
-		  <input type="text" name="txtqtde[]" size="3">
+		  <input type="text" name="txtqtde[]" id="quantidade[]" size="3" onblur="calcular()" >
 		  </td>
           <td>
-		  <input type="text" name="valor_total" size="4">
+		  <input type="text" name="valor_total" id="resultado[]" size="4">
 		  </td>
 		  
 		  
@@ -169,6 +185,8 @@
         </tr>
       </table>
     </form>
+	
+	
   </body>
 	
 </html>
