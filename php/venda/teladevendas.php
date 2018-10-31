@@ -99,19 +99,19 @@
         <tr>
           <td align="right">ID Cupom: </td>
           <td colspan="1">
-            <input type="text" name="txtvendedor" value="<?php echo @ucfirst($vendedor[0]).' '.@ucfirst($vendedor[1]); ?>">
+            <input type="text" name="txtvendedor" readonly value="<?php echo ""; ?>">
           </td>
         
         
           <td align="right">Data: </td>
           <td colspan="1">
-            <input type="text" name="txtdata" value="<?php echo date("d/m/Y"); ?>">
+            <input type="text" name="txtdata" readonly value="<?php echo date("d/m/Y"); ?>">
           </td>
         
         
           <td align="right">Hora: </td>
           <td colspan="1">
-            <input type="text" name="txthora" value="<?php echo date("H:i:s"); ?>">
+            <input type="text" name="txthora" readonly value="<?php echo date("H:i:s"); ?>">
           </td>
         </tr>
 		<tr height="30px"></tr>
@@ -123,7 +123,7 @@
 		  <td>Cód Barras</td>
           <td>Produto</td>
           <td>Valor Un</td>
-		  <td>Quant.</td>
+		  <td>Quantidade</td>
 		  <td>Valor Total</td>
 		  
           <td>
