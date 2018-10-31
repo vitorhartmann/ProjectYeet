@@ -98,19 +98,19 @@
       <table border="1" bgcolor="#A9A9A9" align="center">
         <tr>
           <td align="right">ID Cupom: </td>
-          <td colspan="2">
+          <td colspan="1">
             <input type="text" name="txtvendedor" value="<?php echo @ucfirst($vendedor[0]).' '.@ucfirst($vendedor[1]); ?>">
           </td>
         
         
           <td align="right">Data: </td>
-          <td colspan="2">
+          <td colspan="1">
             <input type="text" name="txtdata" value="<?php echo date("d/m/Y"); ?>">
           </td>
         
         
           <td align="right">Hora: </td>
-          <td colspan="2">
+          <td colspan="1">
             <input type="text" name="txthora" value="<?php echo date("H:i:s"); ?>">
           </td>
         </tr>
@@ -118,8 +118,12 @@
           <td class="titulo_produtos" colspan="8">Produto(s)</td>
         </tr>
         <tr>
+		  <td>Cód Barras</td>
           <td>Produto</td>
-          <td>Qtde</td>
+          <td>Valor Un</td>
+		  <td>Quant.</td>
+		  <td>Valor Total</td>
+		  
           <td>
             <!--botão com função de adicionar uma nova linha de produto, ou seja, um novo "detalhe", a cada clique-->
             <a href="#" class="adicionarDetalhe" title="Adicionar item"><img src="../../img/botaoadicionar.png" border="0" width="35px" height="35px"></a>
@@ -138,9 +142,21 @@
             </select>
           </td>
           <td>
-            <input type="text" name="txtqtde[]" size="1">
+            <input type="text" name="nome_produto" size="1">
           </td>
+		  <td>
+            <input type="text" name="valor_unitario" size="1">
+          </td>
+		  <td>
+		  <input type="text" name="txtqtde[]" size="1">
+		  </td>
           <td>
+		  <input type="text" name="valor_total" size="1">
+		  </td>
+		  
+		  
+		  <td>
+		  
             <!--botão com função de remover essa linha de produto, ou seja, esse "detalhe", ao clicar-->
             <a href="#" class="removerDetalhe" title="Remover linha"><img src="../../img/excluirbotao.png" border="0" width="35px" height="35px"></a>
           </td>
