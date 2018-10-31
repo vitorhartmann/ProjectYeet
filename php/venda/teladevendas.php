@@ -97,20 +97,17 @@
 		    <form name="frm_venda" method="post" action="inseredados.php" onsubmit="return validaDetalhe()">
       <table border="1" bgcolor="#A9A9A9" align="center">
         <tr>
-          <td align="right">ID Cupom: </td>
-          <td colspan="1">
-            <input type="text" name="txtvendedor" readonly value="<?php echo ""; ?>">
-          </td>
+        
         
         
           <td align="right">Data: </td>
-          <td colspan="1">
+          <td colspan="3">
             <input type="text" name="txtdata" readonly value="<?php echo date("d/m/Y"); ?>">
           </td>
         
         
           <td align="right">Hora: </td>
-          <td colspan="1">
+          <td colspan="3">
             <input type="text" name="txthora" readonly value="<?php echo date("H:i:s"); ?>">
           </td>
         </tr>
@@ -134,26 +131,26 @@
         <!--Linha do detalhe, identificada pela classe "detalhes"-->
         <tr class="detalhes">
           <td>
-            <select name="selproduto[]">
+            
               <!-- Por que array("[]")? Porque haverão vários "detalhes", ou seja, vários selects de produtos.
               Sendo assim, todos os campos de um detalhe deve ter seus nomes como array-->
-              <option value="">Selecione um produto...</option>
+              <input type="text" name="selproduto[]" size="15"></input>
               <?php
              
               ?>
-            </select>
+            
           </td>
           <td>
-            <input type="text" name="nome_produto" size="1">
+            <input type="text" name="nome_produto" size="25">
           </td>
 		  <td>
-            <input type="text" name="valor_unitario" size="1">
+            <input type="text" name="valor_unitario" size="3">
           </td>
 		  <td>
-		  <input type="text" name="txtqtde[]" size="1">
+		  <input type="text" name="txtqtde[]" size="3">
 		  </td>
           <td>
-		  <input type="text" name="valor_total" size="1">
+		  <input type="text" name="valor_total" size="4">
 		  </td>
 		  
 		  

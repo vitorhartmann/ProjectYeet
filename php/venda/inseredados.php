@@ -20,7 +20,7 @@
 			}else if($p_txtqtde_validacao){
 				echo "Alguma quantidade não foi preenchida!";
 			}else{
-				echo "Formulário preenchido por completo! <br /> Valores abaixo: <br /> <br /> ID Produto - Quantidade <br /> <br />";
+				echo "Formulário preenchido por completo! <br /> Valores abaixo: <br /> <br /> Cod. Barras - Quantidade <br /> <br />";
 
 				$qtde_produtos = count($p_selproduto);
 				for($i=0; $i<$qtde_produtos; $i++){
