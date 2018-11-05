@@ -185,8 +185,8 @@ function calculaProduto() {
             <input type="text" id="nomeproduto[]" name="nomeProduto[]" size="25">
           </td>
 		  <td>
-            <input type="text" id="valorun[]" name="valorun[]" size="3">
-          </td>
+            <input type="text" id="valorun[]" name="valorun[]" disabled size="3">
+          </td> 
 		  <td>
 		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
 		  </td>
