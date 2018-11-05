@@ -37,6 +37,25 @@ function calculaProduto() {
 	  }
 </script>
 
+<script>
+function calculaTotal(){
+      var result = document.getElementsByName('result[]');
+      //conta quantos elementos foram capturados
+	  var qtdeElementos = result.length;
+      //estrutura para-faça para repetir a validação enquanto i for menor que o tamanho do array
+      for (var i = 0;i < qtdeElementos; i++){
+        //se a posição atual dos arrays de produto e quantidade estiverem vazios,
+        //if ((produtosValidar[i].value=="")||(qtdeValidar[i].value=="")){
+			
+        var resultValidar =  parseInt(result[i].value) +  parseInt(result[i].value);
+
+		  	totalfinal[i].value = resultValidar;
+	
+  
+}
+
+	  }
+</script>
 
 
 <script  src="jquery.js"></script>
@@ -205,7 +224,15 @@ function calculaProduto() {
           <td align="right" colspan="6">
 		  <button type="reset">Limpar Campos</button>
             <button type="submit">Cadastrar</button>
-            
+			</td>
+			</tr>
+			<td colspan="4"></td>
+			<td colspan="2">
+			<label>TOTAL:</label>
+			
+			
+			<input type="text" id="totalfinal" name="totalfinal" onblur="calculaTotal()></input>
+      
           </td>
         </tr>
       </table>
