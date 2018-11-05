@@ -39,7 +39,7 @@ function calculaProduto() {
 
 <script>
 function calculaTotal(){
-      var result = document.getElementsByName('result[]');
+      var result = document.getElementsByName('totalProduto[]');
       //conta quantos elementos foram capturados
 	  var qtdeElementos = result.length;
       //estrutura para-faça para repetir a validação enquanto i for menor que o tamanho do array
@@ -231,7 +231,7 @@ function calculaTotal(){
 			<label>TOTAL:</label>
 			
 			
-			<input type="text" id="totalfinal" name="totalfinal" onblur="calculaTotal()></input>
+			<input type="text" id="totalfinal" name="totalfinal" onblur="calculaTotal()"></input>
       
           </td>
         </tr>
