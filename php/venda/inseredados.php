@@ -29,7 +29,7 @@
 				$qtde_produtos = count($p_selproduto);
 				for($i=0; $i<$qtde_produtos; $i++){
 					
-					 $TotalProduto=$p_produtosValor*$p_txtqtde;
+					 //$TotalProduto=$p_produtosValor*$p_txtqtde;
 					echo $p_selproduto[$i]." - ".$p_produtosNome[$i]." - ".$p_produtosValor[$i]." - ".$p_txtqtde[$i]. "- ".$TotalProduto[$i]. " <br />";
 				}
 			}

@@ -7,13 +7,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script>
-function calcular() {
-  var valorun[] = parseInt(document.getElementById('valorun').value,);
-  var quantidade[] = parseInt(document.getElementById('quantidade').value,);
-  document.getElementById('resultado[]').innerHTML = valorun[] + quantidade[];
+function calculaProduto() {
+  
+  
+      //recebe os valores dos produtos preenchidos
+      var produtosUn = document.getElementsByName('valorun[]');
+      //recebe os valores das quantidades preenchidas
+      var qtde = document.getElementsByName('txtqtde[]');
+      //recebe os valores das quantidades preenchidas
+      var result = document.getElementsByName('totalProduto[]');
+      //conta quantos elementos foram capturados
+	  var qtdeElementos = produtosUn.length;
+      //estrutura para-faça para repetir a validação enquanto i for menor que o tamanho do array
+      for (var i = 0;i < qtdeElementos; i++){
+        //se a posição atual dos arrays de produto e quantidade estiverem vazios,
+        //if ((produtosValidar[i].value=="")||(qtdeValidar[i].value=="")){
+			
+        var resultValidar =  parseInt(produtosUn[i].value) *  parseInt(qtde[i].value);
+			if (isNaN(resultValidar)){;// Função IsNan
+		result[i].value = 0;
+		
+      }else{
+		  	result[i].value = resultValidar;
+	  
+	  }
+  
 }
 
+	  }
 </script>
+
+
 
 <script  src="jquery.js"></script>
     <script type="text/javascript">
@@ -164,10 +188,10 @@ function calcular() {
             <input type="text" id="valorun[]" name="valorun[]" size="3">
           </td>
 		  <td>
-		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  >
+		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
 		  </td>
           <td>
-		  <input type="text" id="totalProduto" name="totalProduto[]"  size="4">
+		  <input type="text" id="totalProduto[]" name="totalProduto[]"  size="4">
 		  </td>
 		  
 		  
