@@ -11,6 +11,9 @@
 			*/
 			$p_selproduto = $_POST['selproduto'];
 			$p_txtqtde = $_POST['txtqtde'];
+			$p_produtosValor = $_POST['valorun'];
+			$p_produtosNome = $_POST['nomeProduto'];
+			$p_totalProduto = $_POST['totalProduto'];
 
 			$p_selproduto_validacao = in_array("", $p_selproduto);
 			$p_txtqtde_validacao = in_array("" , $p_txtqtde);
@@ -20,11 +23,12 @@
 			}else if($p_txtqtde_validacao){
 				echo "Alguma quantidade não foi preenchida!";
 			}else{
-				echo "Formulário preenchido por completo! <br /> Valores abaixo: <br /> <br /> Cod. Barras - Quantidade <br /> <br />";
+				echo "Formulário preenchido por completo! <br /> Valores abaixo: <br /> <br /> Cod. Barras - Produto -Valor Un. -  Quantidade - Valor Total <br /> <br />";
 
+				
 				$qtde_produtos = count($p_selproduto);
 				for($i=0; $i<$qtde_produtos; $i++){
-					echo $p_selproduto[$i]." - ".$p_txtqtde[$i]."<br />";
+					echo $p_selproduto[$i]." - ".$p_produtosNome[$i]." - ".$p_produtosValor[$i]." - ".$p_txtqtde[$i]. "- ".$p_totalProduto[$i]. " <br />";
 				}
 			}
 		?>

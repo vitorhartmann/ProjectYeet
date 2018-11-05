@@ -5,20 +5,14 @@
 ?>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <script>
 function calcular() {
-	
-	
-	
-    var num1 = Number(document.getElementById("num1").value);
-    var num2 = Number(document.getElementById("num2").value);
-	
+  var valorun[] = parseInt(document.getElementById('valorun').value,);
+  var quantidade[] = parseInt(document.getElementById('quantidade').value,);
+  document.getElementById('resultado[]').innerHTML = valorun[] + quantidade[];
+}
 
-    var elemResult = document.getElementById("resultado");
-
-  
-       elemResult.textContent = "O resultado é " + String(num1 * num2) + ".";
-   
 </script>
 
 <script  src="jquery.js"></script>
@@ -72,6 +66,14 @@ function calcular() {
       var produtosValidar = document.getElementsByName('selproduto[]');
       //recebe os valores das quantidades preenchidas
       var qtdeValidar = document.getElementsByName('txtqtde[]');
+	  
+	  
+	  var produtosValor = document.getElementsByName('valorun[]');
+	  
+	  var produtosNome = document.getElementsByName('nomeProduto[]');
+	  
+	  var produtosTotal = document.getElementsByName('totalProduto[]');
+	  
       //conta quantos elementos foram capturados
       var qtdeElementos = produtosValidar.length;
       //estrutura para-faça para repetir a validação enquanto i for menor que o tamanho do array
@@ -152,22 +154,20 @@ function calcular() {
               <!-- Por que array("[]")? Porque haverão vários "detalhes", ou seja, vários selects de produtos.
               Sendo assim, todos os campos de um detalhe deve ter seus nomes como array-->
               <input type="text" name="selproduto[]" size="15"></input>
-              <?php
-             
-              ?>
+            
             
           </td>
           <td>
-            <input type="text" name="nome_produto" size="25">
+            <input type="text" id="nomeproduto[]" name="nomeProduto[]" size="25">
           </td>
 		  <td>
-            <input type="text" id="valorun[]" name="valor_unitario" size="3">
+            <input type="text" id="valorun[]" name="valorun[]" size="3">
           </td>
 		  <td>
-		  <input type="text" name="txtqtde[]" id="quantidade[]" size="3" onblur="calcular()" >
+		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  >
 		  </td>
           <td>
-		  <input type="text" name="valor_total" id="resultado[]" size="4">
+		  <input type="text" id="totalProduto" name="totalProduto[]"  size="4">
 		  </td>
 		  
 		  
