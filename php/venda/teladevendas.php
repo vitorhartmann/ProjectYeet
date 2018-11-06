@@ -209,7 +209,7 @@ function calculaTotal(){
 		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
 		  </td>
           <td>
-		  <input type="text" id="totalProduto[]" name="totalProduto[]"  size="4">
+		  <input type="text" id="totalProduto[]" name="totalProduto[]" disabled size="4">
 		  </td>
 		  
 		  
