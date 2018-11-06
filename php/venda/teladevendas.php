@@ -46,9 +46,9 @@ function calculaTotal(){
       for (var i = 0;i < qtdeElementos; i++){
       
 			
-        var resultValidar =  parseInt(resultValidar.value) +  parseInt(resultado[i].value);
+        var resultadoTotal =  parseInt(resultadoTotal.value) +  parseInt(resultado[i].value);
 
-		  	totalfinal = resultValidar.value;
+		  	totalfinal = resultadoTotal.value;
 	
   
 }
