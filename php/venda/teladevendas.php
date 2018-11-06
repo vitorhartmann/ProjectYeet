@@ -150,7 +150,6 @@ function calculaTotal(){
 		
 
 
-
 	</header>
 	
 	
