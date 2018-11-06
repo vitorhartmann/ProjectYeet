@@ -31,7 +31,7 @@ function calculaProduto() {
 		  	result[i].value = resultValidar;
 	  
 	  }
-  
+    calculaTotal();
 }
 
 	  }
@@ -42,17 +42,21 @@ function calculaTotal(){
       var resultado = document.getElementsByName('totalProduto[]');
       //conta quantos elementos foram capturados
 	  var qtdeElementos = resultado.length;
+    // Magica estruturada 2
+    var totalfinal = document.getElementById('totalfinal');
+
+    var resultadoTotal = 0;
       //estrutura para-faça para repetir a validação enquanto i for menor que o tamanho do array
       for (var i = 0;i < qtdeElementos; i++){
       
 			
-        var resultadoTotal =  parseInt(resultadoTotal.value) +  parseInt(resultado[i].value);
+      resultadoTotal =  resultadoTotal +  parseInt(resultado[i].value);
 
-		  	totalfinal = resultadoTotal.value;
+		  	
 	
   
 }
-
+        totalfinal.value = resultadoTotal;
 	  }
 </script>
 
@@ -65,19 +69,26 @@ function calculaTotal(){
 
     	//cria a função removeDetalhe
       function removeDetalhe() {
+        
         //desvincula a ação de clique na class "removerDetalhe" (botão de X) que vem junto com o clone, para que posteriomente seja vinculada uma função de "click" que referencie a linha correta do elemento.
         $(".removerDetalhe").off("click");
+      
         //ao se clicar no elemento com a class "removerDetalhe", inicia uma função em que...
         $(".removerDetalhe").on("click", function() {
+          
+          
           //... se a quantidade de tags tr com a classe detalhes for maior que 1, ou seja, se houver mais de uma linha no mestre-detalhe (isso serve para evitar que se exclua todas as linhas)
           if($("tr.detalhes").length > 1){
             //remove a linha que contém o botão de excluir que foi clicado
             //explicando: this seria o botão (pois o clique nele causou a execução dessa função), o primeiro parent é a célula onde está o botão e o segundo parent é a linha onde está o botão, assim o remove age na linha
             $(this).parent().parent().remove();
+            calculaTotal();
           //senão
           }else{
+            calculaTotal();
             //avisa que não se pode excluir a última linha
             alert("A última linha não pode ser removida.");
+           
           }
           //termina a function do on
           }
@@ -127,6 +138,7 @@ function calculaTotal(){
           alert ("A linha "+linha+" não foi completamente preenchida.");
           //foca o campo de produto da linha que não está devidamente preenchida
           produtosValidar[i].focus();
+    
           return false;
         }
       }
@@ -203,7 +215,7 @@ function calculaTotal(){
             <input type="text" id="nomeproduto[]" name="nomeProduto[]" size="25">
           </td>
 		  <td>
-            <input type="text" id="valorun[]" name="valorun[]" disabled size="3">
+            <input type="text" id="valorun[]" name="valorun[]"  size="3">
           </td> 
 		  <td>
 		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
@@ -230,7 +242,7 @@ function calculaTotal(){
 			<label>TOTAL:</label>
 			
 			
-			<input type="text" id="totalfinal" name="totalfinal" onblur="calculaTotal()"></input>
+			<input type="text" id="totalfinal" name="totalfinal"></input>
       
           </td>
         </tr>
