@@ -6,6 +6,10 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+
+
+
+
 <script>
 function calculaProduto() {
   
@@ -204,14 +208,17 @@ function calculaTotal(){
         <tr class="detalhes">
           <td>
             
+            
               <!-- Por que array("[]")? Porque haverão vários "detalhes", ou seja, vários selects de produtos.
               Sendo assim, todos os campos de um detalhe deve ter seus nomes como array-->
-              <input type="text" name="selproduto[]" size="15"></input>
+             
+             
+			 <input type="text" id="selproduto[]" name="selproduto[]" onblur="busca()" size="15"></input>
             
             
           </td>
           <td>
-            <input type="text" id="nomeproduto[]" name="nomeProduto[]" size="25">
+            <input type="text" id="nomeproduto[]" name="nomeProduto[]" onblur="busca()" size="25">
           </td>
 		  <td>
             <input type="text" id="valorun[]" disabled name="valorun[]"  size="3">
