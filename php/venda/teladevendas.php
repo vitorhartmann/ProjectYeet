@@ -10,12 +10,7 @@
 <script>
 function busca(){
 	
-	
-	
-	
-	
-	
-	
+
 }
 
 </script>
@@ -224,7 +219,7 @@ function calculaTotal(){
               Sendo assim, todos os campos de um detalhe deve ter seus nomes como array-->
              
              
-			 <input type="text" id="selproduto[]" name="selproduto[]" onblur="busca()" size="15"></input>
+			 <input type="text" id="selproduto[]" name="selproduto[]" onkeyup="busca()" size="15"></input>
             
             
           </td>
