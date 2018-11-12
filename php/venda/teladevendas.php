@@ -67,13 +67,13 @@ function calculaTotal(){
 		  /*
 		se o nome estiver vazio	
 			pesquisarpor = "codigo"
-			valorcodigo = valor do campo codigo
-			var campo = document.getElementById('nome');
+			valorcampo = valor do campo codigo
+			var campo = document.getElementById('nomeProduto[]');
 
 		senao
 			pesquisarpor = "nome"
-			valornome = valor do campo nome
-			var campo = document.getElementById('codigo');
+			valorcampo = valor do campo nome
+			var campo = document.getElementById('selproduto[]');
 
 
 		alerta de aguarde		

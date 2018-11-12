@@ -2,11 +2,12 @@
 include "../conexao.php";
 //recebe o código do estado selecionado
 $tipo=$_POST['pesquisarpor'];
+$valor=$_POST['valorcampo']
 //se o código for vazio, quer dizer que a pessoa não escolheu um estado, então...
 if ($tipo=="nome"){
 	//através do echo, retorna para a página index uma option que diz que a pessoa deve selecionar o estado
 	
-	$sql="SELECT * FROM produto WHERE nome_produto = '$nome_produto'"
+	$sql="SELECT * FROM produto WHERE nome_produto = '$valor'"
 	$result = $conn->query($sql);
 	while($result=$sql_slt_cidades_preparado->fetch()){
 		$codigo_cidade=$sql_slt_cidades_dados['id'];
