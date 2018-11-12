@@ -7,13 +7,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 
-<script>
-function busca(){
-	
-
-}
-
-</script>
 
 
 <script>
@@ -219,11 +212,12 @@ function calculaTotal(){
               Sendo assim, todos os campos de um detalhe deve ter seus nomes como array-->
              
              
-			 <input type="text" id="selproduto[]" name="selproduto[]" onkeyup="busca()" size="15"></input>
+			 <input type="text" id="selproduto[]" name="selproduto[]" onkeyup="buscarProduto(this.value)"" size="15"></input>
             
             
           </td>
           <td>
+		 
             <input type="text" id="nomeproduto[]" name="nomeProduto[]" onblur="busca()" size="25">
           </td>
 		  <td>
