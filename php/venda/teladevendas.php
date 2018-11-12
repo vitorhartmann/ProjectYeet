@@ -8,7 +8,6 @@
 
 
 
-
 <script>
 function calculaProduto() {
   
@@ -60,6 +59,33 @@ function calculaTotal(){
   
 }
         totalfinal.value = resultadoTotal;
+	  }
+	  
+
+	  function busca(){
+		  
+		  /*
+		se o nome estiver vazio	
+			pesquisarpor = "codigo"
+			valorcodigo = valor do campo codigo
+			var campo = document.getElementById('nome');
+
+		senao
+			pesquisarpor = "nome"
+			valornome = valor do campo nome
+			var campo = document.getElementById('codigo');
+
+
+		alerta de aguarde		
+		
+		$.post("buscaProduto.php", {tipo:pesquisarpor, valor:valor},
+      //caso o código contido em buscacidades.php seja executado corretamente, executa uma função que tem como parâmetro a variável "busca", que por sua vez contém o que foi gerado da página buscacidades.php
+      function(busca){
+        campo.value = busca;
+      });
+			
+		  */
+		  
 	  }
 </script>
 
@@ -212,7 +238,7 @@ function calculaTotal(){
               Sendo assim, todos os campos de um detalhe deve ter seus nomes como array-->
              
              
-			 <input type="text" id="selproduto[]" name="selproduto[]" onkeyup="buscarProduto(this.value)"" size="15"></input>
+			 <input type="text" id="selproduto[]" name="selproduto[]" onblur="busca()" size="15"></input>
             
             
           </td>
@@ -221,7 +247,7 @@ function calculaTotal(){
             <input type="text" id="nomeproduto[]" name="nomeProduto[]" onblur="busca()" size="25">
           </td>
 		  <td>
-            <input type="text" id="valorun[]" disabled name="valorun[]"  size="3">
+            <input type="text" id="valorun[]"  name="valorun[]"  size="3">
           </td> 
 		  <td>
 		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
