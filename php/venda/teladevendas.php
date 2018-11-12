@@ -64,27 +64,28 @@ function calculaTotal(){
 
 	  function busca(){
 		  
-		  /*
-		se o nome estiver vazio	
+		  
+		/*
+		if (empty(nomeProduto)){
 			pesquisarpor = "codigo"
 			valorcampo = valor do campo codigo
 			var campo = document.getElementById('nomeProduto[]');
-
-		senao
+		}else{
+		
 			pesquisarpor = "nome"
 			valorcampo = valor do campo nome
 			var campo = document.getElementById('selproduto[]');
-
+		}
 
 		alerta de aguarde		
 		
-		$.post("buscaProduto.php", {tipo:pesquisarpor, valor:valor},
+		$.post("buscaProduto.php", {tipo:pesquisarpor, valorcampo:valor},
       //caso o código contido em buscacidades.php seja executado corretamente, executa uma função que tem como parâmetro a variável "busca", que por sua vez contém o que foi gerado da página buscacidades.php
       function(busca){
         campo.value = busca;
       });
 			
-		  */
+		 */ 
 		  
 	  }
 </script>
