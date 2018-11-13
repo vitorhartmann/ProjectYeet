@@ -276,7 +276,7 @@ function calculaTotal(){
 			</tr>
 			<td colspan="4"></td>
 			<td colspan="2">
-			<label>TOTAL:</label>
+			<label>SubTotal:</label>
 			
 			
 			<input type="text" id="totalfinal" name="totalfinal"></input>
