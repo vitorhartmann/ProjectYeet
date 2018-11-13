@@ -153,9 +153,11 @@ $(document).ready(function() {
 					
 				}
 				echo '
+				
 				<tr>
 				<td Colspan="3"></td>
-				<td Colspan="2">Total: R$ '.$p_totalFinal.'</td>
+				<td Colspan="1">SubTotal: </td>
+				<td style="font-size: 35px;" Colspan="1"> R$ '.$p_totalFinal.'</td>
 				</tr>
 				
 				</table>';
