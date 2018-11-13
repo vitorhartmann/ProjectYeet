@@ -217,7 +217,7 @@ function calculaTotal(){
             <input type="text" name="txthora" readonly value="<?php echo date("H:i:s"); ?>">
           </td>
         </tr>
-		<tr height="30px"></tr>
+		<tr height="15px"></tr>
         <tr>
           <td class="titulo_produtos" colspan="8">Produto(s)</td>
         </tr>

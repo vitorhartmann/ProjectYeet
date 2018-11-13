@@ -117,6 +117,7 @@ $(document).ready(function() {
 					<td>Hora: </td>
 					<td colspan="2"><input type="text" name="txthora" readonly value="';?><?php echo date("H:i:s"); ?><?php echo '"></td>
 					</tr>
+					<tr height="15px"></tr>
 					<tr> 
 					<td colspan="5">Produtos Vendidos</td>
 					</tr>
@@ -153,6 +154,7 @@ $(document).ready(function() {
 					
 				}
 				echo '
+				<tr height="15px"></tr>
 				
 				<tr>
 				<td Colspan="3"></td>
