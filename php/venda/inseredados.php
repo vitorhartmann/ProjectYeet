@@ -86,6 +86,8 @@ $(document).ready(function() {
 				
 
 		<?php
+			include("../conexao.php");
+			date_default_timezone_set("America/Sao_Paulo");
 			/*
 				Esta página está incompleta. Favor focar no recebimento e validação dos dados do mestre-detalhe.
 			*/
@@ -109,7 +111,12 @@ $(document).ready(function() {
 				echo'
 				
 				<table border="4" bgcolor="#A9A9A9">
-				
+					<tr>
+					<td>Data:</td>
+					<td colspan="2"> <input type="text" name="txtdata" readonly value="';?><?php echo date("d/m/Y");?><?php echo '"></td>
+					<td>Hora: </td>
+					<td colspan="2"><input type="text" name="txthora" readonly value="';?><?php echo date("H:i:s"); ?><?php echo '"></td>
+					</tr>
 					<tr> 
 					<td colspan="5">Produtos Vendidos</td>
 					</tr>
