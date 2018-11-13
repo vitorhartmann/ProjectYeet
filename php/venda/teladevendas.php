@@ -6,7 +6,36 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+<script>
+ function busca(){
+		  
+		  
+		
+		if (empty(nomeProduto)){
+			pesquisarpor = ("codigo");
+			// valorcampo = valor do campo codigo
+			var campo = document.getElementById('nomeProduto[]');
+			valorcampo = nomeProduto[].value
+		}else{
+		
+			pesquisarpor = ("nome");
+			// valorcampo = valor do campo nome
+			var campo = document.getElementById('selproduto[]');
+			valorcampo = selproduto[].value
+		}
 
+		// alerta de aguarde		
+		
+		$.post("buscaProduto.php", {tipo:pesquisarpor, valorcampo:campo},
+      //caso o código contido em buscacidades.php seja executado corretamente, executa uma função que tem como parâmetro a variável "busca", que por sua vez contém o que foi gerado da página buscacidades.php
+      function(busca){
+        campo.value = busca;
+      });
+			
+		 
+		  
+	  }
+</script>
 
 <script>
 function calculaProduto() {
@@ -62,32 +91,7 @@ function calculaTotal(){
 	  }
 	  
 
-	  function busca(){
-		  
-		  
-		/*
-		if (empty(nomeProduto)){
-			pesquisarpor = "codigo"
-			valorcampo = valor do campo codigo
-			var campo = document.getElementById('nomeProduto[]');
-		}else{
-		
-			pesquisarpor = "nome"
-			valorcampo = valor do campo nome
-			var campo = document.getElementById('selproduto[]');
-		}
-
-		alerta de aguarde		
-		
-		$.post("buscaProduto.php", {tipo:pesquisarpor, valorcampo:valor},
-      //caso o código contido em buscacidades.php seja executado corretamente, executa uma função que tem como parâmetro a variável "busca", que por sua vez contém o que foi gerado da página buscacidades.php
-      function(busca){
-        campo.value = busca;
-      });
-			
-		 */ 
-		  
-	  }
+	 
 </script>
 
 
@@ -245,7 +249,7 @@ function calculaTotal(){
           </td>
           <td>
 		 
-            <input type="text" id="nomeproduto[]" name="nomeProduto[]" onblur="busca()" size="25">
+            <input type="text" id="nomeProduto[]" name="nomeProduto[]" onblur="busca()" size="25">
           </td>
 		  <td>
             <input type="text" id="valorun[]"  name="valorun[]"  size="3">
@@ -254,7 +258,7 @@ function calculaTotal(){
 		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
 		  </td>
           <td>
-		  <input type="text" id="totalProduto[]" name="totalProduto[]" disabled size="4">
+		  <input type="text" id="totalProduto[]" name="totalProduto[]" readonly size="4">
 		  </td>
 		  
 		  

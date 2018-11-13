@@ -9,10 +9,10 @@ if ($tipo=="nome"){
 	
 	$sql="SELECT * FROM produto WHERE nome_produto = '$valor'"
 	$result = $conn->query($sql);
-	while($result=$sql_slt_cidades_preparado->fetch()){
-		$codigo_cidade=$sql_slt_cidades_dados['id'];
-		$nome_cidade=$sql_slt_cidades_dados['nome'];
-		echo "<option value='$codigo_cidade'>$nome_cidade</option>";
+	 while($resul = mysqli_fetch_array($sql)){
+		$codigo_produto=$sqlcodigoproduto['codbarras_produto'];
+		$nome_produto=$sqlnomeproduto['nome_produto'];
+		echo "<input value='$codigo_produto'>$codigo_produto</input>";
 	}
 //senão, quer dizer que a pessoa escolheu um estado válido, então faz a pesquisa das cidades dele.
 }else{

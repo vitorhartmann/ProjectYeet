@@ -13,7 +13,8 @@
 			$p_txtqtde = $_POST['txtqtde'];
 			$p_produtosValor = $_POST['valorun'];
 			$p_produtosNome = $_POST['nomeProduto'];
-			$p_totalProduto = $_POST['totalProduto'];
+			$p_totalProduto= $_POST['totalProduto'];
+			
 
 			$p_selproduto_validacao = in_array("", $p_selproduto);
 			$p_txtqtde_validacao = in_array("" , $p_txtqtde);
@@ -29,8 +30,15 @@
 				$qtde_produtos = count($p_selproduto);
 				for($i=0; $i<$qtde_produtos; $i++){
 					
-					 //$TotalProduto=$p_produtosValor*$p_txtqtde;
-					echo $p_selproduto[$i]." - ".$p_produtosNome[$i]." - ".$p_produtosValor[$i]." - ".$p_txtqtde[$i]. "- ".$totalProduto[$i]. " <br />";
+					
+					
+					 
+				
+		
+					
+					
+					echo $p_selproduto[$i]." - ".$p_produtosNome[$i]." - ".$p_produtosValor[$i]." - ".$p_txtqtde[$i]. "- ".$p_totalProduto[$i]. " <br />";
+					
 				}
 			}
 		?>
