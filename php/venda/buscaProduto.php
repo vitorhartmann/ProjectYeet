@@ -1,30 +1,32 @@
 <?php
 include "../conexao.php";
 //recebe o código do estado selecionado
-$tipo=$_POST['pesquisarpor'];
-$valor=$_POST['valorcampo']
-//se o código for vazio, quer dizer que a pessoa não escolheu um estado, então...
+$tipo=$_POST['tipo'];
+$valor=$_POST['valor'];
+//se o tipo for nome...
 if ($tipo=="nome"){
-	//através do echo, retorna para a página index uma option que diz que a pessoa deve selecionar o estado
-	
-	$sql="SELECT * FROM produto WHERE nome_produto = '$valor'"
+	//faz a pesquisa por nome
+	$sql="SELECT * FROM produto WHERE nome_produto = '$valor'";
+	//executa
 	$result = $conn->query($sql);
-	 while($resul = mysqli_fetch_array($sql)){
-		$codigo_produto=$sqlcodigoproduto['codbarras_produto'];
-		$nome_produto=$sqlnomeproduto['nome_produto'];
-		echo "<input value='$codigo_produto'>$codigo_produto</input>";
+	
+	 while($linha = mysqli_fetch_array($result)){
+		 //pega os dados necessários em um array
+		$produto['dado']=$linha['codbarras_produto'];
+		$produto['valor']=$linha['valor_produto'];
+		//transforma o array em Json para devolver ao JS
+		echo json_encode($produto);
 	}
-//senão, quer dizer que a pessoa escolheu um estado válido, então faz a pesquisa das cidades dele.
+//senão, quer dizer que a pessoa digitou um codigo...
 }else{
-	$sql_slt_cidades="SELECT * FROM cidades WHERE estados_id='$cod'";
-	$sql_slt_cidades_preparado=$conexao->prepare($sql_slt_cidades);
-	$sql_slt_cidades_preparado->execute();
-	//Através dos echos abaixo, retorna a lista das cidades do estado selecionado para a index
-	echo "<option value=''>Escolha</option>";
-	while($sql_slt_cidades_dados=$sql_slt_cidades_preparado->fetch()){
-		$codigo_cidade=$sql_slt_cidades_dados['id'];
-		$nome_cidade=$sql_slt_cidades_dados['nome'];
-		echo "<option value='$codigo_cidade'>$nome_cidade</option>";
+	//faz a pesquisa por codigo
+	$sql="SELECT * FROM produto WHERE codbarras_produto = '$valor'";
+	//o resto é idem ao caso acima
+	$result = $conn->query($sql);
+	while($linha=mysqli_fetch_array($result)){
+		$produto['dado']=$linha['nome_produto'];
+		$produto['valor']=$linha['valor_produto'];
+		echo json_encode($produto);
 	}
 }
 ?>

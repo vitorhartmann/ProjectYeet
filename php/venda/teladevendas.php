@@ -7,6 +7,85 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script>
+
+  //Aqui iniciamos os arrays codProdutoAntigo e nomeProdutoAntigo, 
+  //que receberão depois o último valor (ou seja, o valor antes da mudança) de cada campo de código e nome no formulário
+  codProdutoAntigo = new Array();
+  nomeProdutoAntigo = new Array();
+  //Agora eles só recebem o valor da primeira linha, que por enquanto é o mesmo do campo vazio ("")
+  codProdutoAntigo[0] = "";
+  nomeProdutoAntigo[0] = "";
+  
+    /*função criada para receber os valores dos campos existentes, usados posteriormente para descobrirmos se o valor do campo foi alterado ou não*/
+  function valoresAntigos (){
+    //recebe todas as posições do campo selproduto[] e salva na variável codProduto
+    var codProduto = document.getElementsByName('selproduto[]');
+    //repete para o nome do produto
+	var nomeProduto = document.getElementsByName('nomeProduto[]');
+    //da posição 0 até a posição final do array...
+    for (var i=0;i<codProduto.length;i++){
+      //...captura e salva o valor atual do campo selproduto no array criado no carregamento da página para os valores antigos
+      codProdutoAntigo[i] = codProduto[i].value;
+      nomeProdutoAntigo[i] = nomeProduto[i].value;
+    }
+	
+  }
+
+  //função que mostra os dados a serem carregados pelo BD na linha CORRETA
+  function busca(pesquisarPor){
+    //recebe todas as posições do campo selproduto[] e salva na variável codMudar
+    var codMudar = document.getElementsByName('selproduto[]');
+	//alert(codMudar);
+    //recebe todas as posições do campo nomeProduto[] e salva na variável nomeMudar
+    var nomeMudar = document.getElementsByName('nomeProduto[]');
+	var valorMudar = document.getElementsByName('valorun[]');
+
+    //cria a variável que irá receber a posição do campo modificado
+	var atual=-1;
+	//verifica da posição 0 até a posição final do array...
+    for (var j=0;j<codMudar.length;j++){
+      //...se o valor antigo do nome ou do código for diferente do valor atual...
+      if ((nomeProdutoAntigo[j] != nomeMudar[j].value || codProdutoAntigo[j] != codMudar[j].value) && (nomeMudar[j].value!=codMudar[j].value)){
+        //é porque essa foi a posição alterada, portanto repassa a posição atual para a variável 'atual'
+        atual=j;
+      }
+    }
+	//se o parâmetro recebido tiver o valor "codigo"
+	if (pesquisarPor=="codigo"){
+		//grava o valor digitado no campo de código em valorcampo
+		valorcampo = codMudar[atual].value;
+		
+	//senão se o valor for "nome"	
+	}else{
+		//grava o valor digitado no campo de nome em valorcampo
+		valorcampo = nomeMudar[atual].value;
+	}
+	
+    //inicia um processo que envia o código por post para a página buscadinamica.php, que pesquisa dinamicamente pelo código quais os produtos correspondentes àquela categoria e...
+	$.post("buscaProduto.php", {tipo:pesquisarPor, valor:valorcampo},    //inicia uma função que recebe os produtos encontrados na pesquisa da página buscadinamica.php em busca, e...
+		function(busca){
+			var dados = jQuery.parseJSON(busca);
+			valorMudar[atual].value=dados.valor;
+			//se o parâmetro recebido tiver o valor "codigo"
+			if (pesquisarPor=="codigo"){
+				//coloca o valor encontrado no BD no campo nome correto
+				nomeMudar[atual].value=dados.dado;
+				
+			//senão se o valor for "nome"	
+			}else{
+				//coloca o valor encontrado no BD no campo codigo correto
+				codMudar[atual].value=dados.dado;
+
+			}
+			
+		calculaProduto();	
+		//chama a função valoresAntigos para guardar os valores atuais das categorias como antigos
+		valoresAntigos();
+		//fecha o processo do post
+		});
+  //fecha a função busca
+  }
+  /*
  function busca(){
 		  
 		  
@@ -34,7 +113,7 @@
 			
 		 
 		  
-	  }
+	  }*/
 </script>
 
 <script>
@@ -217,7 +296,7 @@ function calculaTotal(){
             <input type="text" name="txthora" readonly value="<?php echo date("H:i:s"); ?>">
           </td>
         </tr>
-		<tr height="15px"></tr>
+		<tr height="30px"></tr>
         <tr>
           <td class="titulo_produtos" colspan="8">Produto(s)</td>
         </tr>
@@ -243,16 +322,16 @@ function calculaTotal(){
               Sendo assim, todos os campos de um detalhe deve ter seus nomes como array-->
              
              
-			 <input type="text" id="selproduto[]" name="selproduto[]" onblur="busca()" size="15"></input>
+			 <input type="text" id="selproduto[]" name="selproduto[]" onblur="busca('codigo')" size="15"></input>
             
             
           </td>
           <td>
 		 
-            <input type="text" id="nomeProduto[]" name="nomeProduto[]" onblur="busca()" size="25">
+            <input type="text" id="nomeProduto[]" name="nomeProduto[]" onblur="busca('nome')" size="25">
           </td>
 		  <td>
-            <input type="text" id="valorun[]"  name="valorun[]"  size="3">
+            <input type="text" id="valorun[]"  name="valorun[]"  size="3" disabled>
           </td> 
 		  <td>
 		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
@@ -276,7 +355,7 @@ function calculaTotal(){
 			</tr>
 			<td colspan="4"></td>
 			<td colspan="2">
-			<label>SubTotal:</label>
+			<label>TOTAL:</label>
 			
 			
 			<input type="text" id="totalfinal" name="totalfinal"></input>
