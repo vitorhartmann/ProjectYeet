@@ -336,6 +336,7 @@ function calculaTotal(){
           </td>
 		  <td>
             <input type="text" id="valorun[]"  name="valorun[]"  size="3" disabled>
+			<input type="hidden" id="valorun[]"  name="valorun[]"  size="3" >
           </td> 
 		  <td>
 		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
