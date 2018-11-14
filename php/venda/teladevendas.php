@@ -133,7 +133,7 @@ function calculaProduto() {
         //se a posição atual dos arrays de produto e quantidade estiverem vazios,
         //if ((produtosValidar[i].value=="")||(qtdeValidar[i].value=="")){
 			
-        var resultValidar =  parseInt(produtosUn[i].value) *  parseInt(qtde[i].value);
+        var resultValidar =  parseFloat(produtosUn[i].value) *  parseFloat(qtde[i].value);
 			if (isNaN(resultValidar)){;// Função IsNan
 		result[i].value = 0;
 		
@@ -156,12 +156,14 @@ function calculaTotal(){
     var totalfinal = document.getElementById('totalfinal');
 
     var resultadoTotal = 0;
+	var arredondar =0;
       //estrutura para-faça para repetir a validação enquanto i for menor que o tamanho do array
       for (var i = 0;i < qtdeElementos; i++){
       
-			
-      resultadoTotal =  resultadoTotal +  parseInt(resultado[i].value);
-
+	  
+			arredondar = arredondar + parseFloat(resultado[i].value);
+     // resultadoTotal =  resultadoTotal +  parseFloat(resultado[i].value);
+		resultadoTotal = parseFloat(arredondar.toFixed(2));
 		  	
 	
   
