@@ -138,7 +138,9 @@ function calculaProduto() {
 		result[i].value = 0;
 		
       }else{
-		  	result[i].value = resultValidar;
+		  
+		  
+		  	result[i].value = parseFloat(resultValidar.toFixed(2));
 	  
 	  }
     calculaTotal();
