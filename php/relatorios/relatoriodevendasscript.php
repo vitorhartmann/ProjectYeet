@@ -61,7 +61,6 @@ $(document).ready(function() {
 			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<center>
-		<form action="relatoriodevendasscript.php" method="POST">
 			<div id="busca">
 				<table border="1" bgcolor="white">
 					<tr>
@@ -73,9 +72,9 @@ $(document).ready(function() {
 								<th>
 									<?php 
 		
-			include("../conexao.php");
+		include("../conexao.php");
 						
-			$sql  = mysqli_query($conn, "select * from categoria");?>
+        $sql  = mysqli_query($conn, "select * from categoria");?>
 		
             <select name="id_categoria" id="id_categoria">
 			<option value="">Selecione...</option>
@@ -104,7 +103,7 @@ $(document).ready(function() {
 						</tr>
 						
 				</table>
-			</form>
+				
 			</div>
 		<br>
 			<div id="relatorio">
