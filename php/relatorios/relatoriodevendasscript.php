@@ -3,11 +3,16 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../../css/css.css">
 
-
-
-	</header>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<?php
+include("../conexao.php");
 
+$sql="SELECT * FROM venda WHERE "
+
+
+?>
+	
+	
 <script>
 $(document).ready(function() {
     $('#id_categoria').on('change', function() {
@@ -46,6 +51,11 @@ $(document).ready(function() {
 });
 
 </script>
+
+	</header>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 	
 	<div id="cabecalho"> 
 		<img src="../../img/principal.jpg" width="180px" height="180px" align="left" border="1">
@@ -58,9 +68,10 @@ $(document).ready(function() {
 	
 		<div id="botoes">
 			<button><a href="../../index.html"><img src="../../img/homeicon.png" width="35px" height="35px"></a></button>
-			<button><a href="../../index.html"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
+			<button><a href="relatoriodevendas.php"><img src="../../img/backicon.png" width="35px" height="35px"></a></button>
 		</div>
 		<center>
+		<form action="relatoriodevendasscript.php" method="POST">
 			<div id="busca">
 				<table border="1" bgcolor="white">
 					<tr>
@@ -103,8 +114,9 @@ $(document).ready(function() {
 						</tr>
 						
 				</table>
-				
+			
 			</div>
+		</form>
 		<br>
 			<div id="relatorio">
 				<table border="1" bgcolor="white" text-align=>
