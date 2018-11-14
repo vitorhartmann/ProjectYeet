@@ -335,8 +335,8 @@ function calculaTotal(){
             <input type="text" id="nomeProduto[]" name="nomeProduto[]" onblur="busca('nome')" size="25">
           </td>
 		  <td>
-            <input type="text" id="valorun[]"  name="valorun[]"  size="3" disabled>
-			<input type="hidden" id="valorun[]"  name="valorun[]"  size="3" >
+            <input type="text" id="valorun[]"  name="valorun[]"  size="3" readonly>
+			
           </td> 
 		  <td>
 		  <input type="text" name="txtqtde[]" id="textqtde[]" size="3"  onblur="calculaProduto()">
@@ -360,7 +360,7 @@ function calculaTotal(){
 			</tr>
 			<td colspan="4"></td>
 			<td colspan="2">
-			<label>TOTAL:</label>
+			<label>SubTotal:</label>
 			
 			
 			<input type="text" id="totalfinal" name="totalfinal"></input>

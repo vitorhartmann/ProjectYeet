@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/10/2018 às 19:49
+-- Generation Time: 14-Nov-2018 às 20:01
 -- Versão do servidor: 5.7.11-log
--- Versão do PHP: 5.6.15
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `yeet`
+-- Database: `yeet`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categoria`
+-- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -32,7 +32,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `categoria`
+-- Extraindo dados da tabela `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pagamento`
+-- Estrutura da tabela `pagamento`
 --
 
 CREATE TABLE `pagamento` (
@@ -55,7 +55,7 @@ CREATE TABLE `pagamento` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produto`
+-- Estrutura da tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -68,17 +68,19 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `produto`
+-- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`id_produto`, `nome_produto`, `saldo_produto`, `codbarras_produto`, `valor_produto`, `subcategoria_id_subcategoria`) VALUES
 (1, 'Leite Tirol Integral 1L', 0, 07896256600223, '0.00', 4),
-(2, 'Teste', 0, 00000000000001, '0.00', 3);
+(2, 'Teste', 0, 00000000000001, '0.00', 3),
+(3, 'Teste2', 0, 00000000000002, '2.11', 3),
+(4, 'Teste3', 0, 00000000000003, '5.29', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `subcategoria`
+-- Estrutura da tabela `subcategoria`
 --
 
 CREATE TABLE `subcategoria` (
@@ -88,7 +90,7 @@ CREATE TABLE `subcategoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `subcategoria`
+-- Extraindo dados da tabela `subcategoria`
 --
 
 INSERT INTO `subcategoria` (`id_subcategoria`, `nome_subcategoria`, `categoria_id_categoria`) VALUES
@@ -98,7 +100,7 @@ INSERT INTO `subcategoria` (`id_subcategoria`, `nome_subcategoria`, `categoria_i
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `venda`
+-- Estrutura da tabela `venda`
 --
 
 CREATE TABLE `venda` (
@@ -110,7 +112,7 @@ CREATE TABLE `venda` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `venda_has_produto`
+-- Estrutura da tabela `venda_has_produto`
 --
 
 CREATE TABLE `venda_has_produto` (
@@ -120,44 +122,44 @@ CREATE TABLE `venda_has_produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Índices de tabela `pagamento`
+-- Indexes for table `pagamento`
 --
 ALTER TABLE `pagamento`
   ADD PRIMARY KEY (`id_pagamento`);
 
 --
--- Índices de tabela `produto`
+-- Indexes for table `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id_produto`),
   ADD KEY `fk_produto_subcategoria1_idx` (`subcategoria_id_subcategoria`);
 
 --
--- Índices de tabela `subcategoria`
+-- Indexes for table `subcategoria`
 --
 ALTER TABLE `subcategoria`
   ADD PRIMARY KEY (`id_subcategoria`),
   ADD KEY `fk_subcategoria_categoria1_idx` (`categoria_id_categoria`);
 
 --
--- Índices de tabela `venda`
+-- Indexes for table `venda`
 --
 ALTER TABLE `venda`
   ADD PRIMARY KEY (`id_venda`),
   ADD KEY `fk_venda_pagamento1_idx` (`pagamento_id_pagamento`);
 
 --
--- Índices de tabela `venda_has_produto`
+-- Indexes for table `venda_has_produto`
 --
 ALTER TABLE `venda_has_produto`
   ADD PRIMARY KEY (`venda_id_venda`,`produto_id_produto`),
@@ -165,58 +167,58 @@ ALTER TABLE `venda_has_produto`
   ADD KEY `fk_venda_has_produto_venda1_idx` (`venda_id_venda`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `categoria`
+-- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id_categoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de tabela `pagamento`
+-- AUTO_INCREMENT for table `pagamento`
 --
 ALTER TABLE `pagamento`
   MODIFY `id_pagamento` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de tabela `produto`
+-- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id_produto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_produto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de tabela `subcategoria`
+-- AUTO_INCREMENT for table `subcategoria`
 --
 ALTER TABLE `subcategoria`
   MODIFY `id_subcategoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de tabela `venda`
+-- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
   MODIFY `id_venda` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- Restrições para dumps de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para tabelas `produto`
+-- Limitadores para a tabela `produto`
 --
 ALTER TABLE `produto`
   ADD CONSTRAINT `fk_produto_subcategoria1` FOREIGN KEY (`subcategoria_id_subcategoria`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `subcategoria`
+-- Limitadores para a tabela `subcategoria`
 --
 ALTER TABLE `subcategoria`
   ADD CONSTRAINT `fk_subcategoria_categoria1` FOREIGN KEY (`categoria_id_categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `venda`
+-- Limitadores para a tabela `venda`
 --
 ALTER TABLE `venda`
   ADD CONSTRAINT `fk_venda_pagamento1` FOREIGN KEY (`pagamento_id_pagamento`) REFERENCES `pagamento` (`id_pagamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `venda_has_produto`
+-- Limitadores para a tabela `venda_has_produto`
 --
 ALTER TABLE `venda_has_produto`
   ADD CONSTRAINT `fk_venda_has_produto_produto1` FOREIGN KEY (`produto_id_produto`) REFERENCES `produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
