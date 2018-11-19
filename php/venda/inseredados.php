@@ -99,7 +99,7 @@ $(document).ready(function() {
 			$p_totalFinal= $_POST['totalfinal'];
 			
 			
-			$sql="INSERT INTO venda " ;
+			$sql="INSERT INTO venda data_venda VALUES " ;
 			$query = $conn->query( $sql );
 			
 			$p_selproduto_validacao = in_array("", $p_selproduto);

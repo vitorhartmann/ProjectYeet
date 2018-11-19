@@ -285,15 +285,7 @@ function calculaTotal(){
 		</div>
 		    <form name="frm_venda" method="post" action="inseredados.php" onsubmit="return validaDetalhe()">
       <table border="1" bgcolor="#A9A9A9" align="center">
-	  <tr>
-	  <td colspan="6"><?php 
 	  
-		 $sql  = mysqli_query($conn, "select id_venda from venda");
-		
-	   while($resultado = mysqli_fetch_array($sql)){ 
-			echo '<label>'.$resultado["id_categoria"].'</label>';
-	   }?></td>
-	  </tr>
         <tr>
         
         
