@@ -143,10 +143,13 @@ $(document).ready(function() {
 						<td>' .$p_produtosValor[$i]. '</td>
 						<td>' .$p_txtqtde[$i]. '</td>
 						<td>' .$p_totalProduto[$i]. '</td>
-					 </tr>'
+					 </tr>';
 					 
-					 
-				;
+					 $sql="INSERT INTO venda";
+					 $query = $conn->query( $sql );
+					 $sql="INSERT INTO venda_has_produto (produto_id_produto, quantidade_produto) VALUES ('$p_selproduto[$i]','$p_txtqtde[$i]' )";
+					 $query = $conn->query( $sql );
+				
 		
 					
 					

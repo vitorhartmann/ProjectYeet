@@ -8,10 +8,26 @@
 include("../conexao.php");
 
 $codbarras_produto=$_POST['codbarras_produto'];
-$categoria=$_POST['nome_categoria'];
-$subcategoria=$_POST['nome_subcategoria'];
+$categoria=$_POST['id_categoria'];
+$subcategoria=$_POST['id_subcategoria'];
 
-$sql="SELECT * FROM venda WHERE "
+
+	
+if(empty($codbarras_produto)){
+	$sql="SELECT * FROM venda WHERE id_subcategoria='{$subcategoria}'";
+
+}else {
+	if(empty($subcategoria)){
+			$sql="SELECT * FROM venda WHERE id_categoria='{$categoria}'";
+		
+	} else{
+		if(empty($categoria)){
+			$sql="SELECT * FROM venda WHERE codbarras_produto='{$codbarras_produto}'";
+		}
+		
+	
+}
+
 
 
 ?>
