@@ -98,8 +98,9 @@ $(document).ready(function() {
 			$p_totalProduto= $_POST['totalProduto'];
 			$p_totalFinal= $_POST['totalfinal'];
 			
+			$datahora=date('Y-m-d h:i:s');
 			
-			$sql="INSERT INTO venda data_venda VALUES " ;
+			$sql="INSERT INTO venda data_venda VALUES $datahora " ;
 			$query = $conn->query( $sql );
 			
 			$p_selproduto_validacao = in_array("", $p_selproduto);
