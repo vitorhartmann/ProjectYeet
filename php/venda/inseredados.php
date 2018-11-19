@@ -97,7 +97,7 @@ $(document).ready(function() {
 			$p_produtosNome = $_POST['nomeProduto'];
 			$p_totalProduto= $_POST['totalProduto'];
 			$p_totalFinal= $_POST['totalfinal'];
-			
+			$id_venda;
 
 			$p_selproduto_validacao = in_array("", $p_selproduto);
 			$p_txtqtde_validacao = in_array("" , $p_txtqtde);
@@ -145,9 +145,9 @@ $(document).ready(function() {
 						<td>' .$p_totalProduto[$i]. '</td>
 					 </tr>';
 					 
-					 $sql="INSERT INTO venda";
-					 $query = $conn->query( $sql );
-					 $sql="INSERT INTO venda_has_produto (produto_id_produto, quantidade_produto) VALUES ('$p_selproduto[$i]','$p_txtqtde[$i]' )";
+					 
+					 
+					 $sql="INSERT INTO venda_has_produto (venda_id_venda, produto_id_produto, quantidade_produto) VALUES ('','$p_selproduto[$i]','$p_txtqtde[$i]' ) WHERE venda_id_venda='$id_venda'" ;
 					 $query = $conn->query( $sql );
 				
 		
