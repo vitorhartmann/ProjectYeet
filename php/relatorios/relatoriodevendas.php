@@ -66,7 +66,7 @@ $(document).ready(function() {
 				<table border="1" bgcolor="white">
 					<tr>
 						<th>Código de Barras:</th>
-						<th><input type="text" name="codbarras_produto" id="codbarras_produto"></input> </th>
+						<th><input></input> </th>
 					</tr>
 					<tr>
 					<th><label>Categoria:</label></th>
@@ -81,7 +81,7 @@ $(document).ready(function() {
 			<option value="">Selecione...</option>
 			<?php
               while($resultado = mysqli_fetch_array($sql)){ ?>     
-                  <?php echo '<option   id="nome_categoria" name="nome_categoria" value='.$resultado["id_categoria"].' >'.$resultado['nome_categoria']. '</option>';?>
+                  <?php echo '<option  value='.$resultado["id_categoria"].' >'.$resultado['nome_categoria']. '</option>';?>
                   <?php } ?>
             
 								</th>
@@ -94,8 +94,8 @@ $(document).ready(function() {
 		
 	
 		
-            <select name="nome_subcategoria" id="nome_subcategoria">  
-			<option value="" name="id_subcategoria" id="id_subcategoria">Selecione uma Categoria...</option>
+            <select name="id_subcategoria" id="id_subcategoria">  
+			<option value="" id="id_subcategoria">Selecione uma Categoria...</option>
             </select>
 								</th>
 						<tr>
