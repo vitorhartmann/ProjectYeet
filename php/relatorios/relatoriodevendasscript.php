@@ -7,6 +7,10 @@
 <?php
 include("../conexao.php");
 
+$codbarras_produto=$_POST['codbarras_produto'];
+$categoria=$_POST['nome_categoria'];
+$subcategoria=$_POST['nome_subcategoria'];
+
 $sql="SELECT * FROM venda WHERE "
 
 
