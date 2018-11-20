@@ -100,7 +100,7 @@ $(document).ready(function() {
 			
 			$datahora=date('Y-m-d h:i:s');
 			
-			$sql="INSERT INTO venda data_venda VALUES $datahora " ;
+			$sql="INSERT INTO venda (data_venda,pagamento_id_pagamento) VALUES ('$datahora', '1') " ;
 			$query = $conn->query( $sql );
 			
 			$p_selproduto_validacao = in_array("", $p_selproduto);
@@ -136,6 +136,14 @@ $(document).ready(function() {
 					 '
 					 ;
 				
+					
+					if ($conn->query($sql) === TRUE) {
+					$last_id = $conn->insert_id;
+					echo "New record created successfully. Last inserted ID is: " . $last_id;
+					} else {
+					echo "Error: " . $sql . "<br>" . $conn->error;
+}
+				
 				$qtde_produtos = count($p_selproduto);
 				for($i=0; $i<$qtde_produtos; $i++){
 					
@@ -151,7 +159,7 @@ $(document).ready(function() {
 					 
 					 
 					 
-					 $sql="INSERT INTO venda_has_produto (venda_id_venda, produto_id_produto, quantidade_produto) VALUES ('$id_venda','$p_selproduto[$i]','$p_txtqtde[$i]' ) WHERE venda_id_venda='$id_venda'" ;
+					 $sql="INSERT INTO venda_has_produto (venda_id_venda, produto_id_produto, quantidade_produto) VALUES ('$id_venda',/* Substituir por Cód'$p_selproduto[$i]' */,'$p_txtqtde[$i]' ) WHERE venda_id_venda='$id_venda'" ;
 					 $query = $conn->query( $sql );
 				
 		
