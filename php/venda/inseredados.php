@@ -101,7 +101,14 @@ $(document).ready(function() {
 			$datahora=date('Y-m-d h:i:s');
 			
 			$sql="INSERT INTO venda (data_venda,pagamento_id_pagamento) VALUES ('$datahora', '1') " ;
-			$query = $conn->query( $sql );
+			
+			
+			if ($conn->query($sql) === TRUE) {
+					$id_venda = $conn->insert_id;
+					echo "New record created successfully. Last inserted ID is: " . $id_venda;
+					} else {
+					echo "Error: " . $sql . "<br>" . $conn->error;
+}
 			
 			$p_selproduto_validacao = in_array("", $p_selproduto);
 			$p_txtqtde_validacao = in_array("" , $p_txtqtde);
@@ -137,11 +144,7 @@ $(document).ready(function() {
 					 ;
 				
 					
-					if ($conn->query($sql) === TRUE) {
-					$last_id = $conn->insert_id;
-					echo "New record created successfully. Last inserted ID is: " . $last_id;
-					} else {
-					echo "Error: " . $sql . "<br>" . $conn->error;
+					
 }
 				
 				$qtde_produtos = count($p_selproduto);
@@ -178,7 +181,7 @@ $(document).ready(function() {
 				</tr>
 				
 				</table>';
-			}
+			
 		?>
 			</center>
 	</body>
