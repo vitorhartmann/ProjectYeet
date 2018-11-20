@@ -163,16 +163,22 @@ $(document).ready(function() {
 					 
 				
 					 
-					 $sql = "SELECT id_produto FROM produto WHERE nome_produto='$p_produtosNome[$i]'";
+					 $sql = "SELECT * FROM produto WHERE nome_produto='$p_produtosNome[$i]'";
 					$query = mysqli_query($conn,$sql);
 					while($sql = mysqli_fetch_array($query)){
 					$id_produto = $sql["id_produto"];
+					$saldo_produto = $sql["saldo_produto"];
 					}
 						
 					
 					 
 					 $sql="INSERT INTO venda_has_produto (venda_id_venda, produto_id_produto, quantidade_produto) VALUES ('$id_venda','$id_produto','$p_txtqtde[$i]' )" ;
 					 $query = $conn->query( $sql );
+					 
+					 
+					 echo $novosaldo=$saldo_produto-$p_txtqtde;
+					 
+					echo $sql="UPDATE produto SET saldo_produto='$novosaldo' , WHERE id_produto='$id_produto'";
 				
 		
 					
