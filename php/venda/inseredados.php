@@ -171,7 +171,7 @@ $(document).ready(function() {
 						
 					
 					 
-					 $sql="INSERT INTO venda_has_produto (venda_id_venda, produto_id_produto, quantidade_produto) VALUES ('$id_venda','$id_produto[$i]','$p_txtqtde[$i]' ) WHERE venda_id_venda='$id_venda'" ;
+					 $sql="INSERT INTO venda_has_produto (venda_id_venda, produto_id_produto, quantidade_produto) VALUES ('$id_venda','$id_produto','$p_txtqtde[$i]' ) WHERE venda_id_venda='$id_venda'" ;
 					 $query = $conn->query( $sql );
 				
 		
