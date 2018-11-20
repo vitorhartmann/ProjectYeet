@@ -176,9 +176,9 @@ $(document).ready(function() {
 					 $query = $conn->query( $sql );
 					 
 					 
-					 echo $novosaldo=$saldo_produto-$p_txtqtde;
+					 /* echo $novosaldo=$saldo_produto-$p_txtqtde; CALCULO PARA DEFINIR NOVO VALOR*/
 					 
-					echo $sql="UPDATE produto SET saldo_produto='$novosaldo' , WHERE id_produto='$id_produto'";
+					 $sql="UPDATE produto SET saldo_produto='$novosaldo' , WHERE id_produto='$id_produto'";
 				
 		
 					
