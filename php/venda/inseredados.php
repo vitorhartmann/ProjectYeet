@@ -105,7 +105,7 @@ $(document).ready(function() {
 			
 			if ($conn->query($sql) === TRUE) {
 					$id_venda = $conn->insert_id;
-					echo "New record created successfully. Last inserted ID is: " . $id_venda;
+					/* echo "New record created successfully. Last inserted ID is: " . $id_venda; */
 					} else {
 					echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -161,8 +161,17 @@ $(document).ready(function() {
 					 </tr>';
 					 
 					 
+				
 					 
-					 $sql="INSERT INTO venda_has_produto (venda_id_venda, produto_id_produto, quantidade_produto) VALUES ('$id_venda',/* Substituir por Cód'$p_selproduto[$i]' */,'$p_txtqtde[$i]' ) WHERE venda_id_venda='$id_venda'" ;
+					 $sql = "SELECT id_produto FROM produto WHERE nome_produto='$p_produtosNome[$i]'";
+					$query = mysqli_query($conn,$sql);
+					while($sql = mysqli_fetch_array($query)){
+					$id_produto = $sql["id_produto"];
+					}
+						
+					
+					 
+					 $sql="INSERT INTO venda_has_produto (venda_id_venda, produto_id_produto, quantidade_produto) VALUES ('$id_venda','$id_produto[$i]','$p_txtqtde[$i]' ) WHERE venda_id_venda='$id_venda'" ;
 					 $query = $conn->query( $sql );
 				
 		
