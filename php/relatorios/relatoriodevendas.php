@@ -63,7 +63,7 @@ $(document).ready(function() {
 		<center>
 		<form action="relatoriodevendasscript.php" method="POST">
 			<div id="busca">
-				<table border="1" bgcolor="white">
+				<table border="1" bgcolor="#A9A9A9">
 					<tr>
 						<th>Código de Barras:</th>
 						<th><input type="text" name="codbarras_produto" id="codbarras_produto"></input> </th>
@@ -108,7 +108,7 @@ $(document).ready(function() {
 			</div>
 		<br>
 			<div id="relatorio">
-				<table border="1" bgcolor="white" text-align=>
+				<table border="1" bgcolor="#A9A9A9" text-align=>
 					<tr>
 						<th>Cód.</th>
 						<th>Nome</th>
