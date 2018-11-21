@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/11/2018 às 19:46
+-- Tempo de geração: 21/11/2018 às 19:30
 -- Versão do servidor: 5.7.11-log
 -- Versão do PHP: 5.6.15
 
@@ -82,7 +82,7 @@ INSERT INTO `produto` (`id_produto`, `nome_produto`, `saldo_produto`, `codbarras
 (1, 'Leite Tirol Integral 1L', 0, 07896256600223, '0.00', 4),
 (2, 'Teste', 0, 00000000000001, '0.00', 3),
 (3, 'Teste2', 0, 00000000000002, '2.11', 3),
-(4, 'Teste3', 0, 00000000000003, '5.29', 3);
+(4, 'Teste3', -1, 00000000000003, '5.29', 3);
 
 -- --------------------------------------------------------
 
@@ -121,18 +121,7 @@ CREATE TABLE `venda` (
 --
 
 INSERT INTO `venda` (`id_venda`, `data_venda`, `pagamento_id_pagamento`) VALUES
-(23, '2018-11-20 04:28:07', 1),
-(24, '2018-11-20 04:28:40', 1),
-(25, '2018-11-20 04:30:09', 1),
-(26, '2018-11-20 04:31:09', 1),
-(27, '2018-11-20 04:34:07', 1),
-(28, '2018-11-20 04:34:18', 1),
-(29, '2018-11-20 04:40:21', 1),
-(30, '2018-11-20 04:40:34', 1),
-(31, '2018-11-20 04:40:41', 1),
-(32, '2018-11-20 04:40:52', 1),
-(33, '2018-11-20 04:40:56', 1),
-(34, '2018-11-20 04:44:12', 1);
+(40, '2018-11-21 03:20:39', 1);
 
 -- --------------------------------------------------------
 
@@ -151,16 +140,7 @@ CREATE TABLE `venda_has_produto` (
 --
 
 INSERT INTO `venda_has_produto` (`venda_id_venda`, `produto_id_produto`, `quantidade_produto`) VALUES
-(27, 2, 3),
-(28, 2, 3),
-(28, 3, 4),
-(29, 2, 3),
-(30, 2, 3),
-(31, 2, 3),
-(32, 2, 3),
-(33, 2, 3),
-(34, 2, 3),
-(34, 3, 4);
+(40, 4, 2);
 
 --
 -- Índices de tabelas apagadas
@@ -235,7 +215,7 @@ ALTER TABLE `subcategoria`
 -- AUTO_INCREMENT de tabela `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_venda` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- Restrições para dumps de tabelas
 --
