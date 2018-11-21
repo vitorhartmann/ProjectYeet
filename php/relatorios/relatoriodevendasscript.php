@@ -15,7 +15,8 @@ $subcategoria=$_POST['id_subcategoria'];
 	
 if(empty($codbarras_produto)){
 	$sql="SELECT * FROM venda WHERE id_subcategoria='{$subcategoria}'";
-
+	
+	
 }else {
 	if(empty($subcategoria)){
 			$sql="SELECT * FROM venda WHERE id_categoria='{$categoria}'";
