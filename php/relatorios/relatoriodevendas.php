@@ -108,7 +108,7 @@ $(document).ready(function() {
 			</div>
 		<br>
 			<div id="relatorio">
-				<table border="1" bgcolor="#A9A9A9" text-align=>
+				<table border="1" bgcolor="#A9A9A9" >
 					<tr>
 						<th>Cód.</th>
 						<th>Nome</th>
