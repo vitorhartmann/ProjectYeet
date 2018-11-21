@@ -176,11 +176,11 @@ $(document).ready(function() {
 					 $query = $conn->query( $sql );
 					 
 					 
-					 /* echo $novosaldo=$saldo_produto-$p_txtqtde; CALCULO PARA DEFINIR NOVO VALOR*/
-					 echo $novosaldo= floatval($saldo_produto)-floatval($p_txtqtde);
 					 
-					echo $sql="UPDATE produto SET saldo_produto='$novosaldo' WHERE id_produto='$id_produto'";
-				
+					 $novosaldo= floatval($saldo_produto)-floatval($p_txtqtde);
+					 
+					 $sql="UPDATE produto SET saldo_produto='$novosaldo' WHERE id_produto='$id_produto'";
+					$query = $conn->query( $sql );
 		
 					
 					
