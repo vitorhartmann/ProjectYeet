@@ -30,7 +30,7 @@ if(empty($codbarras_produto)){
 }
 
 
-
+}
 
 
 
@@ -99,7 +99,7 @@ $(document).ready(function() {
 		<center>
 		<form action="relatoriodevendasscript.php" method="POST">
 			<div id="busca">
-				<table border="1" bgcolor="white">
+				<table border="1" bgcolor="#A9A9A9">
 					<tr>
 						<th>Código de Barras:</th>
 						<th><input></input> </th>
@@ -145,7 +145,7 @@ $(document).ready(function() {
 		</form>
 		<br>
 			<div id="relatorio">
-				<table border="1" bgcolor="white" text-align=>
+				<table border="1" bgcolor="#A9A9A9" >
 					<tr>
 						<th>Cód.</th>
 						<th>Nome</th>
@@ -158,14 +158,15 @@ $(document).ready(function() {
 					</tr>
 					<?php
 					echo '<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td><label>'. $row["id_produto"].'</label></td>
+						<td><label>'. $row["nome_produto"].'</label></td>
+						<td><label>'. $row["codbarras_produto"].'</label></td>
+						/* <td><label>'. $row[""].'</label></td>  INSERIR VARIAVEL DE VENDIDOS NO PERÍODO (30 DIAS)     */
+						<td><label>'. $row["saldo_produto"].'</label></td>
+						<td><label>'. $row["valor_produto"].'</label></td>
+						<td><label>'. $row["nome_categoria"].'</label></td>
+						<td><label>'. $row["nome_subcategoria"].'</label></td>
+						
 					
 					</tr>';
 					?>
