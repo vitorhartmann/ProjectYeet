@@ -177,8 +177,9 @@ $(document).ready(function() {
 					 
 					 
 					 /* echo $novosaldo=$saldo_produto-$p_txtqtde; CALCULO PARA DEFINIR NOVO VALOR*/
+					 echo $novosaldo= floatval($saldo_produto)-floatval($p_txtqtde);
 					 
-					 $sql="UPDATE produto SET saldo_produto='$novosaldo' , WHERE id_produto='$id_produto'";
+					echo $sql="UPDATE produto SET saldo_produto='$novosaldo' WHERE id_produto='$id_produto'";
 				
 		
 					
