@@ -31,6 +31,11 @@ if(empty($codbarras_produto)){
 
 
 
+
+
+
+
+
 ?>
 	
 	
@@ -151,7 +156,8 @@ $(document).ready(function() {
 						<th>Categoria</th>
 						<th>Sub-Categoria</th>
 					</tr>
-					<tr>
+					<?php
+					echo '<tr>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -161,8 +167,8 @@ $(document).ready(function() {
 						<td></td>
 						<td></td>
 					
-					</tr>
-			
+					</tr>';
+					?>
 				</table>
 			</div>
 
