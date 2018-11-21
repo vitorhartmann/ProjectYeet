@@ -157,6 +157,13 @@ $(document).ready(function() {
 						<th>Sub-Categoria</th>
 					</tr>
 					<?php
+					
+					/* Inserir Comando Sql em variavel  $sql  para executar a busca dos dados da venda*/
+					$result = $conn->query($sql);
+					
+					if ($result->num_rows > 0) {
+    
+    while($row = $result->fetch_assoc()) {
 					echo '<tr>
 						<td><label>'. $row["id_produto"].'</label></td>
 						<td><label>'. $row["nome_produto"].'</label></td>
@@ -169,6 +176,8 @@ $(document).ready(function() {
 						
 					
 					</tr>';
+	}
+}
 					?>
 				</table>
 			</div>
