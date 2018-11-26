@@ -12,25 +12,28 @@ $categoria=$_POST['id_categoria'];
 $subcategoria=$_POST['id_subcategoria'];
 
 
+
+$campoTipo="codbarras_produto";
+$valorPesquisa=$_POST['codbarras_produto'];
+
+ if(empty($valorPesquisa)){
 	
-if(empty($codbarras_produto)){
 	
-	
-	$campoTipo="id_subcategoria";
-	$valorPesquisa=$_POST['id_subcategoria'];
+	$campoTipo="id_categoria";
+	$valorPesquisa=$_POST['id_categoria'];
 	
 }else {
-	if(empty($subcategoria)){
+	if(empty($valorPesquisa)){
 			
-		$campoTipo="id_categoria";
-		$valorPesquisa=$_POST['id_categoria'];
+		$campoTipo="id_subcategoria";
+		$valorPesquisa=$_POST['id_subcategoria'];
 		
 	} else{
-		if(empty($categoria)){
+		if(empty($valorPesquisa)){
 			
 			
-			$campoTipo="codbarras_produto";
-			$valorPesquisa=$_POST['codbarras_produto'];
+			$campoTipo="1";
+			$valorPesquisa="1";
 		}
 		
 	
