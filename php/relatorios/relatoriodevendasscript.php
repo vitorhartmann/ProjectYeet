@@ -28,16 +28,11 @@ $valorPesquisa=$_POST['codbarras_produto'];
 		$campoTipo="id_subcategoria";
 		$valorPesquisa=$_POST['id_subcategoria'];
 		
-	} else{
-		if(empty($valorPesquisa)){
-			
-			
-			$campoTipo="1";
-			$valorPesquisa="1";
-		}
+	}
+		
 		
 	
-}
+
 
 
 }
@@ -170,7 +165,7 @@ $(document).ready(function() {
 					<?php
 					//$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria";
 					
-				echo	$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria WHERE $campoTipo = $valorPesquisa GROUP BY id_produto";
+				$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria WHERE $campoTipo = $valorPesquisa GROUP BY id_produto";
 					
 					
 					
