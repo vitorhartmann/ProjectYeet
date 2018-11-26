@@ -33,7 +33,8 @@ if(empty($codbarras_produto)){
 }
 
 
-
+	 
+ 
 
 
 ?>
@@ -157,9 +158,13 @@ $(document).ready(function() {
 						<th>Sub-Categoria</th>
 					</tr>
 					<?php
+					// $innerjoin="  SELECT * FROM produto INNER JOIN venda_has_produto ON produto.id_produto = vendas_has_produto.venda_id_venda";
 					
-					/* Inserir Comando Sql em variavel  $sql  para executar a busca dos dados da venda*/
-					$result = $conn->query($sql);
+					$innerjoin="SELECT * FROM produto INNER JOIN subcategoria ON produto.id_produto = subcategoria.id_produto";
+					
+					$result = $conn->query($innerjoin);
+			
+			
 					
 					if ($result->num_rows > 0) {
     
@@ -168,7 +173,7 @@ $(document).ready(function() {
 						<td><label>'. $row["id_produto"].'</label></td>
 						<td><label>'. $row["nome_produto"].'</label></td>
 						<td><label>'. $row["codbarras_produto"].'</label></td>
-						/* <td><label>'. $row[""].'</label></td>  INSERIR VARIAVEL DE VENDIDOS NO PERÍODO (30 DIAS)     */
+						 <td><label>'. $row[""].'</label></td> 
 						<td><label>'. $row["saldo_produto"].'</label></td>
 						<td><label>'. $row["valor_produto"].'</label></td>
 						<td><label>'. $row["nome_categoria"].'</label></td>
