@@ -160,7 +160,7 @@ $(document).ready(function() {
 					<?php
 					// $innerjoin="  SELECT * FROM produto INNER JOIN venda_has_produto ON produto.id_produto = vendas_has_produto.venda_id_venda";
 					
-					$innerjoin="SELECT * FROM produto INNER JOIN subcategoria ON produto.id_produto = subcategoria.id_produto";
+					$innerjoin="SELECT * FROM produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria";
 					
 					$result = $conn->query($innerjoin);
 			
