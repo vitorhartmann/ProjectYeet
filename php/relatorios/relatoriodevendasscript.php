@@ -162,10 +162,10 @@ $(document).ready(function() {
 					
 					//$innerjoin="SELECT * FROM produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria";
 					
-					$innerjoin="SELECT * FROM produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria";
+					$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria";
 					
 					
-					"INNER JOIN produto ON vendas_has_produto.produto_id_produto = produto.id_produto"
+					
 					
 					$result = $conn->query($innerjoin);
 			
@@ -178,7 +178,7 @@ $(document).ready(function() {
 						<td><label>'. $row["id_produto"].'</label></td>
 						<td><label>'. $row["nome_produto"].'</label></td>
 						<td><label>'. $row["codbarras_produto"].'</label></td>
-						 <td><label>'. $row[""].'</label></td> 
+						 <td><label>'. $row["quantidade_produto"].'</label></td> 
 						<td><label>'. $row["saldo_produto"].'</label></td>
 						<td><label>'. $row["valor_produto"].'</label></td>
 						<td><label>'. $row["nome_categoria"].'</label></td>
