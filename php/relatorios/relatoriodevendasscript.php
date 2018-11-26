@@ -14,16 +14,23 @@ $subcategoria=$_POST['id_subcategoria'];
 
 	
 if(empty($codbarras_produto)){
-	$sql="SELECT * FROM venda WHERE id_subcategoria='{$subcategoria}'";
 	
+	
+	$campoTipo="id_subcategoria";
+	$valorPesquisa=$_POST['id_subcategoria'];
 	
 }else {
 	if(empty($subcategoria)){
-			$sql="SELECT * FROM venda WHERE id_categoria='{$categoria}'";
+			
+		$campoTipo="id_categoria";
+		$valorPesquisa=$_POST['id_categoria'];
 		
 	} else{
 		if(empty($categoria)){
-			$sql="SELECT * FROM venda WHERE codbarras_produto='{$codbarras_produto}'";
+			
+			
+			$campoTipo="codbarras_produto";
+			$valorPesquisa=$_POST['codbarras_produto'];
 		}
 		
 	
@@ -160,7 +167,7 @@ $(document).ready(function() {
 					<?php
 					//$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria";
 					
-					$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria";
+					$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria GROUP BY id_produto WHERE $campoTipo = '$valorPesquisa'";
 					
 					
 					
