@@ -108,7 +108,7 @@ $(document).ready(function() {
 				<table border="1" bgcolor="#A9A9A9">
 					<tr>
 						<th>Código de Barras:</th>
-						<th><input></input> </th>
+						<th><input type="text" name="codbarras_produto" id="codbarras_produto"></input> </th>
 					</tr>
 					<tr>
 					<th><label>Categoria:</label></th>
