@@ -161,11 +161,13 @@ $(document).ready(function() {
 						<th>Valor</th>
 						<th>Categoria</th>
 						<th>Sub-Categoria</th>
+					
 					</tr>
 					<?php
 					//$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria";
 					
-				$innerjoin="SELECT * FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria WHERE $campoTipo = $valorPesquisa GROUP BY id_produto";
+				 $innerjoin="SELECT *, SUM(venda_has_produto.quantidade_produto) AS somatotal FROM venda_has_produto INNER JOIN produto ON venda_has_produto.produto_id_produto = produto.id_produto INNER JOIN subcategoria ON produto.subcategoria_id_subcategoria = subcategoria.id_subcategoria INNER JOIN categoria ON subcategoria.categoria_id_categoria = categoria.id_categoria INNER JOIN venda ON venda_has_produto.venda_id_venda = venda.id_venda WHERE $campoTipo = $valorPesquisa AND data_venda
+    BETWEEN DATE_ADD(CURRENT_DATE(), INTERVAL -30 DAY) AND CURRENT_DATE() GROUP BY id_produto";
 					
 					
 					
@@ -181,11 +183,12 @@ $(document).ready(function() {
 						<td><label>'. $row["id_produto"].'</label></td>
 						<td><label>'. $row["nome_produto"].'</label></td>
 						<td><label>'. $row["codbarras_produto"].'</label></td>
-						 <td><label>'. $row["quantidade_produto"].'</label></td> 
+						 <td><label>'. $row["somatotal"].'</label></td> 
 						<td><label>'. $row["saldo_produto"].'</label></td>
 						<td><label>'. $row["valor_produto"].'</label></td>
 						<td><label>'. $row["nome_categoria"].'</label></td>
 						<td><label>'. $row["nome_subcategoria"].'</label></td>
+				
 						
 					
 					</tr>';
