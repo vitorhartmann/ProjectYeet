@@ -356,7 +356,7 @@ function calculaTotal(){
         <tr>
           <td align="right" colspan="6">
 		  <button type="reset">Limpar Campos</button>
-            <button type="submit">Cadastrar</button>
+            <button type="submit">Finalizar Venda</button>
 			</td>
 			</tr>
 			<td colspan="4"></td>
