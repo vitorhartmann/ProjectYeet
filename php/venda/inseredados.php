@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Exemplo Mestre-Detalhe</title>
+		<title>Tela de Vendas</title>
 	</head>
 	<body>
 	
